@@ -30,6 +30,137 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform2.hpp>
 
+
+class Shader
+{
+private:
+	GLuint handle;
+	GLenum type;
+	std::string sourcePath;//コンストラクタでコンパイルすればメンバとしては不要？
+	void init()
+	{
+		handle = glCreateShader(type);
+		if(handle == 0)
+		{
+			std::cout << "error at Shader()." << std::endl;
+		}
+	}
+	std::string readShaderFile(const std::string& filename)
+	{
+		std::ifstream f(filename);
+		std::string s{};
+		std::stringstream ss{};
+		while(std::getline(f, s))
+		{
+			ss << s << std::endl;
+		}
+		return ss.str();
+	}
+public:
+	Shader(GLenum t, const char* path):handle(0),type(t),sourcePath(path)
+	{
+		this->init();
+	}
+	Shader(GLenum t, const std::string& path):handle(0),type(t),sourcePath(path)
+	{
+	}
+	void compile()
+	{
+		
+		//シェーダのコードの読み込み
+		std::string shader_code = readShaderFile(sourcePath.c_str());
+		//シェーダのコードを配列に格納する
+		const GLchar* code_array[] = {shader_code.c_str()};
+		//シェーダへのソースの読み込み
+		glShaderSource(handle, 1, code_array, NULL);
+		
+		GLint result;
+		
+		//シェーダのコンパイル
+		glCompileShader(handle);
+		glGetShaderiv(handle, GL_COMPILE_STATUS, &result);
+		if(result == GL_FALSE)
+		{
+			std::cout << "error at glGetShaderiv()." << std::endl;
+			GLint log_len;
+			glGetShaderiv(handle,GL_INFO_LOG_LENGTH, &log_len);
+			if(log_len > 0)
+			{
+				std::unique_ptr<char> log(new char[log_len]);
+				GLsizei written;
+				glGetShaderInfoLog(handle, log_len, &written, log.get());
+				std::cout << log.get() << std::endl;
+			}
+		}
+	}
+	GLuint getHandle() const
+	{
+		return handle;
+	}
+	
+};
+
+
+class ShaderProgram
+{
+private:
+	GLuint handle;
+public:
+	ShaderProgram()
+	{
+		handle = glCreateProgram();
+		if(handle == 0)
+		{
+			std::cout << "error at glCreateProgram()." << std::endl;
+		}
+	}
+	void attach(const Shader& s)
+	{
+		glAttachShader(handle, s.getHandle());
+	}
+	void link()
+	{
+		glLinkProgram(handle);
+		GLint status;
+		
+		//リンクの結果確認
+		glGetProgramiv(handle, GL_LINK_STATUS, &status);
+		if(status == GL_FALSE)
+		{
+			std::cout << "error at glLinkProgram(handle)." << std::endl;
+		}
+	}
+	void use()
+	{
+		//OpenGLパイプラインにインストール
+		glUseProgram(handle);
+	}
+	void unuse()
+	{
+		//OpenGLパイプラインプログラムを割り当てない
+		glUseProgram(0);
+	}
+};
+
+//お遊びクラス
+//このクラスのインスタンスがスコープ内にいる限りShaderProgramがuseになる
+//mutex的な使い方。
+//useのままスコープを外れることが防止できる
+class UseShaderProgram
+{
+private:
+	ShaderProgram& sp;
+public:
+	UseShaderProgram(ShaderProgram& s):sp(s)
+	{
+		sp.use();
+	}
+	~UseShaderProgram()
+	{
+		sp.unuse();
+	}
+};
+
 GLuint vert_shader;
 GLuint frag_shader;
 

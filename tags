@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+COMMON_FLAGS	makefile	/^COMMON_FLAGS := -pg -g -O0$/;"	m
+CUDA_SRCS	makefile	/^CUDA_SRCS := $(shell ls *.cu)$/;"	m
+CXXFLAGS	makefile	/^CXXFLAGS := -Wall -lsqlite3 -L\/usr\/lib\/nvidia-340 -lglut -lGLEW -lGLU -lGL -I\/usr\/include$/;"	m
+CXXONLYFLAGS	makefile	/^CXXONLYFLAGS :=  -fopenmp -std=c++11$/;"	m
+DEPS	makefile	/^DEPS := $(SRCS:.cpp=.d) $(CUDA_SRCS:.cu=.d)$/;"	m
+GLM_FORCE_RADIANS	glsltest.cpp	28;"	d	file:
+NVCC	makefile	/^NVCC := nvcc$/;"	m
+NVCC_FLAGS	makefile	/^NVCC_FLAGS :=  -Xcompiler -Wall -Xcompiler -fopenmp  -arch=compute_13 -code=sm_13,compute_13$/;"	m
+NVCC_LINKS	makefile	/^NVCC_LINKS := -lcuda -lcudart$/;"	m
+OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o) $(CUDA_SRCS:.cu=.o)$/;"	m
+OBJSTARGET	makefile	/^OBJSTARGET := $(filter-out $(TESTTARGET).o, $(OBJS))$/;"	m
+OBJSTEST	makefile	/^OBJSTEST := $(filter-out $(TARGET).o, $(OBJS))$/;"	m
+SRCS	makefile	/^SRCS := $(shell ls *.cpp)$/;"	m
+TARGET	makefile	/^TARGET := $(shell basename `pwd`)$/;"	m
+TESTTARGET	makefile	/^TESTTARGET := unittest$/;"	m
+display	glsltest.cpp	/^void display(void)$/;"	f
+frag_shader	glsltest.cpp	/^GLuint frag_shader;$/;"	v
+idle	glsltest.cpp	/^void idle(void)$/;"	f
+initCallbacks	glsltest.cpp	/^void initCallbacks(void)$/;"	f
+initScene	glsltest.cpp	/^void initScene(void)$/;"	f
+initShader	glsltest.cpp	/^void initShader(void)$/;"	f
+initShaderProgram	glsltest.cpp	/^void initShaderProgram(void)$/;"	f
+main	glsltest.cpp	/^int main(int argc, char** argv)$/;"	f
+program_handle	glsltest.cpp	/^GLuint program_handle;$/;"	v
+projection	glsltest.cpp	/^glm::mat4 projection;$/;"	v
+readShaderFile	glsltest.cpp	/^std::string readShaderFile(const std::string& filename)$/;"	f
+resize	glsltest.cpp	/^void resize(int w, int h)$/;"	f
+setMatrix	glsltest.cpp	/^void setMatrix(void)$/;"	f
+vao_handle	glsltest.cpp	/^GLuint vao_handle;$/;"	v
+vert_shader	glsltest.cpp	/^GLuint vert_shader;$/;"	v
