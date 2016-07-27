@@ -39,6 +39,7 @@ private:
 	std::string sourcePath;//コンストラクタでコンパイルすればメンバとしては不要？
 	void init()
 	{
+		//シェーダオブジェクトを生成する
 		handle = glCreateShader(type);
 		if(handle == 0)
 		{
@@ -56,13 +57,38 @@ private:
 		}
 		return ss.str();
 	}
+	//コピー・ムーブを禁止するため下記の宣言のみ行う
+	//		禁止しない場合のメモ
+	//		handleはコピーしないで別個に作る
+	//		ほかはコピーでOK
+	//		ムーブについては全部コピーでいいが、
+	//		コピー元のハンドルは0にする
+	//		（コピー元のShaderがデストラクタで破棄されないようにするため）
+	//
+	//コピーコンストラクタ
+	Shader(const Shader& s);
+	//コピー代入演算子
+	Shader& operator=(const Shader& s);
+	//ムーブコンストラクタ
+	Shader(Shader&& s);
+	//ムーブ代入演算子
+	Shader& operator=(Shader&& s);
 public:
+	//デフォルトコンストラクタを作る？
+	//->作らないとstdコンテナに格納できない
+	//->作るには、typeとsourcePathを後から設定可能にする必要あり
 	Shader(GLenum t, const char* path):handle(0),type(t),sourcePath(path)
 	{
 		this->init();
 	}
 	Shader(GLenum t, const std::string& path):handle(0),type(t),sourcePath(path)
 	{
+		this->init();
+	}
+	~Shader()
+	{
+		//シェーダオブジェクトを削除する
+		glDeleteShader(handle);
 	}
 	void compile()
 	{
@@ -100,19 +126,61 @@ public:
 	
 };
 
+template <typename T>
+class UniformVariable
+{
+private:
+	GLuint location;
+public:
+	void setLocation(GLuint program_handle, const char* name)
+	{
+		glGetUniformLocation(program_handle, name);
+	}
+	void setLocation(GLuint program_handle, const std::string& name)
+	{
+		glGetUniformLocation(program_handle, name.c_str());
+	}
+	void set(const T& t);
+};
+
+template<>
+void UniformVariable<glm::mat4>::set(const glm::mat4& m)
+{
+	glUniformMatrix4fv(this->location, 1, GL_FALSE, &m[0][0]);
+}
+
+template<>
+void UniformVariable<glm::vec3>::set(const glm::vec3& v)
+{
+	glUniform3fv(this->location, 1, &v[0]);
+}
 
 class ShaderProgram
 {
 private:
 	GLuint handle;
+	
+	//コピー・ムーブを禁止するため下記の宣言のみ行う
+	//コピーコンストラクタ
+	ShaderProgram(const ShaderProgram& s);
+	//コピー代入演算子
+	ShaderProgram& operator=(const ShaderProgram& s);
+	//ムーブコンストラクタ
+	ShaderProgram(ShaderProgram&& s);
+	//ムーブ代入演算子
+	ShaderProgram& operator=(ShaderProgram&& s);
 public:
-	ShaderProgram()
+	ShaderProgram():handle(0)
 	{
 		handle = glCreateProgram();
 		if(handle == 0)
 		{
 			std::cout << "error at glCreateProgram()." << std::endl;
 		}
+	}
+	~ShaderProgram()
+	{
+		glDeleteProgram(handle);
 	}
 	void attach(const Shader& s)
 	{
@@ -121,9 +189,9 @@ public:
 	void link()
 	{
 		glLinkProgram(handle);
-		GLint status;
 		
 		//リンクの結果確認
+		GLint status;
 		glGetProgramiv(handle, GL_LINK_STATUS, &status);
 		if(status == GL_FALSE)
 		{
