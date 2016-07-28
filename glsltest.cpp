@@ -134,11 +134,11 @@ private:
 public:
 	void setLocation(GLuint program_handle, const char* name)
 	{
-		glGetUniformLocation(program_handle, name);
+		location = glGetUniformLocation(program_handle, name);
 	}
 	void setLocation(GLuint program_handle, const std::string& name)
 	{
-		glGetUniformLocation(program_handle, name.c_str());
+		location = glGetUniformLocation(program_handle, name.c_str());
 	}
 	void set(const T& t);
 };
@@ -208,6 +208,10 @@ public:
 		//OpenGLパイプラインプログラムを割り当てない
 		glUseProgram(0);
 	}
+	GLuint getHandle()
+	{
+		return handle;
+	}
 };
 
 //お遊びクラス
@@ -228,6 +232,48 @@ public:
 		sp.unuse();
 	}
 };
+
+class TestShaderProgram
+{
+private:
+	Shader vertShader;
+	Shader fragShader;
+	ShaderProgram shaderProgram;
+	UniformVariable<glm::mat4> mvpMatrix;
+public:
+	TestShaderProgram()
+		:
+			vertShader(GL_VERTEX_SHADER,  "basic.vert"),
+			fragShader(GL_FRAGMENT_SHADER,"basic.frag"),
+			shaderProgram(),
+			mvpMatrix()
+	{
+	}
+	void init(void)
+	{
+		vertShader.compile();
+		fragShader.compile();
+		
+		shaderProgram.attach(fragShader);
+		shaderProgram.attach(vertShader);
+		shaderProgram.link();
+		
+		mvpMatrix.setLocation(shaderProgram.getHandle(), "rotationMatrix");
+	}
+	void use()
+	{
+		shaderProgram.use();
+	}
+	void unuse()
+	{
+		shaderProgram.unuse();
+	}
+	void setMVPMatrix(const glm::mat4& m)
+	{
+		mvpMatrix.set(m);
+	}
+};
+
 
 GLuint vert_shader;
 GLuint frag_shader;
