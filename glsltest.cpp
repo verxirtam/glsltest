@@ -20,10 +20,7 @@
 #include <GL/glut.h>
 
 #include <iostream>
-#include <fstream>
-#include <sstream>
 #include <vector>
-#include <memory>
 
 
 #define GLM_FORCE_RADIANS
@@ -31,343 +28,18 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform2.hpp>
 
+#include "TestShaderProgram.h"
+#include "VAOPositionColor.h"
 
-class Shader
-{
-private:
-	GLuint handle;
-	GLenum type;
-	std::string sourcePath;//コンストラクタでコンパイルすればメンバとしては不要？
-	void init()
-	{
-		//シェーダオブジェクトを生成する
-		handle = glCreateShader(type);
-		if(handle == 0)
-		{
-			std::cout << "error at Shader()." << std::endl;
-		}
-	}
-	std::string readShaderFile(const std::string& filename)
-	{
-		std::ifstream f(filename);
-		std::string s{};
-		std::stringstream ss{};
-		while(std::getline(f, s))
-		{
-			ss << s << std::endl;
-		}
-		return ss.str();
-	}
-	//コピー・ムーブを禁止するため下記の宣言のみ行う
-	//		禁止しない場合のメモ
-	//		handleはコピーしないで別個に作る
-	//		ほかはコピーでOK
-	//		ムーブについては全部コピーでいいが、
-	//		コピー元のハンドルは0にする
-	//		（コピー元のShaderがデストラクタで破棄されないようにするため）
-	//
-	//コピーコンストラクタ
-	Shader(const Shader& s);
-	//コピー代入演算子
-	Shader& operator=(const Shader& s);
-	//ムーブコンストラクタ
-	Shader(Shader&& s);
-	//ムーブ代入演算子
-	Shader& operator=(Shader&& s);
-public:
-	//デフォルトコンストラクタを作る？
-	//->作らないとstdコンテナに格納できない
-	//->作るには、typeとsourcePathを後から設定可能にする必要あり
-	Shader(GLenum t, const char* path):handle(0),type(t),sourcePath(path)
-	{
-		this->init();
-	}
-	Shader(GLenum t, const std::string& path):handle(0),type(t),sourcePath(path)
-	{
-		this->init();
-	}
-	~Shader()
-	{
-		//シェーダオブジェクトを削除する
-		glDeleteShader(handle);
-	}
-	void compile()
-	{
-		
-		//シェーダのコードの読み込み
-		std::string shader_code = readShaderFile(sourcePath.c_str());
-		//シェーダのコードを配列に格納する
-		const GLchar* code_array[] = {shader_code.c_str()};
-		//シェーダへのソースの読み込み
-		glShaderSource(handle, 1, code_array, NULL);
-		
-		GLint result;
-		
-		//シェーダのコンパイル
-		glCompileShader(handle);
-		glGetShaderiv(handle, GL_COMPILE_STATUS, &result);
-		if(result == GL_FALSE)
-		{
-			std::cout << "error at glGetShaderiv()." << std::endl;
-			GLint log_len;
-			glGetShaderiv(handle,GL_INFO_LOG_LENGTH, &log_len);
-			if(log_len > 0)
-			{
-				std::unique_ptr<char> log(new char[log_len]);
-				GLsizei written;
-				glGetShaderInfoLog(handle, log_len, &written, log.get());
-				std::cout << log.get() << std::endl;
-			}
-		}
-	}
-	GLuint getHandle() const
-	{
-		return handle;
-	}
-	
-};
 
-template <typename T>
-class UniformVariable
-{
-private:
-	GLuint location;
-public:
-	void setLocation(GLuint program_handle, const char* name)
-	{
-		location = glGetUniformLocation(program_handle, name);
-	}
-	void setLocation(GLuint program_handle, const std::string& name)
-	{
-		location = glGetUniformLocation(program_handle, name.c_str());
-	}
-	void set(const T& t);
-};
 
-template<>
-void UniformVariable<glm::mat4>::set(const glm::mat4& m)
-{
-	glUniformMatrix4fv(this->location, 1, GL_FALSE, &m[0][0]);
-}
 
-template<>
-void UniformVariable<glm::vec3>::set(const glm::vec3& v)
-{
-	glUniform3fv(this->location, 1, &v[0]);
-}
 
-class ShaderProgram
-{
-private:
-	GLuint handle;
-	
-	//コピー・ムーブを禁止するため下記の宣言のみ行う
-	//コピーコンストラクタ
-	ShaderProgram(const ShaderProgram& s);
-	//コピー代入演算子
-	ShaderProgram& operator=(const ShaderProgram& s);
-	//ムーブコンストラクタ
-	ShaderProgram(ShaderProgram&& s);
-	//ムーブ代入演算子
-	ShaderProgram& operator=(ShaderProgram&& s);
-public:
-	ShaderProgram():handle(0)
-	{
-		handle = glCreateProgram();
-		if(handle == 0)
-		{
-			std::cout << "error at glCreateProgram()." << std::endl;
-		}
-	}
-	~ShaderProgram()
-	{
-		glDeleteProgram(handle);
-	}
-	void attach(const Shader& s)
-	{
-		glAttachShader(handle, s.getHandle());
-	}
-	void link()
-	{
-		glLinkProgram(handle);
-		
-		//リンクの結果確認
-		GLint status;
-		glGetProgramiv(handle, GL_LINK_STATUS, &status);
-		if(status == GL_FALSE)
-		{
-			std::cout << "error at glLinkProgram(handle)." << std::endl;
-		}
-	}
-	void use()
-	{
-		//OpenGLパイプラインにインストール
-		glUseProgram(handle);
-	}
-	void unuse()
-	{
-		//OpenGLパイプラインプログラムを割り当てない
-		glUseProgram(0);
-	}
-	GLuint getHandle()
-	{
-		return handle;
-	}
-};
-
-//お遊びクラス
-//このクラスのインスタンスがスコープ内にいる限りShaderProgramがuseになる
-//mutex的な使い方。
-//useのままスコープを外れることが防止できる
-class UseShaderProgram
-{
-private:
-	ShaderProgram& sp;
-public:
-	UseShaderProgram(ShaderProgram& s):sp(s)
-	{
-		sp.use();
-	}
-	~UseShaderProgram()
-	{
-		sp.unuse();
-	}
-};
-
-class TestShaderProgram
-{
-private:
-	Shader vertShader;
-	Shader fragShader;
-	ShaderProgram shaderProgram;
-	UniformVariable<glm::mat4> mvpMatrix;
-public:
-	TestShaderProgram()
-		:
-			vertShader(GL_VERTEX_SHADER,  "basic.vert"),
-			fragShader(GL_FRAGMENT_SHADER,"basic.frag"),
-			shaderProgram(),
-			mvpMatrix()
-	{
-	}
-	void init(void)
-	{
-		vertShader.compile();
-		fragShader.compile();
-		
-		shaderProgram.attach(fragShader);
-		shaderProgram.attach(vertShader);
-		shaderProgram.link();
-		
-		mvpMatrix.setLocation(shaderProgram.getHandle(), "rotationMatrix");
-	}
-	void use()
-	{
-		shaderProgram.use();
-	}
-	void unuse()
-	{
-		shaderProgram.unuse();
-	}
-	void setMVPMatrix(const glm::mat4& m)
-	{
-		shaderProgram.use();
-		mvpMatrix.set(m);
-		shaderProgram.unuse();
-	}
-};
-
-class VBOStatic
-{
-private:
-	GLuint handle;
-	GLenum type;
-	GLenum usage;
-public:
-	VBOStatic():handle(0),type(GL_ARRAY_BUFFER),usage(GL_STATIC_DRAW)
-	{
-		glGenBuffers(1, &handle);
-	}
-	void bind()
-	{
-		glBindBuffer(type, handle);
-	}
-	void bufferData(const std::vector<float>& v)
-	{
-		this->bind();
-		GLsizeiptr size = v.size() * sizeof(float);
-		glBufferData(type, size, v.data(), usage);
-	}
-};
-
-template <typename S>
-class VAOPositionColor
-{
-private:
-	VBOStatic position;
-	VBOStatic color;
-	GLuint handle;
-	S& shaderProgram;
-public:
-	VAOPositionColor(S& s):position(), color(),shaderProgram(s)
-	{
-		glGenVertexArrays(1, &handle);
-	}
-	void bind()
-	{
-		glBindVertexArray(handle);
-	}
-	void init(const std::vector<float>& p, const std::vector<float>& c)
-	{
-		position.bufferData(p);
-		color.bufferData(c);
-		
-		this->bind();
-		glEnableVertexAttribArray(0);
-		glEnableVertexAttribArray(1);
-		
-		position.bind();
-		glVertexAttribPointer
-			(
-				0,				//設定するバーテックスシェーダの引数のインデックスを指定する
-				3,				//1頂点あたりの要素数(ここでは3次元座標なので3)
-				GL_FLOAT,		//要素の型
-				GL_FALSE,		//正規化の要否 位置座標なのでFalse
-				0,				//頂点データ同士の間隔(byte単位) 0なら隙間なく配置されているとみなされる
-				(GLubyte*)NULL	//頂点データの開始アドレスから指定するデータの位置までの間隔
-			);
-		
-		color.bind();
-		glVertexAttribPointer
-			(
-				1,				//設定するバーテックスシェーダの引数のインデックスを指定する
-				3,				//1頂点あたりの要素数(ここでは3次元座標なので3)
-				GL_FLOAT,		//要素の型
-				GL_FALSE,		//正規化の要否 位置座標なのでFalse
-				0,				//頂点データ同士の間隔(byte単位) 0なら隙間なく配置されているとみなされる
-				(GLubyte*)NULL	//頂点データの開始アドレスから指定するデータの位置までの間隔
-			);
-	}
-	void display(void)
-	{
-		shaderProgram.use();
-		this->bind();
-		glDrawArrays(GL_TRIANGLES, 0,3);
-		shaderProgram.unuse();
-	}
-};
 
 
 TestShaderProgram *tsp;
 VAOPositionColor<TestShaderProgram> *vao;
 
-
-GLuint vert_shader;
-GLuint frag_shader;
-
-GLuint program_handle;
-
-GLuint vao_handle;
 
 glm::mat4 projection;
 
@@ -397,14 +69,6 @@ void setMatrix(void)
 	
 	tsp->setMVPMatrix(mvp);
 	
-	/*
-	GLuint location = glGetUniformLocation(program_handle, "rotationMatrix");
-	
-	if(location >= 0)
-	{
-		glUniformMatrix4fv(location, 1, GL_FALSE, &mvp[0][0]);
-	}
-	*/
 }
 
 
@@ -417,9 +81,6 @@ void display(void)
 	setMatrix();
 	
 	vao->display();
-	//glBindVertexArray(vao_handle);
-	//glDrawArrays(GL_TRIANGLES, 0,3);
-	
 	
 	//描画対象のバッファを入れ替える
 	glutSwapBuffers();
@@ -451,169 +112,42 @@ void initCallbacks(void)
 }
 
 
-std::string readShaderFile(const std::string& filename)
-{
-	std::ifstream f(filename);
-	std::string s{};
-	std::stringstream ss{};
-	while(std::getline(f, s))
-	{
-		ss << s << std::endl;
-	}
-	return ss.str();
-}
-
-void initShader(void)
-{
-	//バーテックスシェーダの生成
-	vert_shader = glCreateShader(GL_VERTEX_SHADER);
-	if(vert_shader == 0)
-	{
-		std::cout << "error at glCreateShaderGL_VERTEX_SHADER()." << std::endl;
-	}
-	
-	//フラグメントシェーダの生成
-	frag_shader = glCreateShader(GL_FRAGMENT_SHADER);
-	if(frag_shader == 0)
-	{
-		std::cout << "error at glCreateShader(GL_FRAGMENT_SHADER)." << std::endl;
-	}
-	
-	//バーテックスシェーダのコードの読み込み
-	std::string vert_shader_code = readShaderFile("basic.vert");
-	//フラグメントシェーダのコードの読み込み
-	std::string frag_shader_code = readShaderFile("basic.frag");
-	//シェーダのコードを配列に格納する
-	const GLchar* vert_code_array[] = {vert_shader_code.c_str()};
-	const GLchar* frag_code_array[] = {frag_shader_code.c_str()};
-	//シェーダへのソースの読み込み
-	glShaderSource(vert_shader, 1, vert_code_array, NULL);
-	glShaderSource(frag_shader, 1, frag_code_array, NULL);
-	
-	GLint result;
-	
-	//バーテックスシェーダのコンパイル
-	glCompileShader(vert_shader);
-	glGetShaderiv(vert_shader, GL_COMPILE_STATUS, &result);
-	if(result == GL_FALSE)
-	{
-		std::cout << "error at glGetShaderiv(vert_shader,*)." << std::endl;
-	}
-	
-	
-	//フラグメントシェーダのコンパイル
-	glCompileShader(frag_shader);
-	glGetShaderiv(frag_shader, GL_COMPILE_STATUS, &result);
-	if(result == GL_FALSE)
-	{
-		std::cout << "error at glGetShaderiv(frag_shader,*)." << std::endl;
-		GLint log_len;
-		glGetShaderiv(frag_shader,GL_INFO_LOG_LENGTH, &log_len);
-		if(log_len > 0)
-		{
-			std::unique_ptr<char> log(new char[log_len]);
-			GLsizei written;
-			glGetShaderInfoLog(frag_shader, log_len, &written, log.get());
-			std::cout << log.get() << std::endl;
-		}
-	}
-	
-}
-
-void initShaderProgram(void)
-{
-	//シェーダプログラムの初期化
-	program_handle = glCreateProgram();
-	if(program_handle == 0)
-	{
-		std::cout << "error at glCreateProgram()." << std::endl;
-	}
-	//コンパイルしたシェーダプログラムの割り当て
-	glAttachShader(program_handle, vert_shader);
-	glAttachShader(program_handle, frag_shader);
-	
-	//シェーダプログラムのリンク
-	glLinkProgram(program_handle);
-	
-	GLint status;
-	
-	
-	//リンクの結果確認
-	glGetProgramiv(program_handle, GL_LINK_STATUS, &status);
-	if(status == GL_FALSE)
-	{
-		std::cout << "error at glLinkProgram(program_handle)." << std::endl;
-	}
-	else
-	{
-		//エラーがなければOpenGLパイプラインにインストール
-		glUseProgram(program_handle);
-	}
-}
-
 void initScene(void)
 {
 	tsp->init();
-	//initShader();
-	//initShaderProgram();
 	
 	
 	projection = glm::perspective(3.141592f * 30.0f / 180.0f, 1.0f / 1.0f, 1.0f, 1000.f);
 	
 	//位置データ
-	std::vector<float> position_data{
+	std::vector<float> position_data
+		{
 			-0.8f, -0.8f, 0.0f,
 			 0.8f, -0.8f, 0.0f,
-			 0.0f,  0.8f, 0.0f
-			};
+			 0.0f,  0.8f, 0.0f,
+			-0.8f,  0.2f, 0.0f,
+			 0.8f,  0.2f, 0.0f,
+			 0.0f,  1.8f, 0.0f
+		};
 	//色データ
-	std::vector<float> color_data{
+	std::vector<float> color_data
+		{
+			1.0f, 0.0f, 0.0f,
+			0.0f, 1.0f, 0.0f,
+			0.0f, 0.0f, 1.0f,
 			1.0f, 0.0f, 0.0f,
 			0.0f, 1.0f, 0.0f,
 			0.0f, 0.0f, 1.0f
-			};
+		};
 	
-	vao->init(position_data,color_data);
-	/*
-	//バッファオブジェクトの生成
-	GLuint vbo_handles[2];
-	glGenBuffers(2, vbo_handles);
-	GLuint position_buffer_handle = vbo_handles[0];
-	GLuint color_buffer_handle = vbo_handles[1];
-	
-	//バッファへの位置データの格納
-	glBindBuffer(GL_ARRAY_BUFFER, position_buffer_handle);
-	glBufferData(GL_ARRAY_BUFFER, 9 * sizeof(float), position_data, GL_STATIC_DRAW);
-	//バッファへの色データの格納
-	glBindBuffer(GL_ARRAY_BUFFER, color_buffer_handle);
-	glBufferData(GL_ARRAY_BUFFER, 9 * sizeof(float), color_data, GL_STATIC_DRAW);
+	std::vector<unsigned int> element_data
+		{
+			0,1,2,
+			3,4,5
+		};
 	
 	
-	//VAOの生成
-	glGenVertexArrays(1, &vao_handle);
-	glBindVertexArray(vao_handle);
-	
-	//バーテックスシェーダのインプットの設定を有効にする
-	glEnableVertexAttribArray(0);
-	glEnableVertexAttribArray(1);
-	
-	//インデックス0を位置データに割り当てる
-	glBindBuffer(GL_ARRAY_BUFFER, position_buffer_handle);
-	glVertexAttribPointer
-		(
-			0,				//設定するバーテックスシェーダの引数のインデックスを指定する
-			3,				//1頂点あたりの要素数(ここでは3次元座標なので3)
-			GL_FLOAT,		//要素の型
-			GL_FALSE,		//正規化の要否 位置座標なのでFalse
-			0,				//頂点データ同士の間隔(byte単位) 0なら隙間なく配置されているとみなされる
-			(GLubyte*)NULL	//頂点データの開始アドレスから指定するデータの位置までの間隔
-		);
-	
-	//インデックス1を色データに割り当てる
-	glBindBuffer(GL_ARRAY_BUFFER, color_buffer_handle);
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLubyte*)NULL);
-	
-	*/
+	vao->init(position_data, color_data, element_data);
 }
 
 int main(int argc, char** argv)

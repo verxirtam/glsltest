@@ -9,7 +9,8 @@ CUDA_SRCS	makefile	/^CUDA_SRCS := $(shell ls *.cu)$/;"	m
 CXXFLAGS	makefile	/^CXXFLAGS := -Wall -lsqlite3 -L\/usr\/lib\/nvidia-340 -lglut -lGLEW -lGLU -lGL -I\/usr\/include$/;"	m
 CXXONLYFLAGS	makefile	/^CXXONLYFLAGS :=  -fopenmp -std=c++11$/;"	m
 DEPS	makefile	/^DEPS := $(SRCS:.cpp=.d) $(CUDA_SRCS:.cu=.d)$/;"	m
-GLM_FORCE_RADIANS	glsltest.cpp	29;"	d	file:
+GLM_FORCE_RADIANS	UniformVariable.h	27;"	d
+GLM_FORCE_RADIANS	glsltest.cpp	26;"	d	file:
 NVCC	makefile	/^NVCC := nvcc$/;"	m
 NVCC_FLAGS	makefile	/^NVCC_FLAGS :=  -Xcompiler -Wall -Xcompiler -fopenmp  -arch=compute_13 -code=sm_13,compute_13$/;"	m
 NVCC_LINKS	makefile	/^NVCC_LINKS := -lcuda -lcudart$/;"	m
@@ -17,77 +18,75 @@ OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o) $(CUDA_SRCS:.cu=.o)$/;"	m
 OBJSTARGET	makefile	/^OBJSTARGET := $(filter-out $(TESTTARGET).o, $(OBJS))$/;"	m
 OBJSTEST	makefile	/^OBJSTEST := $(filter-out $(TARGET).o, $(OBJS))$/;"	m
 SRCS	makefile	/^SRCS := $(shell ls *.cpp)$/;"	m
-Shader	glsltest.cpp	/^	Shader(GLenum t, const char* path):handle(0),type(t),sourcePath(path)$/;"	f	class:Shader
-Shader	glsltest.cpp	/^	Shader(GLenum t, const std::string& path):handle(0),type(t),sourcePath(path)$/;"	f	class:Shader
-Shader	glsltest.cpp	/^class Shader$/;"	c	file:
-ShaderProgram	glsltest.cpp	/^	ShaderProgram():handle(0)$/;"	f	class:ShaderProgram
-ShaderProgram	glsltest.cpp	/^class ShaderProgram$/;"	c	file:
+Shader	Shader.h	/^	Shader(GLenum t, const char* path):handle(0),type(t),sourcePath(path)$/;"	f	class:Shader
+Shader	Shader.h	/^	Shader(GLenum t, const std::string& path):handle(0),type(t),sourcePath(path)$/;"	f	class:Shader
+Shader	Shader.h	/^class Shader$/;"	c
+ShaderProgram	ShaderProgram.h	/^	ShaderProgram():handle(0)$/;"	f	class:ShaderProgram
+ShaderProgram	ShaderProgram.h	/^class ShaderProgram$/;"	c
 TARGET	makefile	/^TARGET := $(shell basename `pwd`)$/;"	m
 TESTTARGET	makefile	/^TESTTARGET := unittest$/;"	m
-TestShaderProgram	glsltest.cpp	/^	TestShaderProgram()$/;"	f	class:TestShaderProgram
-TestShaderProgram	glsltest.cpp	/^class TestShaderProgram$/;"	c	file:
-UniformVariable	glsltest.cpp	/^class UniformVariable$/;"	c	file:
-UseShaderProgram	glsltest.cpp	/^	UseShaderProgram(ShaderProgram& s):sp(s)$/;"	f	class:UseShaderProgram
-UseShaderProgram	glsltest.cpp	/^class UseShaderProgram$/;"	c	file:
-VAOPositionColor	glsltest.cpp	/^	VAOPositionColor(S& s):position(), color(),shaderProgram(s)$/;"	f	class:VAOPositionColor
-VAOPositionColor	glsltest.cpp	/^class VAOPositionColor$/;"	c	file:
-VBOStatic	glsltest.cpp	/^	VBOStatic():handle(0),type(GL_ARRAY_BUFFER),usage(GL_STATIC_DRAW)$/;"	f	class:VBOStatic
-VBOStatic	glsltest.cpp	/^class VBOStatic$/;"	c	file:
-attach	glsltest.cpp	/^	void attach(const Shader& s)$/;"	f	class:ShaderProgram
-bind	glsltest.cpp	/^	void bind()$/;"	f	class:VAOPositionColor
-bind	glsltest.cpp	/^	void bind()$/;"	f	class:VBOStatic
-bufferData	glsltest.cpp	/^	void bufferData(const std::vector<float>& v)$/;"	f	class:VBOStatic
-color	glsltest.cpp	/^	VBOStatic color;$/;"	m	class:VAOPositionColor	file:
-compile	glsltest.cpp	/^	void compile()$/;"	f	class:Shader
-display	glsltest.cpp	/^	void display(void)$/;"	f	class:VAOPositionColor
+TestShaderProgram	TestShaderProgram.h	/^	TestShaderProgram()$/;"	f	class:TestShaderProgram
+TestShaderProgram	TestShaderProgram.h	/^class TestShaderProgram$/;"	c
+UniformVariable	UniformVariable.h	/^class UniformVariable$/;"	c
+UseShaderProgram	UseShaderProgram.h	/^	UseShaderProgram(ShaderProgram& s):sp(s)$/;"	f	class:UseShaderProgram
+UseShaderProgram	UseShaderProgram.h	/^class UseShaderProgram$/;"	c
+VAOPositionColor	VAOPositionColor.h	/^	VAOPositionColor(S& s):position(), color(), element(), vertexCount(0), shaderProgram(s)$/;"	f	class:VAOPositionColor
+VAOPositionColor	VAOPositionColor.h	/^class VAOPositionColor$/;"	c
+VBOBase	VBOStatic.h	/^	VBOBase():handle(0),type(T),usage(U)$/;"	f	class:VBOBase
+VBOBase	VBOStatic.h	/^class VBOBase$/;"	c
+VBOElementStatic	VBOStatic.h	/^typedef VBOBase<GL_ELEMENT_ARRAY_BUFFER, GL_STATIC_DRAW, unsigned int> VBOElementStatic;$/;"	t
+VBOStatic	VBOStatic.h	/^typedef VBOBase<GL_ARRAY_BUFFER, GL_STATIC_DRAW, float> VBOStatic;$/;"	t
+attach	ShaderProgram.h	/^	void attach(const Shader& s)$/;"	f	class:ShaderProgram
+bind	VAOPositionColor.h	/^	void bind()$/;"	f	class:VAOPositionColor
+bind	VBOStatic.h	/^	void bind()$/;"	f	class:VBOBase
+bufferData	VBOStatic.h	/^	void bufferData(const std::vector<V>& v)$/;"	f	class:VBOBase
+color	VAOPositionColor.h	/^	VBOStatic color;$/;"	m	class:VAOPositionColor
+compile	Shader.h	/^	void compile()$/;"	f	class:Shader
+display	VAOPositionColor.h	/^	void display(void)$/;"	f	class:VAOPositionColor
 display	glsltest.cpp	/^void display(void)$/;"	f
-fragShader	glsltest.cpp	/^	Shader fragShader;$/;"	m	class:TestShaderProgram	file:
-frag_shader	glsltest.cpp	/^GLuint frag_shader;$/;"	v
-getHandle	glsltest.cpp	/^	GLuint getHandle() const$/;"	f	class:Shader
-getHandle	glsltest.cpp	/^	GLuint getHandle()$/;"	f	class:ShaderProgram
-handle	glsltest.cpp	/^	GLuint handle;$/;"	m	class:Shader	file:
-handle	glsltest.cpp	/^	GLuint handle;$/;"	m	class:ShaderProgram	file:
-handle	glsltest.cpp	/^	GLuint handle;$/;"	m	class:VAOPositionColor	file:
-handle	glsltest.cpp	/^	GLuint handle;$/;"	m	class:VBOStatic	file:
+element	VAOPositionColor.h	/^	VBOElementStatic element;$/;"	m	class:VAOPositionColor
+fragShader	TestShaderProgram.h	/^	Shader fragShader;$/;"	m	class:TestShaderProgram
+getHandle	Shader.h	/^	GLuint getHandle() const$/;"	f	class:Shader
+getHandle	ShaderProgram.h	/^	GLuint getHandle()$/;"	f	class:ShaderProgram
+handle	Shader.h	/^	GLuint handle;$/;"	m	class:Shader
+handle	ShaderProgram.h	/^	GLuint handle;$/;"	m	class:ShaderProgram
+handle	VAOPositionColor.h	/^	GLuint handle;$/;"	m	class:VAOPositionColor
+handle	VBOStatic.h	/^	GLuint handle;$/;"	m	class:VBOBase
 idle	glsltest.cpp	/^void idle(void)$/;"	f
-init	glsltest.cpp	/^	void init()$/;"	f	class:Shader	file:
-init	glsltest.cpp	/^	void init(const std::vector<float>& p, const std::vector<float>& c)$/;"	f	class:VAOPositionColor
-init	glsltest.cpp	/^	void init(void)$/;"	f	class:TestShaderProgram
+init	Shader.h	/^	void init()$/;"	f	class:Shader
+init	TestShaderProgram.cpp	/^void TestShaderProgram::init(void)$/;"	f	class:TestShaderProgram
+init	VAOPositionColor.h	/^void VAOPositionColor<S>::init$/;"	f	class:VAOPositionColor
 initCallbacks	glsltest.cpp	/^void initCallbacks(void)$/;"	f
 initScene	glsltest.cpp	/^void initScene(void)$/;"	f
-initShader	glsltest.cpp	/^void initShader(void)$/;"	f
-initShaderProgram	glsltest.cpp	/^void initShaderProgram(void)$/;"	f
-link	glsltest.cpp	/^	void link()$/;"	f	class:ShaderProgram
-location	glsltest.cpp	/^	GLuint location;$/;"	m	class:UniformVariable	file:
+link	ShaderProgram.h	/^	void link()$/;"	f	class:ShaderProgram
+location	UniformVariable.h	/^	GLuint location;$/;"	m	class:UniformVariable
 main	glsltest.cpp	/^int main(int argc, char** argv)$/;"	f
-mvpMatrix	glsltest.cpp	/^	UniformVariable<glm::mat4> mvpMatrix;$/;"	m	class:TestShaderProgram	file:
-position	glsltest.cpp	/^	VBOStatic position;$/;"	m	class:VAOPositionColor	file:
-program_handle	glsltest.cpp	/^GLuint program_handle;$/;"	v
+mvpMatrix	TestShaderProgram.h	/^	UniformVariable<glm::mat4> mvpMatrix;$/;"	m	class:TestShaderProgram
+position	VAOPositionColor.h	/^	VBOStatic position;$/;"	m	class:VAOPositionColor
 projection	glsltest.cpp	/^glm::mat4 projection;$/;"	v
-readShaderFile	glsltest.cpp	/^	std::string readShaderFile(const std::string& filename)$/;"	f	class:Shader	file:
-readShaderFile	glsltest.cpp	/^std::string readShaderFile(const std::string& filename)$/;"	f
+readShaderFile	Shader.h	/^	std::string readShaderFile(const std::string& filename)$/;"	f	class:Shader
 resize	glsltest.cpp	/^void resize(int w, int h)$/;"	f
-set	glsltest.cpp	/^void UniformVariable<glm::mat4>::set(const glm::mat4& m)$/;"	f	class:UniformVariable
-set	glsltest.cpp	/^void UniformVariable<glm::vec3>::set(const glm::vec3& v)$/;"	f	class:UniformVariable
-setLocation	glsltest.cpp	/^	void setLocation(GLuint program_handle, const char* name)$/;"	f	class:UniformVariable
-setLocation	glsltest.cpp	/^	void setLocation(GLuint program_handle, const std::string& name)$/;"	f	class:UniformVariable
-setMVPMatrix	glsltest.cpp	/^	void setMVPMatrix(const glm::mat4& m)$/;"	f	class:TestShaderProgram
+set	UniformVariable.cpp	/^void UniformVariable<glm::mat4>::set(const glm::mat4& m)$/;"	f	class:UniformVariable
+set	UniformVariable.cpp	/^void UniformVariable<glm::vec3>::set(const glm::vec3& v)$/;"	f	class:UniformVariable
+setLocation	UniformVariable.h	/^	void setLocation(GLuint program_handle, const char* name)$/;"	f	class:UniformVariable
+setLocation	UniformVariable.h	/^	void setLocation(GLuint program_handle, const std::string& name)$/;"	f	class:UniformVariable
+setMVPMatrix	TestShaderProgram.h	/^	void setMVPMatrix(const glm::mat4& m)$/;"	f	class:TestShaderProgram
 setMatrix	glsltest.cpp	/^void setMatrix(void)$/;"	f
-shaderProgram	glsltest.cpp	/^	S& shaderProgram;$/;"	m	class:VAOPositionColor	file:
-shaderProgram	glsltest.cpp	/^	ShaderProgram shaderProgram;$/;"	m	class:TestShaderProgram	file:
-sourcePath	glsltest.cpp	/^	std::string sourcePath;\/\/コンストラクタでコンパイルすればメンバとしては不要？$/;"	m	class:Shader	file:
-sp	glsltest.cpp	/^	ShaderProgram& sp;$/;"	m	class:UseShaderProgram	file:
-tsp	glsltest.cpp	/^TestShaderProgram tsp;$/;"	v
-type	glsltest.cpp	/^	GLenum type;$/;"	m	class:Shader	file:
-type	glsltest.cpp	/^	GLenum type;$/;"	m	class:VBOStatic	file:
-unuse	glsltest.cpp	/^	void unuse()$/;"	f	class:ShaderProgram
-unuse	glsltest.cpp	/^	void unuse()$/;"	f	class:TestShaderProgram
-usage	glsltest.cpp	/^	GLenum usage;$/;"	m	class:VBOStatic	file:
-use	glsltest.cpp	/^	void use()$/;"	f	class:ShaderProgram
-use	glsltest.cpp	/^	void use()$/;"	f	class:TestShaderProgram
-vao_handle	glsltest.cpp	/^GLuint vao_handle;$/;"	v
-vertShader	glsltest.cpp	/^	Shader vertShader;$/;"	m	class:TestShaderProgram	file:
-vert_shader	glsltest.cpp	/^GLuint vert_shader;$/;"	v
-~Shader	glsltest.cpp	/^	~Shader()$/;"	f	class:Shader
-~ShaderProgram	glsltest.cpp	/^	~ShaderProgram()$/;"	f	class:ShaderProgram
-~UseShaderProgram	glsltest.cpp	/^	~UseShaderProgram()$/;"	f	class:UseShaderProgram
+shaderProgram	TestShaderProgram.h	/^	ShaderProgram shaderProgram;$/;"	m	class:TestShaderProgram
+shaderProgram	VAOPositionColor.h	/^	S& shaderProgram;$/;"	m	class:VAOPositionColor
+sourcePath	Shader.h	/^	std::string sourcePath;\/\/コンストラクタでコンパイルすればメンバとしては不要？$/;"	m	class:Shader
+sp	UseShaderProgram.h	/^	ShaderProgram& sp;$/;"	m	class:UseShaderProgram
+tsp	glsltest.cpp	/^TestShaderProgram *tsp;$/;"	v
+type	Shader.h	/^	GLenum type;$/;"	m	class:Shader
+type	VBOStatic.h	/^	GLenum type;$/;"	m	class:VBOBase
+unuse	ShaderProgram.h	/^	void unuse()$/;"	f	class:ShaderProgram
+unuse	TestShaderProgram.h	/^	void unuse()$/;"	f	class:TestShaderProgram
+usage	VBOStatic.h	/^	GLenum usage;$/;"	m	class:VBOBase
+use	ShaderProgram.h	/^	void use()$/;"	f	class:ShaderProgram
+use	TestShaderProgram.h	/^	void use()$/;"	f	class:TestShaderProgram
+vao	glsltest.cpp	/^VAOPositionColor<TestShaderProgram> *vao;$/;"	v
+vertShader	TestShaderProgram.h	/^	Shader vertShader;$/;"	m	class:TestShaderProgram
+vertexCount	VAOPositionColor.h	/^	int vertexCount;$/;"	m	class:VAOPositionColor
+~Shader	Shader.h	/^	~Shader()$/;"	f	class:Shader
+~ShaderProgram	ShaderProgram.h	/^	~ShaderProgram()$/;"	f	class:ShaderProgram
+~UseShaderProgram	UseShaderProgram.h	/^	~UseShaderProgram()$/;"	f	class:UseShaderProgram
