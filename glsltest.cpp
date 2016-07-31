@@ -22,6 +22,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <vector>
 #include <memory>
 
 
@@ -270,9 +271,95 @@ public:
 	}
 	void setMVPMatrix(const glm::mat4& m)
 	{
+		shaderProgram.use();
 		mvpMatrix.set(m);
+		shaderProgram.unuse();
 	}
 };
+
+class VBOStatic
+{
+private:
+	GLuint handle;
+	GLenum type;
+	GLenum usage;
+public:
+	VBOStatic():handle(0),type(GL_ARRAY_BUFFER),usage(GL_STATIC_DRAW)
+	{
+		glGenBuffers(1, &handle);
+	}
+	void bind()
+	{
+		glBindBuffer(type, handle);
+	}
+	void bufferData(const std::vector<float>& v)
+	{
+		this->bind();
+		GLsizeiptr size = v.size() * sizeof(float);
+		glBufferData(type, size, v.data(), usage);
+	}
+};
+
+template <typename S>
+class VAOPositionColor
+{
+private:
+	VBOStatic position;
+	VBOStatic color;
+	GLuint handle;
+	S& shaderProgram;
+public:
+	VAOPositionColor(S& s):position(), color(),shaderProgram(s)
+	{
+		glGenVertexArrays(1, &handle);
+	}
+	void bind()
+	{
+		glBindVertexArray(handle);
+	}
+	void init(const std::vector<float>& p, const std::vector<float>& c)
+	{
+		position.bufferData(p);
+		color.bufferData(c);
+		
+		this->bind();
+		glEnableVertexAttribArray(0);
+		glEnableVertexAttribArray(1);
+		
+		position.bind();
+		glVertexAttribPointer
+			(
+				0,				//設定するバーテックスシェーダの引数のインデックスを指定する
+				3,				//1頂点あたりの要素数(ここでは3次元座標なので3)
+				GL_FLOAT,		//要素の型
+				GL_FALSE,		//正規化の要否 位置座標なのでFalse
+				0,				//頂点データ同士の間隔(byte単位) 0なら隙間なく配置されているとみなされる
+				(GLubyte*)NULL	//頂点データの開始アドレスから指定するデータの位置までの間隔
+			);
+		
+		color.bind();
+		glVertexAttribPointer
+			(
+				1,				//設定するバーテックスシェーダの引数のインデックスを指定する
+				3,				//1頂点あたりの要素数(ここでは3次元座標なので3)
+				GL_FLOAT,		//要素の型
+				GL_FALSE,		//正規化の要否 位置座標なのでFalse
+				0,				//頂点データ同士の間隔(byte単位) 0なら隙間なく配置されているとみなされる
+				(GLubyte*)NULL	//頂点データの開始アドレスから指定するデータの位置までの間隔
+			);
+	}
+	void display(void)
+	{
+		shaderProgram.use();
+		this->bind();
+		glDrawArrays(GL_TRIANGLES, 0,3);
+		shaderProgram.unuse();
+	}
+};
+
+
+TestShaderProgram *tsp;
+VAOPositionColor<TestShaderProgram> *vao;
 
 
 GLuint vert_shader;
@@ -283,6 +370,8 @@ GLuint program_handle;
 GLuint vao_handle;
 
 glm::mat4 projection;
+
+
 
 void setMatrix(void)
 {
@@ -306,12 +395,16 @@ void setMatrix(void)
 	degree += 1;
 	degree = (degree >= 360) ? (degree - 360) : degree;
 	
+	tsp->setMVPMatrix(mvp);
+	
+	/*
 	GLuint location = glGetUniformLocation(program_handle, "rotationMatrix");
 	
 	if(location >= 0)
 	{
 		glUniformMatrix4fv(location, 1, GL_FALSE, &mvp[0][0]);
 	}
+	*/
 }
 
 
@@ -323,8 +416,9 @@ void display(void)
 	
 	setMatrix();
 	
-	glBindVertexArray(vao_handle);
-	glDrawArrays(GL_TRIANGLES, 0,3);
+	vao->display();
+	//glBindVertexArray(vao_handle);
+	//glDrawArrays(GL_TRIANGLES, 0,3);
 	
 	
 	//描画対象のバッファを入れ替える
@@ -459,23 +553,28 @@ void initShaderProgram(void)
 
 void initScene(void)
 {
-	initShader();
-	initShaderProgram();
+	tsp->init();
+	//initShader();
+	//initShaderProgram();
+	
 	
 	projection = glm::perspective(3.141592f * 30.0f / 180.0f, 1.0f / 1.0f, 1.0f, 1000.f);
 	
 	//位置データ
-	float position_data[] = {
+	std::vector<float> position_data{
 			-0.8f, -0.8f, 0.0f,
 			 0.8f, -0.8f, 0.0f,
 			 0.0f,  0.8f, 0.0f
 			};
 	//色データ
-	float color_data[] = {
+	std::vector<float> color_data{
 			1.0f, 0.0f, 0.0f,
 			0.0f, 1.0f, 0.0f,
 			0.0f, 0.0f, 1.0f
 			};
+	
+	vao->init(position_data,color_data);
+	/*
 	//バッファオブジェクトの生成
 	GLuint vbo_handles[2];
 	glGenBuffers(2, vbo_handles);
@@ -500,13 +599,21 @@ void initScene(void)
 	
 	//インデックス0を位置データに割り当てる
 	glBindBuffer(GL_ARRAY_BUFFER, position_buffer_handle);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (GLubyte*)NULL);
+	glVertexAttribPointer
+		(
+			0,				//設定するバーテックスシェーダの引数のインデックスを指定する
+			3,				//1頂点あたりの要素数(ここでは3次元座標なので3)
+			GL_FLOAT,		//要素の型
+			GL_FALSE,		//正規化の要否 位置座標なのでFalse
+			0,				//頂点データ同士の間隔(byte単位) 0なら隙間なく配置されているとみなされる
+			(GLubyte*)NULL	//頂点データの開始アドレスから指定するデータの位置までの間隔
+		);
 	
 	//インデックス1を色データに割り当てる
 	glBindBuffer(GL_ARRAY_BUFFER, color_buffer_handle);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLubyte*)NULL);
 	
-	
+	*/
 }
 
 int main(int argc, char** argv)
@@ -526,10 +633,17 @@ int main(int argc, char** argv)
 	}
 	//コールバック関数の設定
 	initCallbacks();
+	
+	tsp = new TestShaderProgram();
+	vao = new VAOPositionColor<TestShaderProgram>(*tsp);
+	
 	//シーンの初期化
 	initScene();
 	//メインループ
 	glutMainLoop();
+	
+	delete vao;
+	delete tsp;
 	
 	return 0;
 }
