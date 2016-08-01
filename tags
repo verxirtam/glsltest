@@ -4,6 +4,8 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Bind	Util.h	/^	Bind(Bindable& _b):b(_b)$/;"	f	class:Bind
+Bind	Util.h	/^class Bind$/;"	c
 COMMON_FLAGS	makefile	/^COMMON_FLAGS := -pg -g -O0$/;"	m
 CUDA_SRCS	makefile	/^CUDA_SRCS := $(shell ls *.cu)$/;"	m
 CXXFLAGS	makefile	/^CXXFLAGS := -Wall -lsqlite3 -L\/usr\/lib\/nvidia-340 -lglut -lGLEW -lGLU -lGL -I\/usr\/include$/;"	m
@@ -28,15 +30,16 @@ TESTTARGET	makefile	/^TESTTARGET := unittest$/;"	m
 TestShaderProgram	TestShaderProgram.h	/^	TestShaderProgram()$/;"	f	class:TestShaderProgram
 TestShaderProgram	TestShaderProgram.h	/^class TestShaderProgram$/;"	c
 UniformVariable	UniformVariable.h	/^class UniformVariable$/;"	c
-UseShaderProgram	UseShaderProgram.h	/^	UseShaderProgram(ShaderProgram& s):sp(s)$/;"	f	class:UseShaderProgram
-UseShaderProgram	UseShaderProgram.h	/^class UseShaderProgram$/;"	c
-VAOPositionColor	VAOPositionColor.h	/^	VAOPositionColor(S& s):position(), color(), element(), vertexCount(0), shaderProgram(s)$/;"	f	class:VAOPositionColor
+Use	Util.h	/^	Use(Usable& _u):u(_u)$/;"	f	class:Use
+Use	Util.h	/^class Use$/;"	c
+VAOPositionColor	VAOPositionColor.h	/^	VAOPositionColor(S& s):handle(0), position(), color(), element(), vertexCount(0), shaderProgram(s)$/;"	f	class:VAOPositionColor
 VAOPositionColor	VAOPositionColor.h	/^class VAOPositionColor$/;"	c
 VBOBase	VBOStatic.h	/^	VBOBase():handle(0),type(T),usage(U)$/;"	f	class:VBOBase
 VBOBase	VBOStatic.h	/^class VBOBase$/;"	c
 VBOElementStatic	VBOStatic.h	/^typedef VBOBase<GL_ELEMENT_ARRAY_BUFFER, GL_STATIC_DRAW, unsigned int> VBOElementStatic;$/;"	t
 VBOStatic	VBOStatic.h	/^typedef VBOBase<GL_ARRAY_BUFFER, GL_STATIC_DRAW, float> VBOStatic;$/;"	t
 attach	ShaderProgram.h	/^	void attach(const Shader& s)$/;"	f	class:ShaderProgram
+b	Util.h	/^	Bindable& b;$/;"	m	class:Bind
 bind	VAOPositionColor.h	/^	void bind()$/;"	f	class:VAOPositionColor
 bind	VBOStatic.h	/^	void bind()$/;"	f	class:VBOBase
 bufferData	VBOStatic.h	/^	void bufferData(const std::vector<V>& v)$/;"	f	class:VBOBase
@@ -68,6 +71,7 @@ readShaderFile	Shader.h	/^	std::string readShaderFile(const std::string& filenam
 resize	glsltest.cpp	/^void resize(int w, int h)$/;"	f
 set	UniformVariable.cpp	/^void UniformVariable<glm::mat4>::set(const glm::mat4& m)$/;"	f	class:UniformVariable
 set	UniformVariable.cpp	/^void UniformVariable<glm::vec3>::set(const glm::vec3& v)$/;"	f	class:UniformVariable
+set	UniformVariable.cpp	/^void UniformVariable<int>::set(const int& i)$/;"	f	class:UniformVariable
 setLocation	UniformVariable.h	/^	void setLocation(GLuint program_handle, const char* name)$/;"	f	class:UniformVariable
 setLocation	UniformVariable.h	/^	void setLocation(GLuint program_handle, const std::string& name)$/;"	f	class:UniformVariable
 setMVPMatrix	TestShaderProgram.h	/^	void setMVPMatrix(const glm::mat4& m)$/;"	f	class:TestShaderProgram
@@ -75,18 +79,21 @@ setMatrix	glsltest.cpp	/^void setMatrix(void)$/;"	f
 shaderProgram	TestShaderProgram.h	/^	ShaderProgram shaderProgram;$/;"	m	class:TestShaderProgram
 shaderProgram	VAOPositionColor.h	/^	S& shaderProgram;$/;"	m	class:VAOPositionColor
 sourcePath	Shader.h	/^	std::string sourcePath;\/\/コンストラクタでコンパイルすればメンバとしては不要？$/;"	m	class:Shader
-sp	UseShaderProgram.h	/^	ShaderProgram& sp;$/;"	m	class:UseShaderProgram
 tsp	glsltest.cpp	/^TestShaderProgram *tsp;$/;"	v
 type	Shader.h	/^	GLenum type;$/;"	m	class:Shader
-type	VBOStatic.h	/^	GLenum type;$/;"	m	class:VBOBase
+type	VBOStatic.h	/^	const GLenum type;$/;"	m	class:VBOBase
+u	Util.h	/^	Usable& u;$/;"	m	class:Use
+unbind	VAOPositionColor.h	/^	void unbind()$/;"	f	class:VAOPositionColor
+unbind	VBOStatic.h	/^	void unbind()$/;"	f	class:VBOBase
 unuse	ShaderProgram.h	/^	void unuse()$/;"	f	class:ShaderProgram
 unuse	TestShaderProgram.h	/^	void unuse()$/;"	f	class:TestShaderProgram
-usage	VBOStatic.h	/^	GLenum usage;$/;"	m	class:VBOBase
+usage	VBOStatic.h	/^	const GLenum usage;$/;"	m	class:VBOBase
 use	ShaderProgram.h	/^	void use()$/;"	f	class:ShaderProgram
 use	TestShaderProgram.h	/^	void use()$/;"	f	class:TestShaderProgram
 vao	glsltest.cpp	/^VAOPositionColor<TestShaderProgram> *vao;$/;"	v
 vertShader	TestShaderProgram.h	/^	Shader vertShader;$/;"	m	class:TestShaderProgram
 vertexCount	VAOPositionColor.h	/^	int vertexCount;$/;"	m	class:VAOPositionColor
+~Bind	Util.h	/^	~Bind()$/;"	f	class:Bind
 ~Shader	Shader.h	/^	~Shader()$/;"	f	class:Shader
 ~ShaderProgram	ShaderProgram.h	/^	~ShaderProgram()$/;"	f	class:ShaderProgram
-~UseShaderProgram	UseShaderProgram.h	/^	~UseShaderProgram()$/;"	f	class:UseShaderProgram
+~Use	Util.h	/^	~Use()$/;"	f	class:Use

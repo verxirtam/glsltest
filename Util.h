@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  UseShaderProgram.h
+ *       Filename:  Util.h
  *
  *    Description:  
  *
@@ -18,23 +18,40 @@
 
 #pragma once
 
-#include "ShaderProgram.h"
 
-//お遊びクラス
-//このクラスのインスタンスがスコープ内にいる限りShaderProgramがuseになる
+//このクラスのインスタンスがスコープ内にいる限りuseになる
 //mutex的な使い方。
 //useのままスコープを外れることが防止できる
-class UseShaderProgram
+template<typename Usable>
+class Use
 {
 private:
-	ShaderProgram& sp;
+	Usable& u;
 public:
-	UseShaderProgram(ShaderProgram& s):sp(s)
+	Use(Usable& _u):u(_u)
 	{
-		sp.use();
+		u.use();
 	}
-	~UseShaderProgram()
+	~Use()
 	{
-		sp.unuse();
+		u.unuse();
+	}
+};
+
+
+//このクラスのインスタンスがスコープ内にいる限りbindされる
+template<typename Bindable>
+class Bind
+{
+private:
+	Bindable& b;
+public:
+	Bind(Bindable& _b):b(_b)
+	{
+		b.bind();
+	}
+	~Bind()
+	{
+		b.unbind();
 	}
 };

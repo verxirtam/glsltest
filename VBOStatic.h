@@ -29,8 +29,8 @@ class VBOBase
 {
 private:
 	GLuint handle;
-	GLenum type;
-	GLenum usage;
+	const GLenum type;
+	const GLenum usage;
 public:
 	VBOBase():handle(0),type(T),usage(U)
 	{
@@ -39,6 +39,10 @@ public:
 	void bind()
 	{
 		glBindBuffer(type, handle);
+	}
+	void unbind()
+	{
+		glBindBuffer(type, 0);
 	}
 	void bufferData(const std::vector<V>& v)
 	{

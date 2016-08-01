@@ -1,2 +1,2 @@
 glsltest.o: glsltest.cpp TestShaderProgram.h Shader.h ShaderProgram.h \
- UniformVariable.h VAOPositionColor.h VBOStatic.h
+ UniformVariable.h VAOPositionColor.h Util.h VBOStatic.h
