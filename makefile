@@ -23,7 +23,7 @@ COMMON_FLAGS := -pg -g -O0
 
 #g++のコンパイルのフラグ
 #CXXFLAGS := -Wall -lsqlite3 -L/usr/lib/x86_64-linux-gnu -lglut -lGLEW -lGLU -lGL -I/usr/include
-CXXFLAGS := -Wall -lsqlite3 -L/usr/lib/nvidia-340 -lglut -lGLEW -lGLU -lGL -I/usr/include
+CXXFLAGS := -Wall -lsqlite3 -L/usr/lib/nvidia-367 -lglut -lGLEW -lGLU -lGL -I/usr/include
 CXXONLYFLAGS :=  -fopenmp -std=c++11
 
 #CUDA関連の設定
@@ -32,7 +32,7 @@ CXXONLYFLAGS :=  -fopenmp -std=c++11
 NVCC := nvcc
 
 #CUDAコンパイルオプション
-NVCC_FLAGS :=  -Xcompiler -Wall -Xcompiler -fopenmp  -arch=compute_13 -code=sm_13,compute_13
+NVCC_FLAGS :=  -Xcompiler -Wall -Xcompiler -fopenmp
 
 #CUDAリンクオプション
 NVCC_LINKS := -lcuda -lcudart

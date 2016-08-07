@@ -4,17 +4,19 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Active	Util.h	/^	Active(Activatable& _a):a(_a)$/;"	f	class:Active
+Active	Util.h	/^class Active$/;"	c
 Bind	Util.h	/^	Bind(Bindable& _b):b(_b)$/;"	f	class:Bind
 Bind	Util.h	/^class Bind$/;"	c
 COMMON_FLAGS	makefile	/^COMMON_FLAGS := -pg -g -O0$/;"	m
 CUDA_SRCS	makefile	/^CUDA_SRCS := $(shell ls *.cu)$/;"	m
-CXXFLAGS	makefile	/^CXXFLAGS := -Wall -lsqlite3 -L\/usr\/lib\/nvidia-340 -lglut -lGLEW -lGLU -lGL -I\/usr\/include$/;"	m
+CXXFLAGS	makefile	/^CXXFLAGS := -Wall -lsqlite3 -L\/usr\/lib\/nvidia-367 -lglut -lGLEW -lGLU -lGL -I\/usr\/include$/;"	m
 CXXONLYFLAGS	makefile	/^CXXONLYFLAGS :=  -fopenmp -std=c++11$/;"	m
 DEPS	makefile	/^DEPS := $(SRCS:.cpp=.d) $(CUDA_SRCS:.cu=.d)$/;"	m
 GLM_FORCE_RADIANS	UniformVariable.h	27;"	d
 GLM_FORCE_RADIANS	glsltest.cpp	26;"	d	file:
 NVCC	makefile	/^NVCC := nvcc$/;"	m
-NVCC_FLAGS	makefile	/^NVCC_FLAGS :=  -Xcompiler -Wall -Xcompiler -fopenmp  -arch=compute_13 -code=sm_13,compute_13$/;"	m
+NVCC_FLAGS	makefile	/^NVCC_FLAGS :=  -Xcompiler -Wall -Xcompiler -fopenmp$/;"	m
 NVCC_LINKS	makefile	/^NVCC_LINKS := -lcuda -lcudart$/;"	m
 OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o) $(CUDA_SRCS:.cu=.o)$/;"	m
 OBJSTARGET	makefile	/^OBJSTARGET := $(filter-out $(TESTTARGET).o, $(OBJS))$/;"	m
@@ -29,6 +31,10 @@ TARGET	makefile	/^TARGET := $(shell basename `pwd`)$/;"	m
 TESTTARGET	makefile	/^TESTTARGET := unittest$/;"	m
 TestShaderProgram	TestShaderProgram.h	/^	TestShaderProgram()$/;"	f	class:TestShaderProgram
 TestShaderProgram	TestShaderProgram.h	/^class TestShaderProgram$/;"	c
+TestShaderProgram	TextureShaderProgram.h	/^	TestShaderProgram()$/;"	f	class:TextureShaderProgram
+Texture2D	Texture2D.h	/^	Texture2D(GLenum u, const std::string& path):name(0), unit(u), target(GL_TEXTURE_2D)$/;"	f	class:Texture2D
+Texture2D	Texture2D.h	/^class Texture2D$/;"	c
+TextureShaderProgram	TextureShaderProgram.h	/^class TextureShaderProgram$/;"	c
 UniformVariable	UniformVariable.h	/^class UniformVariable$/;"	c
 Use	Util.h	/^	Use(Usable& _u):u(_u)$/;"	f	class:Use
 Use	Util.h	/^class Use$/;"	c
@@ -38,8 +44,11 @@ VBOBase	VBOStatic.h	/^	VBOBase():handle(0),type(T),usage(U)$/;"	f	class:VBOBase
 VBOBase	VBOStatic.h	/^class VBOBase$/;"	c
 VBOElementStatic	VBOStatic.h	/^typedef VBOBase<GL_ELEMENT_ARRAY_BUFFER, GL_STATIC_DRAW, unsigned int> VBOElementStatic;$/;"	t
 VBOStatic	VBOStatic.h	/^typedef VBOBase<GL_ARRAY_BUFFER, GL_STATIC_DRAW, float> VBOStatic;$/;"	t
+a	Util.h	/^	Activatable& a;$/;"	m	class:Active
+active	Texture2D.h	/^	void active()$/;"	f	class:Texture2D
 attach	ShaderProgram.h	/^	void attach(const Shader& s)$/;"	f	class:ShaderProgram
 b	Util.h	/^	Bindable& b;$/;"	m	class:Bind
+bind	Texture2D.h	/^	void bind()$/;"	f	class:Texture2D
 bind	VAOPositionColor.h	/^	void bind()$/;"	f	class:VAOPositionColor
 bind	VBOStatic.h	/^	void bind()$/;"	f	class:VBOBase
 bufferData	VBOStatic.h	/^	void bufferData(const std::vector<V>& v)$/;"	f	class:VBOBase
@@ -49,6 +58,7 @@ display	VAOPositionColor.h	/^	void display(void)$/;"	f	class:VAOPositionColor
 display	glsltest.cpp	/^void display(void)$/;"	f
 element	VAOPositionColor.h	/^	VBOElementStatic element;$/;"	m	class:VAOPositionColor
 fragShader	TestShaderProgram.h	/^	Shader fragShader;$/;"	m	class:TestShaderProgram
+fragShader	TextureShaderProgram.h	/^	Shader fragShader;$/;"	m	class:TextureShaderProgram
 getHandle	Shader.h	/^	GLuint getHandle() const$/;"	f	class:Shader
 getHandle	ShaderProgram.h	/^	GLuint getHandle()$/;"	f	class:ShaderProgram
 handle	Shader.h	/^	GLuint handle;$/;"	m	class:Shader
@@ -56,8 +66,11 @@ handle	ShaderProgram.h	/^	GLuint handle;$/;"	m	class:ShaderProgram
 handle	VAOPositionColor.h	/^	GLuint handle;$/;"	m	class:VAOPositionColor
 handle	VBOStatic.h	/^	GLuint handle;$/;"	m	class:VBOBase
 idle	glsltest.cpp	/^void idle(void)$/;"	f
+inactive	Texture2D.h	/^	void inactive()$/;"	f	class:Texture2D
 init	Shader.h	/^	void init()$/;"	f	class:Shader
 init	TestShaderProgram.cpp	/^void TestShaderProgram::init(void)$/;"	f	class:TestShaderProgram
+init	Texture2D.cpp	/^void Texture2D::init(const std::string& filepath, int width, int height)$/;"	f	class:Texture2D
+init	TextureShaderProgram.cpp	/^void TextureShaderProgram::init(void)$/;"	f	class:TextureShaderProgram
 init	VAOPositionColor.h	/^void VAOPositionColor<S>::init$/;"	f	class:VAOPositionColor
 initCallbacks	glsltest.cpp	/^void initCallbacks(void)$/;"	f
 initScene	glsltest.cpp	/^void initScene(void)$/;"	f
@@ -65,6 +78,8 @@ link	ShaderProgram.h	/^	void link()$/;"	f	class:ShaderProgram
 location	UniformVariable.h	/^	GLuint location;$/;"	m	class:UniformVariable
 main	glsltest.cpp	/^int main(int argc, char** argv)$/;"	f
 mvpMatrix	TestShaderProgram.h	/^	UniformVariable<glm::mat4> mvpMatrix;$/;"	m	class:TestShaderProgram
+mvpMatrix	TextureShaderProgram.h	/^	UniformVariable<glm::mat4> mvpMatrix;$/;"	m	class:TextureShaderProgram
+name	Texture2D.h	/^	GLuint name;$/;"	m	class:Texture2D
 position	VAOPositionColor.h	/^	VBOStatic position;$/;"	m	class:VAOPositionColor
 projection	glsltest.cpp	/^glm::mat4 projection;$/;"	v
 readShaderFile	Shader.h	/^	std::string readShaderFile(const std::string& filename)$/;"	f	class:Shader
@@ -75,24 +90,34 @@ set	UniformVariable.cpp	/^void UniformVariable<int>::set(const int& i)$/;"	f	cla
 setLocation	UniformVariable.h	/^	void setLocation(GLuint program_handle, const char* name)$/;"	f	class:UniformVariable
 setLocation	UniformVariable.h	/^	void setLocation(GLuint program_handle, const std::string& name)$/;"	f	class:UniformVariable
 setMVPMatrix	TestShaderProgram.h	/^	void setMVPMatrix(const glm::mat4& m)$/;"	f	class:TestShaderProgram
+setMVPMatrix	TextureShaderProgram.h	/^	void setMVPMatrix(const glm::mat4& m)$/;"	f	class:TextureShaderProgram
 setMatrix	glsltest.cpp	/^void setMatrix(void)$/;"	f
 shaderProgram	TestShaderProgram.h	/^	ShaderProgram shaderProgram;$/;"	m	class:TestShaderProgram
+shaderProgram	TextureShaderProgram.h	/^	ShaderProgram shaderProgram;$/;"	m	class:TextureShaderProgram
 shaderProgram	VAOPositionColor.h	/^	S& shaderProgram;$/;"	m	class:VAOPositionColor
 sourcePath	Shader.h	/^	std::string sourcePath;\/\/コンストラクタでコンパイルすればメンバとしては不要？$/;"	m	class:Shader
+target	Texture2D.h	/^	const GLenum target;$/;"	m	class:Texture2D
+textureSampler	TextureShaderProgram.h	/^	UniformVariable<int> textureSampler;$/;"	m	class:TextureShaderProgram
 tsp	glsltest.cpp	/^TestShaderProgram *tsp;$/;"	v
 type	Shader.h	/^	GLenum type;$/;"	m	class:Shader
 type	VBOStatic.h	/^	const GLenum type;$/;"	m	class:VBOBase
 u	Util.h	/^	Usable& u;$/;"	m	class:Use
+unbind	Texture2D.h	/^	void unbind()$/;"	f	class:Texture2D
 unbind	VAOPositionColor.h	/^	void unbind()$/;"	f	class:VAOPositionColor
 unbind	VBOStatic.h	/^	void unbind()$/;"	f	class:VBOBase
+unit	Texture2D.h	/^	const GLenum unit;$/;"	m	class:Texture2D
 unuse	ShaderProgram.h	/^	void unuse()$/;"	f	class:ShaderProgram
 unuse	TestShaderProgram.h	/^	void unuse()$/;"	f	class:TestShaderProgram
+unuse	TextureShaderProgram.h	/^	void unuse()$/;"	f	class:TextureShaderProgram
 usage	VBOStatic.h	/^	const GLenum usage;$/;"	m	class:VBOBase
 use	ShaderProgram.h	/^	void use()$/;"	f	class:ShaderProgram
 use	TestShaderProgram.h	/^	void use()$/;"	f	class:TestShaderProgram
+use	TextureShaderProgram.h	/^	void use()$/;"	f	class:TextureShaderProgram
 vao	glsltest.cpp	/^VAOPositionColor<TestShaderProgram> *vao;$/;"	v
 vertShader	TestShaderProgram.h	/^	Shader vertShader;$/;"	m	class:TestShaderProgram
+vertShader	TextureShaderProgram.h	/^	Shader vertShader;$/;"	m	class:TextureShaderProgram
 vertexCount	VAOPositionColor.h	/^	int vertexCount;$/;"	m	class:VAOPositionColor
+~Active	Util.h	/^	~Active()$/;"	f	class:Active
 ~Bind	Util.h	/^	~Bind()$/;"	f	class:Bind
 ~Shader	Shader.h	/^	~Shader()$/;"	f	class:Shader
 ~ShaderProgram	ShaderProgram.h	/^	~ShaderProgram()$/;"	f	class:ShaderProgram

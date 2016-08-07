@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  TestShaderProgram.cpp
+ *       Filename:  TextureShaderProgram.cpp
  *
  *    Description:  
  *
  *        Version:  1.0
- *        Created:  2016年07月31日 20時08分15秒
+ *        Created:  2016年08月08日 03時27分30秒
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -16,10 +16,10 @@
  * =====================================================================================
  */
 
-#include "TestShaderProgram.h"
+#include "TextureShaderProgram.h"
 
 
-void TestShaderProgram::init(void)
+void TextureShaderProgram::init(void)
 {
 	vertShader.compile();
 	fragShader.compile();
@@ -29,5 +29,8 @@ void TestShaderProgram::init(void)
 	shaderProgram.link();
 	
 	mvpMatrix.setLocation(shaderProgram.getHandle(), "mvpMatrix");
+	
+	textureSampler.setLocation(shaderProgram.getHandle(), "tex");
+	textureSampler.set(0);
 }
 

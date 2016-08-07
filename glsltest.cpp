@@ -32,6 +32,9 @@
 #include "VAOPositionColor.h"
 
 
+#include "Texture2D.h"
+#include "TextureShaderProgram.h"
+#include "VAOPositionTexture.h"
 
 
 
@@ -39,6 +42,10 @@
 
 TestShaderProgram *tsp;
 VAOPositionColor<TestShaderProgram> *vao;
+
+Texture2D *tex;
+TextureShaderProgram *texsp;
+VAOPositionTexture<TextureShaderProgram> *vaot;
 
 
 glm::mat4 projection;
@@ -68,7 +75,7 @@ void setMatrix(void)
 	degree = (degree >= 360) ? (degree - 360) : degree;
 	
 	tsp->setMVPMatrix(mvp);
-	
+	texsp->setMVPMatrix(mvp);
 }
 
 
@@ -81,6 +88,8 @@ void display(void)
 	setMatrix();
 	
 	vao->display();
+	
+	vaot->display();
 	
 	//描画対象のバッファを入れ替える
 	glutSwapBuffers();
@@ -114,44 +123,71 @@ void initCallbacks(void)
 
 void initScene(void)
 {
-	tsp->init();
-	
 	
 	projection = glm::perspective(3.141592f * 30.0f / 180.0f, 1.0f / 1.0f, 1.0f, 1000.f);
 	
-	//位置データ
-	std::vector<float> position_data
-		{
-			-0.8f, -0.8f, 0.0f,
-			 0.8f, -0.8f, 0.0f,
-			 0.0f,  0.8f, 0.0f,
-			-0.8f,  0.2f, 0.0f,
-			 0.8f,  0.2f, 0.0f,
-			 0.0f,  1.8f, 0.0f
-		};
-	//色データ
-	std::vector<float> color_data
-		{
-			1.0f, 0.0f, 0.0f,
-			0.0f, 1.0f, 0.0f,
-			0.0f, 0.0f, 1.0f,
-			1.0f, 0.0f, 0.0f,
-			0.0f, 1.0f, 0.0f,
-			0.0f, 0.0f, 1.0f
-		};
+	{
+		tsp->init();
+		//位置データ
+		std::vector<float> position_data
+			{
+				-0.8f,  0.2f, 0.0f,
+				 0.8f,  0.2f, 0.0f,
+				 0.0f,  1.8f, 0.0f
+			};
+		//色データ
+		std::vector<float> color_data
+			{
+				1.0f, 0.0f, 0.0f,
+				0.0f, 1.0f, 0.0f,
+				0.0f, 0.0f, 1.0f
+			};
+		
+		std::vector<unsigned int> element_data
+			{
+				0,1,2
+			};
+		
+		
+		vao->init(position_data, color_data, element_data);
+	}
 	
-	std::vector<unsigned int> element_data
-		{
-			0,1,2,
-			3,4,5
-		};
-	
-	
-	vao->init(position_data, color_data, element_data);
+	{
+		//位置データ
+		std::vector<float> position_data
+			{
+				-0.8f, -0.8f, 0.0f,
+				 0.8f, -0.8f, 0.0f,
+				 0.0f,  0.8f, 0.0f
+			};
+		//色データ
+		std::vector<float> texcoord_data
+			{
+				1.0f, 0.0f,
+				0.0f, 1.0f,
+				1.0f, 1.0f
+			};
+		
+		std::vector<unsigned int> element_data
+			{
+				0,1,2
+			};
+		texsp->init();
+		tex->init
+			(
+				"/home/daisuke/programs/ATFViewer/res/JP-ENR-6.2-en-JP_20160204.raw",
+				6928,
+				4331
+			);
+		vaot->init(position_data, texcoord_data, element_data);
+	}
+
 }
 
 int main(int argc, char** argv)
 {
+	
+	
 	glutInit(&argc,argv);
 	//ディスプレイモードの設定
 	glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
@@ -171,6 +207,10 @@ int main(int argc, char** argv)
 	tsp = new TestShaderProgram();
 	vao = new VAOPositionColor<TestShaderProgram>(*tsp);
 	
+	tex = new Texture2D(GL_TEXTURE0);
+	texsp = new TextureShaderProgram();
+	vaot = new VAOPositionTexture<TextureShaderProgram>(*texsp, *tex);
+	
 	//シーンの初期化
 	initScene();
 	//メインループ
@@ -178,6 +218,8 @@ int main(int argc, char** argv)
 	
 	delete vao;
 	delete tsp;
+	delete vaot;
+	delete texsp;
 	
 	return 0;
 }

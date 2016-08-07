@@ -55,3 +55,20 @@ public:
 		b.unbind();
 	}
 };
+//このクラスのインスタンスがスコープ内にいる限りactiveされる
+template<typename Activatable>
+class Active
+{
+private:
+	Activatable& a;
+public:
+	Active(Activatable& _a):a(_a)
+	{
+		a.active();
+	}
+	~Active()
+	{
+		a.inactive();
+	}
+};
+
