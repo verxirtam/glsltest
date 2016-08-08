@@ -131,9 +131,9 @@ void initScene(void)
 		//位置データ
 		std::vector<float> position_data
 			{
-				-0.8f,  0.2f, 0.0f,
-				 0.8f,  0.2f, 0.0f,
-				 0.0f,  1.8f, 0.0f
+				-0.8f,  0.2f, -0.5f,
+				 0.8f,  0.2f,  0.5f,
+				 0.0f,  1.8f,  0.0f
 			};
 		//色データ
 		std::vector<float> color_data
@@ -210,6 +210,9 @@ int main(int argc, char** argv)
 	tex = new Texture2D(GL_TEXTURE0);
 	texsp = new TextureShaderProgram();
 	vaot = new VAOPositionTexture<TextureShaderProgram>(*texsp, *tex);
+	
+	//デプスバッファを有効にする
+	glEnable(GL_DEPTH_TEST);
 	
 	//シーンの初期化
 	initScene();

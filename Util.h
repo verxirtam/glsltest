@@ -72,3 +72,24 @@ public:
 	}
 };
 
+/*
+
+template<typename Lockable>
+class Lock
+{
+private:
+	Lockable& l;
+	auto unlock;
+public:
+	Lock(Lockable& _l, auto _lock, auto _unlock):l(_l),unlock(_unlock)
+	{
+		_lock(_l);
+	}
+	~Lock()
+	{
+		unlock(l);
+	}
+};
+
+*/
+
