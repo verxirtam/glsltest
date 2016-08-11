@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  TestShaderProgram.cpp
+ *       Filename:  BasicShaderProgram.cpp
  *
  *    Description:  
  *
@@ -16,10 +16,10 @@
  * =====================================================================================
  */
 
-#include "TestShaderProgram.h"
+#include "BasicShaderProgram.h"
 
 
-void TestShaderProgram::init(void)
+void BasicShaderProgram::init(void)
 {
 	vertShader.compile();
 	fragShader.compile();

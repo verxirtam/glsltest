@@ -19,77 +19,32 @@
 #pragma once
 
 
-//このクラスのインスタンスがスコープ内にいる限りuseになる
+//このクラスのインスタンスがスコープ内にいる限りbeginになる
 //mutex的な使い方。
-//useのままスコープを外れることが防止できる
-template<typename Usable>
-class Use
-{
-private:
-	Usable& u;
-public:
-	Use(Usable& _u):u(_u)
-	{
-		u.use();
-	}
-	~Use()
-	{
-		u.unuse();
-	}
-};
+//beginのままスコープを外れることが防止できる
+//define文の引数：
+//		クラス名
+//		コンストラクタで実行する関数名
+//		デストラクタで実行する関数名
+#define DEF_LOCK(ClassName, begin, end) \
+	template<typename Lockable>\
+	class ClassName\
+	{\
+	private:\
+		Lockable& l;\
+	public:\
+		ClassName(Lockable& _l):l(_l)\
+		{\
+			l.begin();\
+		}\
+		~ClassName()\
+		{\
+			l.end();\
+		}\
+	};
 
+DEF_LOCK(   Use,    use,    unuse)
+DEF_LOCK(  Bind,   bind,   unbind)
+DEF_LOCK(Active, active, inactive)
 
-//このクラスのインスタンスがスコープ内にいる限りbindされる
-template<typename Bindable>
-class Bind
-{
-private:
-	Bindable& b;
-public:
-	Bind(Bindable& _b):b(_b)
-	{
-		b.bind();
-	}
-	~Bind()
-	{
-		b.unbind();
-	}
-};
-//このクラスのインスタンスがスコープ内にいる限りactiveされる
-template<typename Activatable>
-class Active
-{
-private:
-	Activatable& a;
-public:
-	Active(Activatable& _a):a(_a)
-	{
-		a.active();
-	}
-	~Active()
-	{
-		a.inactive();
-	}
-};
-
-/*
-
-template<typename Lockable>
-class Lock
-{
-private:
-	Lockable& l;
-	auto unlock;
-public:
-	Lock(Lockable& _l, auto _lock, auto _unlock):l(_l),unlock(_unlock)
-	{
-		_lock(_l);
-	}
-	~Lock()
-	{
-		unlock(l);
-	}
-};
-
-*/
 

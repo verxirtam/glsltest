@@ -28,24 +28,24 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform2.hpp>
 
-#include "TestShaderProgram.h"
+#include "BasicShaderProgram.h"
 #include "VAOPositionColor.h"
-
 
 #include "Texture2D.h"
 #include "TextureShaderProgram.h"
-#include "VAOPositionTexture.h"
 
 
+#include "glsltest_cuda.h"
 
 
+BasicShaderProgram *tsp;
+BasicShaderProgram::vaoType *vao;
 
-TestShaderProgram *tsp;
-VAOPositionColor<TestShaderProgram> *vao;
+VAOPositionColorDynamic<BasicShaderProgram> *vaod;
 
 Texture2D *tex;
 TextureShaderProgram *texsp;
-VAOPositionTexture<TextureShaderProgram> *vaot;
+TextureShaderProgram::vaoType *vaot;
 
 
 glm::mat4 projection;
@@ -78,7 +78,17 @@ void setMatrix(void)
 	texsp->setMVPMatrix(mvp);
 }
 
-
+void moveVAO()
+{
+	vaod->map();
+	
+	float* v = vaod->getPositionDevicePointer();
+	int vc = vaod->getVertexCount();
+	//cudaの関数を呼ぶ
+	moveVAO_cuda(v, vc);
+	
+	vaod->unmap();
+}
 
 void display(void)
 {
@@ -90,6 +100,10 @@ void display(void)
 	vao->display();
 	
 	vaot->display();
+	
+	moveVAO();
+	
+	vaod->display();
 	
 	//描画対象のバッファを入れ替える
 	glutSwapBuffers();
@@ -149,7 +163,7 @@ void initScene(void)
 			};
 		
 		
-		vao->init(position_data, color_data, element_data);
+		vao->init(position_data, color_data, element_data, GL_TRIANGLES);
 	}
 	
 	{
@@ -179,9 +193,37 @@ void initScene(void)
 				6928,
 				4331
 			);
-		vaot->init(position_data, texcoord_data, element_data);
+		vaot->init(position_data, texcoord_data, element_data, GL_TRIANGLES);
 	}
-
+	{
+		
+		//位置データ
+		std::vector<float> position_data
+			{
+				-1.0f, -1.0f, 0.5f,
+				 1.0f, -1.0f, 0.5f,
+				-1.0f,  0.0f, 0.5f,
+				 1.0f,  0.0f, 0.5f,
+				-1.0f,  1.0f, 0.5f,
+				 1.0f,  1.0f, 0.5f
+			};
+		//色データ
+		std::vector<float> color_data
+			{
+				1.0f, 0.0f, 0.0f,
+				0.0f, 1.0f, 0.0f,
+				0.0f, 0.0f, 1.0f,
+				1.0f, 0.0f, 0.0f,
+				0.0f, 1.0f, 0.0f,
+				0.0f, 0.0f, 1.0f
+			};
+		
+		std::vector<unsigned int> element_data
+			{
+				0,1,2,3,4,5
+			};
+		vaod->init(position_data, color_data, element_data, GL_TRIANGLE_STRIP);
+	}
 }
 
 int main(int argc, char** argv)
@@ -204,12 +246,13 @@ int main(int argc, char** argv)
 	//コールバック関数の設定
 	initCallbacks();
 	
-	tsp = new TestShaderProgram();
-	vao = new VAOPositionColor<TestShaderProgram>(*tsp);
-	
+	tsp = new BasicShaderProgram();
+	vao = new BasicShaderProgram::vaoType(*tsp);
+	vaod = new VAOPositionColorDynamic<BasicShaderProgram>(*tsp);
+
 	tex = new Texture2D(GL_TEXTURE0);
 	texsp = new TextureShaderProgram();
-	vaot = new VAOPositionTexture<TextureShaderProgram>(*texsp, *tex);
+	vaot = new TextureShaderProgram::vaoType(*texsp, *tex);
 	
 	//デプスバッファを有効にする
 	glEnable(GL_DEPTH_TEST);
@@ -219,6 +262,7 @@ int main(int argc, char** argv)
 	//メインループ
 	glutMainLoop();
 	
+	delete vaod;
 	delete vao;
 	delete tsp;
 	delete vaot;

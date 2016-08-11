@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  TestShaderProgram.h
+ *       Filename:  BasicShaderProgram.h
  *
  *    Description:  
  *
@@ -21,9 +21,10 @@
 #include "Shader.h"
 #include "ShaderProgram.h"
 #include "UniformVariable.h"
+#include "VAOPositionColor.h"
 
 
-class TestShaderProgram
+class BasicShaderProgram
 {
 private:
 	Shader vertShader;
@@ -31,7 +32,7 @@ private:
 	ShaderProgram shaderProgram;
 	UniformVariable<glm::mat4> mvpMatrix;
 public:
-	TestShaderProgram()
+	BasicShaderProgram()
 		:
 			vertShader(GL_VERTEX_SHADER,  "basic.vert"),
 			fragShader(GL_FRAGMENT_SHADER,"basic.frag"),
@@ -54,4 +55,6 @@ public:
 		mvpMatrix.set(m);
 		shaderProgram.unuse();
 	}
+	typedef VAOPositionColor<BasicShaderProgram> vaoType;
 };
+

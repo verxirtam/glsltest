@@ -21,7 +21,7 @@
 #include "Shader.h"
 #include "ShaderProgram.h"
 #include "UniformVariable.h"
-
+#include "VAOPositionTexture.h"
 
 class TextureShaderProgram
 {
@@ -32,6 +32,7 @@ private:
 	UniformVariable<glm::mat4> mvpMatrix;
 	UniformVariable<int> textureSampler;
 public:
+	typedef VAOPositionTexture<TextureShaderProgram> vaoType;
 	TextureShaderProgram()
 		:
 			vertShader(GL_VERTEX_SHADER,  "texture.vert"),

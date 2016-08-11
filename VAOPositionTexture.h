@@ -22,7 +22,7 @@
 #include <GL/glut.h>
 
 #include "Util.h"
-#include "VBOStatic.h"
+#include "VBO.h"
 #include "Texture2D.h"
 
 
@@ -34,6 +34,7 @@ private:
 	VBOStatic position;
 	VBOStatic textureCoord;
 	VBOElementStatic element;
+	GLenum mode;
 	int vertexCount;
 	S& shaderProgram;
 	Texture2D& texture;
@@ -43,6 +44,7 @@ public:
 		position(),
 		textureCoord(),
 		element(),
+		mode(0),
 		vertexCount(0),
 		shaderProgram(s),
 		texture(t)
@@ -57,7 +59,13 @@ public:
 	{
 		glBindVertexArray(0);
 	}
-	void init(const std::vector<float>& p, const std::vector<float>& c, const std::vector<unsigned int>& e);
+	void init
+		(
+			const std::vector<float>& p,
+			const std::vector<float>& c,
+			const std::vector<unsigned int>& e,
+			GLenum m
+		);
 	void display(void)
 	{
 		//シェーダを使用開始
@@ -70,7 +78,7 @@ public:
 		//インデックス配列をバインド
 		Bind<VBOElementStatic> be(element);
 		
-		glDrawElements(GL_TRIANGLES, vertexCount, GL_UNSIGNED_INT, 0);
+		glDrawElements(mode, vertexCount, GL_UNSIGNED_INT, 0);
 		
 	}
 };
@@ -82,15 +90,19 @@ void VAOPositionTexture<S>::init
 	(
 		const std::vector<float>& p,
 		const std::vector<float>& t,
-		const std::vector<unsigned int>& e
+		const std::vector<unsigned int>& e,
+		GLenum m
 	)
 {
 	//引数をバッファに格納
-	position.bufferData(p);
-	textureCoord.bufferData(t);
-	element.bufferData(e);
+	position.init(p);
+	textureCoord.init(t);
+	element.init(e);
 	//頂点数を格納
 	vertexCount = e.size();
+	
+	//modeの設定
+	mode = m;
 	
 	//自身のVAOをバインド
 	Bind<VAOPositionTexture> b(*this);

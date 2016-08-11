@@ -22,22 +22,31 @@
 #include <GL/glut.h>
 
 #include "Util.h"
-#include "VBOStatic.h"
+#include "VBO.h"
 
 
 
-template <typename S>
-class VAOPositionColor
+template <typename S, typename VBOClass, typename VBOElementClass>
+class VAOPositionColorBase
 {
 private:
 	GLuint handle;
-	VBOStatic position;
-	VBOStatic color;
-	VBOElementStatic element;
+	VBOClass position;
+	VBOClass color;
+	VBOElementClass element;
+	GLenum mode;
 	int vertexCount;
 	S& shaderProgram;
 public:
-	VAOPositionColor(S& s):handle(0), position(), color(), element(), vertexCount(0), shaderProgram(s)
+	VAOPositionColorBase(S& s)
+		:
+			handle(0),
+			position(),
+			color(),
+			element(),
+			mode(0),
+			vertexCount(0),
+			shaderProgram(s)
 	{
 		glGenVertexArrays(1, &handle);
 	}
@@ -49,45 +58,66 @@ public:
 	{
 		glBindVertexArray(0);
 	}
-	void init(const std::vector<float>& p, const std::vector<float>& c, const std::vector<unsigned int>& e);
+	void init(const std::vector<float>& p, const std::vector<float>& c, const std::vector<unsigned int>& e, GLenum m);
 	void display(void)
 	{
 		//シェーダを使用開始
 		Use<S> s(shaderProgram);
 		//自身のVAOをバインド
-		Bind<VAOPositionColor> b(*this);
+		Bind<VAOPositionColorBase<S, VBOClass, VBOElementClass> > b(*this);
 		//インデックス配列をバインド
-		Bind<VBOElementStatic> be(element);
+		Bind<VBOElementClass> be(element);
 		
-		glDrawElements(GL_TRIANGLES, vertexCount, GL_UNSIGNED_INT, 0);
+		glDrawElements(mode, vertexCount, GL_UNSIGNED_INT, 0);
 		
+	}
+	int getVertexCount()
+	{
+		return vertexCount;
+	}
+	VBOClass& getPosition()
+	{
+		return position;
+	}
+	VBOClass& getColor()
+	{
+		return color;
+	}
+	VBOElementClass& getElement()
+	{
+		return element;
 	}
 };
 
 
 
-template <typename S>
-void VAOPositionColor<S>::init
+template <typename S, typename VBOClass, typename VBOElementClass>
+void VAOPositionColorBase<S, VBOClass, VBOElementClass>::init
 	(
 		const std::vector<float>& p,
 		const std::vector<float>& c,
-		const std::vector<unsigned int>& e
+		const std::vector<unsigned int>& e,
+		GLenum m
 	)
 {
 	//引数をバッファに格納
-	position.bufferData(p);
-	color.bufferData(c);
-	element.bufferData(e);
+	position.init(p);
+	color.init(c);
+	element.init(e);
+	
+	//modeの設定
+	mode = m;
+	
 	//頂点数を格納
 	vertexCount = e.size();
 	
 	//自身のVAOをバインド
-	Bind<VAOPositionColor> b(*this);
+	Bind<VAOPositionColorBase<S, VBOClass, VBOElementClass> > b(*this);
 	
 	//positionの設定
 	{
 		//頂点配列をバインド
-		Bind<VBOStatic> bp(position);
+		Bind<VBOClass> bp(position);
 		
 		glVertexAttribPointer
 			(
@@ -103,7 +133,7 @@ void VAOPositionColor<S>::init
 	//colorの設定
 	{
 		//頂点色の配列をバインド
-		Bind<VBOStatic> bc(color);
+		Bind<VBOClass> bc(color);
 		
 		glVertexAttribPointer
 			(
@@ -117,4 +147,67 @@ void VAOPositionColor<S>::init
 		glEnableVertexAttribArray(1);
 	}
 }
+
+template <typename S>
+using VAOPositionColor = VAOPositionColorBase<S, VBOStatic, VBOElementStatic>;
+
+//template <typename S>
+//using VAOPositionColorDynamic = VAOPositionColorBase<S, VBODynamic, VBOElementDynamic>;
+template <typename S>
+class VAOPositionColorDynamic
+{
+private:
+	VAOPositionColorBase<S, VBODynamic, VBOElementDynamic> base;
+
+
+public:
+	VAOPositionColorDynamic(S& s):base(s)
+	{
+	}
+	void bind()
+	{
+		base.bind();
+	}
+	void unbind()
+	{
+		base.unbind();
+	}
+	void init(const std::vector<float>& p, const std::vector<float>& c, const std::vector<unsigned int>& e, GLenum m)
+	{
+		base.init(p, c, e, m);
+	}
+	void display()
+	{
+		base.display();
+	}
+	void map()
+	{
+		base.getPosition().map();
+		base.getColor().map();
+		base.getElement().map();
+	}
+	void unmap()
+	{
+		base.getPosition().unmap();
+		base.getColor().unmap();
+		base.getElement().unmap();
+	}
+	float* getPositionDevicePointer()
+	{
+		return base.getPosition().getDevicePointer();
+	}
+	float* getColorDevicePointer()
+	{
+		return base.getColor().getDevicePointer();
+	}
+	unsigned int* getElementDevicePointer()
+	{
+		return base.getElement().getDevicePointer();
+	}
+	int getVertexCount()
+	{
+		return base.getVertexCount();
+	}
+};
+
 
