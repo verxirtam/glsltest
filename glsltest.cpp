@@ -101,7 +101,7 @@ void display(void)
 	
 	vaot->display();
 	
-	moveVAO();
+	//moveVAO();
 	
 	vaod->display();
 	
@@ -111,6 +111,8 @@ void display(void)
 
 void idle(void)
 {
+	//moveVAO();
+
 	glutPostRedisplay();
 }
 

@@ -23,20 +23,17 @@ __global__
 void moveVAO_cuda_kernel(float* v)
 {
 	unsigned int tx = threadIdx.x;
-	unsigned int ty = threadIdx.y;
-	if(ty == 2)
-	{
-		int i = tx * 3 + ty;
-		v[i] += 0.025;
-		v[i] = ( v[i] > 1.0 ) ? -1.0f : v[i];
-	}
+	
+	int i = tx * 3 + 2;
+	v[i] += 0.025;
+	v[i] = ( v[i] > 1.0 ) ? -1.0f : v[i];
 }
 
 
 
 void moveVAO_cuda(float* v, int vc)
 {
-	dim3 g(1,1,1);
-	dim3 b(vc, 3, 1);
+	dim3 g( 1, 1, 1);
+	dim3 b(vc, 1, 1);
 	moveVAO_cuda_kernel<<<g, b>>>(v);
 }

@@ -71,7 +71,7 @@ all: $(TARGET)
 .PHONY: run
 run: $(TARGET)
 	./$(TARGET)
-#	gprof $(TARGET) | ./gprof2dot.py | dot -Tpng -o gprof_call_graph_$(TARGET).png
+	gprof $(TARGET) | ./gprof2dot.py | dot -Tpng -o gprof_call_graph_$(TARGET).png
 
 #テストの実行ファイルを実行する
 #ログと標準出力両方に出力する

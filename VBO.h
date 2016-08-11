@@ -146,12 +146,12 @@ public:
 	}
 	void map()
 	{
-		cudaGraphicsMapResources(1, &resource, 0);
+		cudaGraphicsMapResources(1, &resource, NULL);
 		cudaGraphicsResourceGetMappedPointer((void**)&device, NULL, resource);
 	}
 	void unmap()
 	{
-		cudaGraphicsUnmapResources(1, &resource, 0);
+		cudaGraphicsUnmapResources(1, &resource, NULL);
 	}
 	float* getDevicePointer()
 	{
@@ -195,12 +195,12 @@ public:
 	}
 	void map()
 	{
-		cudaGraphicsMapResources(1, &resource, 0);
+		cudaGraphicsMapResources(1, &resource, NULL);
 		cudaGraphicsResourceGetMappedPointer((void**)&device, NULL, resource);
 	}
 	void unmap()
 	{
-		cudaGraphicsUnmapResources(1, &resource, 0);
+		cudaGraphicsUnmapResources(1, &resource, NULL);
 	}
 	unsigned int* getDevicePointer()
 	{
