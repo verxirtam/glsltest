@@ -21,7 +21,7 @@
 #include <GL/glew.h>
 #include <GL/glut.h>
 
-#include "Util.h"
+#include "Lock.h"
 #include "VBO.h"
 #include "Texture2D.h"
 

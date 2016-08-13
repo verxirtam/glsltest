@@ -27,7 +27,7 @@
 #include <string>
 #include <vector>
 
-#include "Util.h"
+#include "Lock.h"
 
 
 class Texture2D

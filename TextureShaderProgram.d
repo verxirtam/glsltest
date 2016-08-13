@@ -1,5 +1,5 @@
 TextureShaderProgram.o: TextureShaderProgram.cpp TextureShaderProgram.h \
- Shader.h ShaderProgram.h UniformVariable.h VAOPositionTexture.h Util.h \
+ Shader.h ShaderProgram.h UniformVariable.h VAOPositionTexture.h Lock.h \
  VBO.h /usr/local/cuda-7.5/include/cuda_runtime.h \
  /usr/local/cuda-7.5/include/host_config.h \
  /usr/local/cuda-7.5/include/builtin_types.h \

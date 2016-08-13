@@ -23,6 +23,7 @@
 
 #include <vector>
 
+#include "Lock.h"
 
 #include </usr/local/cuda-7.5/include/cuda_runtime.h>
 #include </usr/local/cuda-7.5/include/cuda_gl_interop.h>
