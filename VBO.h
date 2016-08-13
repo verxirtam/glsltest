@@ -106,14 +106,26 @@ public:
 	}
 };
 
-//using VBODynamic        = VBOBase<        GL_ARRAY_BUFFER, GL_DYNAMIC_DRAW,        float>;
-//using VBOElementDynamic = VBOBase<GL_ELEMENT_ARRAY_BUFFER, GL_DYNAMIC_DRAW, unsigned int>;
 
 ///////////////////////////
 
-#define TEST_1A
-#define TEST_1B
-#define TEST_2B
+//VBODynamicBaseでのVBOのCUDA向けの設定
+
+//VBODYNAMICBASE_STANDARD
+//cudaのドキュメントに従った方法
+//map(),unmap()でVBOのリソースをCUDA向けに確保する
+//ドキュメントに従っているが、
+//PCIeの通信量(rx, tx)が増加する(nvidia-smiで確認)
+//
+//VBODYNAMICBASE_LOWTHROUGHPUT
+//cudaのドキュメントに従っていないが
+//PCIeの通信量がほとんど増加しない方法
+//init()時にリソースの確保とアドレスの取得をしてしまう
+//map(),unmap()時は何もしない
+
+//下記2行のうちのどちらか1方のみをコメントアウトして設定する
+//#define VBODYNAMICBASE_STANDARD
+#define VBODYNAMICBASE_LOWTHROUGHPUT
 
 template <int VboType, typename ElementType>
 class VBODynamicBase
@@ -138,14 +150,10 @@ public:
 		base.init(v);
 		cudaGraphicsGLRegisterBuffer(&resource, base.getHandle(), cudaGraphicsRegisterFlagsNone);
 		
-		#ifdef TEST_1B
-		cudaGraphicsMapResources(1, &resource, 0);
-		#endif
-		#ifdef TEST_2B
+		#ifdef VBODYNAMICBASE_LOWTHROUGHPUT
+		cudaGraphicsMapResources(1, &resource, nullptr);
 		cudaGraphicsResourceGetMappedPointer((void**)&device, nullptr, resource);
-		#endif
-		#ifdef TEST_1B
-		cudaGraphicsUnmapResources(1, &resource, 0);
+		cudaGraphicsUnmapResources(1, &resource, nullptr);
 		#endif
 	}
 	void bind()
@@ -158,17 +166,15 @@ public:
 	}
 	void map()
 	{
-		#ifdef TEST_1A
-		cudaGraphicsMapResources(1, &resource, NULL);
-		#endif
-		#ifdef TEST_2A
-		cudaGraphicsResourceGetMappedPointer((void**)&device, NULL, resource);
+		#ifdef VBODYNAMICBASE_STANDARD
+		cudaGraphicsMapResources(1, &resource, nullptr);
+		cudaGraphicsResourceGetMappedPointer((void**)&device, nullptr, resource);
 		#endif
 	}
 	void unmap()
 	{
-		#ifdef TEST_1A
-		cudaGraphicsUnmapResources(1, &resource, NULL);
+		#ifdef VBODYNAMICBASE_STANDARD
+		cudaGraphicsUnmapResources(1, &resource, nullptr);
 		#endif
 	}
 	ElementType* getDevicePointer()
@@ -182,103 +188,5 @@ public:
 using VBODynamic        = VBODynamicBase<GL_ARRAY_BUFFER        , float       >;
 using VBOElementDynamic = VBODynamicBase<GL_ELEMENT_ARRAY_BUFFER, unsigned int>;
 
-/*
-class VBODynamic
-{
-private:
-	VBOBase<float> base;
-	cudaGraphicsResource* resource;
-	float* device;
-public:
-	VBODynamic():base(GL_ARRAY_BUFFER,GL_DYNAMIC_DRAW),resource(nullptr), device(nullptr)
-	{
-	}
-	~VBODynamic()
-	{
-		if(resource != nullptr)
-		{
-			cudaGraphicsUnregisterResource(resource);
-		}
-	}
-	void init(const std::vector<float>& v)
-	{
-		base.init(v);
-		cudaGraphicsGLRegisterBuffer(&resource, base.getHandle(), cudaGraphicsRegisterFlagsNone);
-		
-		//cudaGraphicsMapResources(1, &resource, 0);
-		//cudaGraphicsResourceGetMappedPointer((void**)&device, nullptr, resource);
-		//cudaGraphicsUnmapResources(1, &resource, 0);
-	}
-	void bind()
-	{
-		base.bind();
-	}
-	void unbind()
-	{
-		base.unbind();
-	}
-	void map()
-	{
-		cudaGraphicsMapResources(1, &resource, NULL);
-		cudaGraphicsResourceGetMappedPointer((void**)&device, NULL, resource);
-	}
-	void unmap()
-	{
-		cudaGraphicsUnmapResources(1, &resource, NULL);
-	}
-	float* getDevicePointer()
-	{
-		return device;
-	}
-};
 
-class VBOElementDynamic
-{
-private:
-	VBOBase<unsigned int> base;
-	cudaGraphicsResource* resource;
-	unsigned int* device;
-public:
-	VBOElementDynamic():base(GL_ELEMENT_ARRAY_BUFFER, GL_DYNAMIC_DRAW), resource(nullptr), device(nullptr)
-	{
-	}
-	~VBOElementDynamic()
-	{
-		if(resource != nullptr)
-		{
-			cudaGraphicsUnregisterResource(resource);
-		}
-	}
-	void init(const std::vector<unsigned int>& v)
-	{
-		base.init(v);
-		cudaGraphicsGLRegisterBuffer(&resource, base.getHandle(), cudaGraphicsRegisterFlagsNone);
-		
-		//cudaGraphicsMapResources(1, &resource, 0);
-		//cudaGraphicsResourceGetMappedPointer((void**)&device, nullptr, resource);
-		//cudaGraphicsUnmapResources(1, &resource, 0);
-	}
-	void bind()
-	{
-		base.bind();
-	}
-	void unbind()
-	{
-		base.unbind();
-	}
-	void map()
-	{
-		cudaGraphicsMapResources(1, &resource, NULL);
-		cudaGraphicsResourceGetMappedPointer((void**)&device, NULL, resource);
-	}
-	void unmap()
-	{
-		cudaGraphicsUnmapResources(1, &resource, NULL);
-	}
-	unsigned int* getDevicePointer()
-	{
-		return device;
-	}
-};
 
-*/
