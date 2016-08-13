@@ -111,7 +111,7 @@ void display(void)
 
 void idle(void)
 {
-	//moveVAO();
+	moveVAO();
 
 	glutPostRedisplay();
 }
@@ -248,16 +248,19 @@ int main(int argc, char** argv)
 	//コールバック関数の設定
 	initCallbacks();
 	
-	tsp = new BasicShaderProgram();
-	vao = new BasicShaderProgram::vaoType(*tsp);
-	vaod = new VAOPositionColorDynamic<BasicShaderProgram>(*tsp);
-
-	tex = new Texture2D(GL_TEXTURE0);
-	texsp = new TextureShaderProgram();
-	vaot = new TextureShaderProgram::vaoType(*texsp, *tex);
+	//cudaを使用するデバイスを指定する
+	cudaSetDevice(0);
 	
 	//デプスバッファを有効にする
 	glEnable(GL_DEPTH_TEST);
+	
+	tsp = new BasicShaderProgram();
+	vao = new BasicShaderProgram::vaoType(*tsp);
+	vaod = new VAOPositionColorDynamic<BasicShaderProgram>(*tsp);
+	
+	tex = new Texture2D(GL_TEXTURE0);
+	texsp = new TextureShaderProgram();
+	vaot = new TextureShaderProgram::vaoType(*texsp, *tex);
 	
 	//シーンの初期化
 	initScene();

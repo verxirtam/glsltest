@@ -109,7 +109,80 @@ public:
 //using VBODynamic        = VBOBase<        GL_ARRAY_BUFFER, GL_DYNAMIC_DRAW,        float>;
 //using VBOElementDynamic = VBOBase<GL_ELEMENT_ARRAY_BUFFER, GL_DYNAMIC_DRAW, unsigned int>;
 
+///////////////////////////
 
+#define TEST_1A
+#define TEST_1B
+#define TEST_2B
+
+template <int VboType, typename ElementType>
+class VBODynamicBase
+{
+private:
+	VBOBase<ElementType> base;
+	cudaGraphicsResource* resource;
+	ElementType* device;
+public:
+	VBODynamicBase():base(VboType, GL_DYNAMIC_DRAW),resource(nullptr), device(nullptr)
+	{
+	}
+	~VBODynamicBase()
+	{
+		if(resource != nullptr)
+		{
+			cudaGraphicsUnregisterResource(resource);
+		}
+	}
+	void init(const std::vector<ElementType>& v)
+	{
+		base.init(v);
+		cudaGraphicsGLRegisterBuffer(&resource, base.getHandle(), cudaGraphicsRegisterFlagsNone);
+		
+		#ifdef TEST_1B
+		cudaGraphicsMapResources(1, &resource, 0);
+		#endif
+		#ifdef TEST_2B
+		cudaGraphicsResourceGetMappedPointer((void**)&device, nullptr, resource);
+		#endif
+		#ifdef TEST_1B
+		cudaGraphicsUnmapResources(1, &resource, 0);
+		#endif
+	}
+	void bind()
+	{
+		base.bind();
+	}
+	void unbind()
+	{
+		base.unbind();
+	}
+	void map()
+	{
+		#ifdef TEST_1A
+		cudaGraphicsMapResources(1, &resource, NULL);
+		#endif
+		#ifdef TEST_2A
+		cudaGraphicsResourceGetMappedPointer((void**)&device, NULL, resource);
+		#endif
+	}
+	void unmap()
+	{
+		#ifdef TEST_1A
+		cudaGraphicsUnmapResources(1, &resource, NULL);
+		#endif
+	}
+	ElementType* getDevicePointer()
+	{
+		return device;
+	}
+};
+
+///////////////////////////
+
+using VBODynamic        = VBODynamicBase<GL_ARRAY_BUFFER        , float       >;
+using VBOElementDynamic = VBODynamicBase<GL_ELEMENT_ARRAY_BUFFER, unsigned int>;
+
+/*
 class VBODynamic
 {
 private:
@@ -208,4 +281,4 @@ public:
 	}
 };
 
-
+*/

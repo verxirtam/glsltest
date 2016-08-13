@@ -4,34 +4,73 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AXEParser	gprof2dot.py	/^class AXEParser(Parser):$/;"	c
+BW_COLORMAP	gprof2dot.py	/^BW_COLORMAP = Theme($/;"	v
 BasicShaderProgram	BasicShaderProgram.h	/^	BasicShaderProgram()$/;"	f	class:BasicShaderProgram
 BasicShaderProgram	BasicShaderProgram.h	/^class BasicShaderProgram$/;"	c
+CALLS	gprof2dot.py	/^CALLS = Event("Calls", 0, add, times)$/;"	v
 COMMON_FLAGS	makefile	/^COMMON_FLAGS := -pg -g -O0$/;"	m
 CUDA_SRCS	makefile	/^CUDA_SRCS := $(shell ls *.cu)$/;"	m
 CXXFLAGS	makefile	/^CXXFLAGS := -Wall -lsqlite3 -L\/usr\/lib\/nvidia-367 -lglut -lGLEW -lGLU -lGL -I\/usr\/include$/;"	m
 CXXONLYFLAGS	makefile	/^CXXONLYFLAGS :=  -fopenmp -std=c++11$/;"	m
+Call	gprof2dot.py	/^class Call(Object):$/;"	c
+CallgrindParser	gprof2dot.py	/^class CallgrindParser(LineParser):$/;"	c
+Cycle	gprof2dot.py	/^class Cycle(Object):$/;"	c
 DEF_LOCK	Util.h	29;"	d
 DEPS	makefile	/^DEPS := $(SRCS:.cpp=.d) $(CUDA_SRCS:.cu=.d)$/;"	m
+DotWriter	gprof2dot.py	/^class DotWriter:$/;"	c
+Event	gprof2dot.py	/^class Event(object):$/;"	c
+Function	gprof2dot.py	/^class Function(Object):$/;"	c
 GLM_FORCE_RADIANS	UniformVariable.h	27;"	d
 GLM_FORCE_RADIANS	glsltest.cpp	26;"	d	file:
+GRAY_COLORMAP	gprof2dot.py	/^GRAY_COLORMAP = Theme($/;"	v
+GprofParser	gprof2dot.py	/^class GprofParser(Parser):$/;"	c
+HProfParser	gprof2dot.py	/^class HProfParser(LineParser):$/;"	c
+JsonParser	gprof2dot.py	/^class JsonParser(Parser):$/;"	c
+LineParser	gprof2dot.py	/^class LineParser(Parser):$/;"	c
+MULTIPLICATION_SIGN	gprof2dot.py	/^MULTIPLICATION_SIGN = unichr(0xd7)$/;"	v
 NVCC	makefile	/^NVCC := nvcc$/;"	m
 NVCC_FLAGS	makefile	/^NVCC_FLAGS :=  -Xcompiler -Wall -Xcompiler -fopenmp$/;"	m
 NVCC_LINKS	makefile	/^NVCC_LINKS := -lcuda -lcudart$/;"	m
 OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o) $(CUDA_SRCS:.cu=.o)$/;"	m
 OBJSTARGET	makefile	/^OBJSTARGET := $(filter-out $(TESTTARGET).o, $(OBJS))$/;"	m
 OBJSTEST	makefile	/^OBJSTEST := $(filter-out $(TARGET).o, $(OBJS))$/;"	m
+Object	gprof2dot.py	/^class Object(object):$/;"	c
+OprofileParser	gprof2dot.py	/^class OprofileParser(LineParser):$/;"	c
+PINK_COLORMAP	gprof2dot.py	/^PINK_COLORMAP = Theme($/;"	v
+PRINT_COLORMAP	gprof2dot.py	/^PRINT_COLORMAP = Theme($/;"	v
+PYTHON_3	gprof2dot.py	/^    PYTHON_3 = False$/;"	v
+PYTHON_3	gprof2dot.py	/^    PYTHON_3 = True$/;"	v
+ParseError	gprof2dot.py	/^class ParseError(Exception):$/;"	c
+Parser	gprof2dot.py	/^class Parser:$/;"	c
+PerfParser	gprof2dot.py	/^class PerfParser(LineParser):$/;"	c
+Profile	gprof2dot.py	/^class Profile(Object):$/;"	c
+PstatsParser	gprof2dot.py	/^class PstatsParser:$/;"	c
+SAMPLES	gprof2dot.py	/^SAMPLES = Event("Samples", 0, add, times)$/;"	v
+SAMPLES2	gprof2dot.py	/^SAMPLES2 = Event("Samples", 0, add, times)$/;"	v
 SRCS	makefile	/^SRCS := $(shell ls *.cpp)$/;"	m
 Shader	Shader.h	/^	Shader(GLenum t, const char* path):handle(0),type(t),sourcePath(path)$/;"	f	class:Shader
 Shader	Shader.h	/^	Shader(GLenum t, const std::string& path):handle(0),type(t),sourcePath(path)$/;"	f	class:Shader
 Shader	Shader.h	/^class Shader$/;"	c
 ShaderProgram	ShaderProgram.h	/^	ShaderProgram():handle(0)$/;"	f	class:ShaderProgram
 ShaderProgram	ShaderProgram.h	/^class ShaderProgram$/;"	c
+SleepyParser	gprof2dot.py	/^class SleepyParser(Parser):$/;"	c
+Struct	gprof2dot.py	/^class Struct:$/;"	c
+SysprofParser	gprof2dot.py	/^class SysprofParser(XmlParser):$/;"	c
 TARGET	makefile	/^TARGET := $(shell basename `pwd`)$/;"	m
+TEMPERATURE_COLORMAP	gprof2dot.py	/^TEMPERATURE_COLORMAP = Theme($/;"	v
 TESTTARGET	makefile	/^TESTTARGET := unittest$/;"	m
+TIME	gprof2dot.py	/^TIME = Event("Time", 0.0, add, lambda x: '(' + str(x) + ')')$/;"	v
+TIME_RATIO	gprof2dot.py	/^TIME_RATIO = Event("Time ratio", 0.0, add, lambda x: '(' + percentage(x) + ')')$/;"	v
+TOTAL_SAMPLES	gprof2dot.py	/^TOTAL_SAMPLES = Event("Samples", 0, add, times)$/;"	v
+TOTAL_TIME	gprof2dot.py	/^TOTAL_TIME = Event("Total time", 0.0, fail)$/;"	v
+TOTAL_TIME_RATIO	gprof2dot.py	/^TOTAL_TIME_RATIO = Event("Total time ratio", 0.0, fail, percentage)$/;"	v
 Texture2D	Texture2D.h	/^	Texture2D(GLenum u):name(0), unit(u), target(GL_TEXTURE_2D)$/;"	f	class:Texture2D
 Texture2D	Texture2D.h	/^class Texture2D$/;"	c
 TextureShaderProgram	TextureShaderProgram.h	/^	TextureShaderProgram()$/;"	f	class:TextureShaderProgram
 TextureShaderProgram	TextureShaderProgram.h	/^class TextureShaderProgram$/;"	c
+Theme	gprof2dot.py	/^class Theme:$/;"	c
+UndefinedEvent	gprof2dot.py	/^class UndefinedEvent(Exception):$/;"	c
 UniformVariable	UniformVariable.h	/^class UniformVariable$/;"	c
 VAOPositionColorBase	VAOPositionColor.h	/^	VAOPositionColorBase(S& s)$/;"	f	class:VAOPositionColorBase
 VAOPositionColorBase	VAOPositionColor.h	/^class VAOPositionColorBase$/;"	c
@@ -49,13 +88,116 @@ VBOElementStatic	VBO.h	/^	VBOElementStatic():base(GL_ELEMENT_ARRAY_BUFFER, GL_ST
 VBOElementStatic	VBO.h	/^class VBOElementStatic$/;"	c
 VBOStatic	VBO.h	/^	VBOStatic():base(GL_ARRAY_BUFFER,GL_STATIC_DRAW)$/;"	f	class:VBOStatic
 VBOStatic	VBO.h	/^class VBOStatic$/;"	c
+XPerfParser	gprof2dot.py	/^class XPerfParser(Parser):$/;"	c
+XmlParser	gprof2dot.py	/^class XmlParser(Parser):$/;"	c
+XmlToken	gprof2dot.py	/^class XmlToken:$/;"	c
+XmlTokenMismatch	gprof2dot.py	/^class XmlTokenMismatch(Exception):$/;"	c
+XmlTokenizer	gprof2dot.py	/^class XmlTokenizer:$/;"	c
+__author__	gprof2dot.py	/^__author__ = "Jose Fonseca et al"$/;"	v
+__contains__	gprof2dot.py	/^    def __contains__(self, event):$/;"	m	class:Object	file:
+__eq__	gprof2dot.py	/^    def __eq__(self, other):$/;"	m	class:Event	file:
+__eq__	gprof2dot.py	/^    def __eq__(self, other):$/;"	m	class:Object	file:
+__getattr__	gprof2dot.py	/^    def __getattr__(self, name):$/;"	m	class:Struct	file:
+__getitem__	gprof2dot.py	/^    def __getitem__(self, event):$/;"	m	class:Object	file:
+__hash__	gprof2dot.py	/^    def __hash__(self):$/;"	m	class:Event	file:
+__hash__	gprof2dot.py	/^    def __hash__(self):$/;"	m	class:Object	file:
+__init__	gprof2dot.py	/^    def __init__(self):$/;"	m	class:Cycle
+__init__	gprof2dot.py	/^    def __init__(self):$/;"	m	class:Parser
+__init__	gprof2dot.py	/^    def __init__(self):$/;"	m	class:Profile
+__init__	gprof2dot.py	/^    def __init__(self, $/;"	m	class:Theme
+__init__	gprof2dot.py	/^    def __init__(self, *filename):$/;"	m	class:PstatsParser
+__init__	gprof2dot.py	/^    def __init__(self, attrs = None):$/;"	m	class:Struct
+__init__	gprof2dot.py	/^    def __init__(self, callee_id):$/;"	m	class:Call
+__init__	gprof2dot.py	/^    def __init__(self, event):$/;"	m	class:UndefinedEvent
+__init__	gprof2dot.py	/^    def __init__(self, events=None):$/;"	m	class:Object
+__init__	gprof2dot.py	/^    def __init__(self, expected, found):$/;"	m	class:XmlTokenMismatch
+__init__	gprof2dot.py	/^    def __init__(self, filename):$/;"	m	class:SleepyParser
+__init__	gprof2dot.py	/^    def __init__(self, fp):$/;"	m	class:AXEParser
+__init__	gprof2dot.py	/^    def __init__(self, fp):$/;"	m	class:DotWriter
+__init__	gprof2dot.py	/^    def __init__(self, fp):$/;"	m	class:GprofParser
+__init__	gprof2dot.py	/^    def __init__(self, fp):$/;"	m	class:XmlParser
+__init__	gprof2dot.py	/^    def __init__(self, fp, skip_ws = True):$/;"	m	class:XmlTokenizer
+__init__	gprof2dot.py	/^    def __init__(self, id, name):$/;"	m	class:Function
+__init__	gprof2dot.py	/^    def __init__(self, infile):$/;"	m	class:CallgrindParser
+__init__	gprof2dot.py	/^    def __init__(self, infile):$/;"	m	class:HProfParser
+__init__	gprof2dot.py	/^    def __init__(self, infile):$/;"	m	class:OprofileParser
+__init__	gprof2dot.py	/^    def __init__(self, infile):$/;"	m	class:PerfParser
+__init__	gprof2dot.py	/^    def __init__(self, msg, line):$/;"	m	class:ParseError
+__init__	gprof2dot.py	/^    def __init__(self, name, null, aggregator, formatter = str):$/;"	m	class:Event
+__init__	gprof2dot.py	/^    def __init__(self, stream):$/;"	m	class:JsonParser
+__init__	gprof2dot.py	/^    def __init__(self, stream):$/;"	m	class:LineParser
+__init__	gprof2dot.py	/^    def __init__(self, stream):$/;"	m	class:SysprofParser
+__init__	gprof2dot.py	/^    def __init__(self, stream):$/;"	m	class:XPerfParser
+__init__	gprof2dot.py	/^    def __init__(self, type, name_or_data, attrs = None, line = None, column = None):$/;"	m	class:XmlToken
+__repr__	gprof2dot.py	/^    def __repr__(self):$/;"	m	class:Function	file:
+__repr__	gprof2dot.py	/^    def __repr__(self):$/;"	m	class:Struct	file:
+__setattr__	gprof2dot.py	/^    def __setattr__(self, name, value):$/;"	m	class:Struct	file:
+__setitem__	gprof2dot.py	/^    def __setitem__(self, event, value):$/;"	m	class:Object	file:
+__str__	gprof2dot.py	/^    def __str__(self):$/;"	m	class:ParseError	file:
+__str__	gprof2dot.py	/^    def __str__(self):$/;"	m	class:Struct	file:
+__str__	gprof2dot.py	/^    def __str__(self):$/;"	m	class:UndefinedEvent	file:
+__str__	gprof2dot.py	/^    def __str__(self):$/;"	m	class:XmlToken	file:
+__str__	gprof2dot.py	/^    def __str__(self):$/;"	m	class:XmlTokenMismatch	file:
+__subpos_re	gprof2dot.py	/^    __subpos_re = r'(0x[0-9a-fA-F]+|\\d+|\\+\\d+|-\\d+|\\*)'$/;"	v	class:CallgrindParser
+_angles_re	gprof2dot.py	/^    _angles_re = re.compile(r'<[^<>]*>')$/;"	v	class:Function
+_call_ratios_cycle	gprof2dot.py	/^    def _call_ratios_cycle(self, cycle, function, ranks, call_ratios, visited):$/;"	m	class:Profile
+_call_re	gprof2dot.py	/^    _call_re = re.compile(r'^calls=\\s*(\\d+)\\s+((\\d+|\\+\\d+|-\\d+|\\*)\\s+)+$')$/;"	v	class:CallgrindParser
+_cg_child_re	gprof2dot.py	/^    _cg_child_re = _cg_parent_re$/;"	v	class:AXEParser
+_cg_child_re	gprof2dot.py	/^    _cg_child_re = _cg_parent_re$/;"	v	class:GprofParser
+_cg_cycle_header_re	gprof2dot.py	/^    _cg_cycle_header_re = re.compile($/;"	v	class:AXEParser
+_cg_cycle_header_re	gprof2dot.py	/^    _cg_cycle_header_re = re.compile($/;"	v	class:GprofParser
+_cg_cycle_member_re	gprof2dot.py	/^    _cg_cycle_member_re = re.compile($/;"	v	class:AXEParser
+_cg_cycle_member_re	gprof2dot.py	/^    _cg_cycle_member_re = re.compile($/;"	v	class:GprofParser
+_cg_footer_re	gprof2dot.py	/^    _cg_footer_re = re.compile(r'^Index\\s+Function\\s*$')$/;"	v	class:AXEParser
+_cg_header_re	gprof2dot.py	/^    _cg_header_re = re.compile($/;"	v	class:AXEParser
+_cg_header_re	gprof2dot.py	/^    _cg_header_re = re.compile($/;"	v	class:GprofParser
+_cg_ignore_re	gprof2dot.py	/^    _cg_ignore_re = re.compile($/;"	v	class:GprofParser
+_cg_parent_re	gprof2dot.py	/^    _cg_parent_re = re.compile($/;"	v	class:AXEParser
+_cg_parent_re	gprof2dot.py	/^    _cg_parent_re = re.compile($/;"	v	class:GprofParser
+_cg_primary_re	gprof2dot.py	/^    _cg_primary_re = re.compile($/;"	v	class:AXEParser
+_cg_primary_re	gprof2dot.py	/^    _cg_primary_re = re.compile($/;"	v	class:GprofParser
+_cg_sep_re	gprof2dot.py	/^    _cg_sep_re = re.compile(r'^--+$')$/;"	v	class:GprofParser
+_const_re	gprof2dot.py	/^    _const_re = re.compile(r'\\s+const$')$/;"	v	class:Function
+_cost_re	gprof2dot.py	/^    _cost_re = re.compile(r'^' + $/;"	v	class:CallgrindParser
+_detail_keys	gprof2dot.py	/^    _detail_keys = set(('cmd', 'pid', 'thread', 'part'))$/;"	v	class:CallgrindParser
+_dump_events	gprof2dot.py	/^    def _dump_events(self, events):$/;"	m	class:Profile
+_fields_re	gprof2dot.py	/^    _fields_re = {$/;"	v	class:OprofileParser
+_float_re	gprof2dot.py	/^    _float_re = re.compile(r'^\\d+\\.\\d+$')$/;"	v	class:AXEParser
+_float_re	gprof2dot.py	/^    _float_re = re.compile(r'^\\d+\\.\\d+$')$/;"	v	class:GprofParser
+_hue_to_rgb	gprof2dot.py	/^    def _hue_to_rgb(self, m1, m2, h):$/;"	m	class:Theme
+_int_re	gprof2dot.py	/^    _int_re = re.compile(r'^\\d+$')$/;"	v	class:AXEParser
+_int_re	gprof2dot.py	/^    _int_re = re.compile(r'^\\d+$')$/;"	v	class:GprofParser
+_integrate_call	gprof2dot.py	/^    def _integrate_call(self, call, outevent, inevent):$/;"	m	class:Profile
+_integrate_cycle	gprof2dot.py	/^    def _integrate_cycle(self, cycle, outevent, inevent):$/;"	m	class:Profile
+_integrate_cycle_function	gprof2dot.py	/^    def _integrate_cycle_function(self, cycle, function, partial_ratio, partials, ranks, call_ratios, outevent, inevent):$/;"	m	class:Profile
+_integrate_function	gprof2dot.py	/^    def _integrate_function(self, function, outevent, inevent):$/;"	m	class:Profile
+_key_re	gprof2dot.py	/^    _key_re = re.compile(r'^(\\w+):')$/;"	v	class:CallgrindParser
+_parenthesis_re	gprof2dot.py	/^    _parenthesis_re = re.compile(r'\\([^()]*\\)')$/;"	v	class:Function
+_position_map	gprof2dot.py	/^    _position_map = {$/;"	v	class:CallgrindParser
+_position_re	gprof2dot.py	/^    _position_re = re.compile(r'^(?P<position>[cj]?(?:ob|fl|fi|fe|fn))=\\s*(?:\\((?P<id>\\d+)\\))?(?:\\s*(?P<name>.+))?')$/;"	v	class:CallgrindParser
+_position_table_map	gprof2dot.py	/^    _position_table_map = {$/;"	v	class:CallgrindParser
+_rank_cycle_function	gprof2dot.py	/^    def _rank_cycle_function(self, cycle, function, rank, ranks):$/;"	m	class:Profile
+_symbol_re	gprof2dot.py	/^    _symbol_re = re.compile($/;"	v	class:SleepyParser
+_tarjan	gprof2dot.py	/^    def _tarjan(self, function, order, stack, orders, lowlinks, visited):$/;"	m	class:Profile
 active	Texture2D.h	/^	void active()$/;"	f	class:Texture2D
+add	gprof2dot.py	/^def add(a, b):$/;"	f
+add_call	gprof2dot.py	/^    def add_call(self, call):$/;"	m	class:Function
+add_cycle	gprof2dot.py	/^    def add_cycle(self, cycle):$/;"	m	class:Profile
+add_entry	gprof2dot.py	/^    def add_entry(self, callers, function, callees):$/;"	m	class:OprofileParser
+add_function	gprof2dot.py	/^    def add_function(self, function):$/;"	m	class:Cycle
+add_function	gprof2dot.py	/^    def add_function(self, function):$/;"	m	class:Profile
+aggregate	gprof2dot.py	/^    def aggregate(self, event):$/;"	m	class:Profile
+aggregate	gprof2dot.py	/^    def aggregate(self, val1, val2):$/;"	m	class:Event
 attach	ShaderProgram.h	/^	void attach(const Shader& s)$/;"	f	class:ShaderProgram
+attr	gprof2dot.py	/^    def attr(self, what, **attrs):$/;"	m	class:DotWriter
+attr_list	gprof2dot.py	/^    def attr_list(self, attrs):$/;"	m	class:DotWriter
 base	VAOPositionColor.h	/^	VAOPositionColorBase<S, VBODynamic, VBOElementDynamic> base;$/;"	m	class:VAOPositionColorDynamic
 base	VBO.h	/^	VBOBase<float> base;$/;"	m	class:VBODynamic
 base	VBO.h	/^	VBOBase<float> base;$/;"	m	class:VBOStatic
 base	VBO.h	/^	VBOBase<unsigned int> base;$/;"	m	class:VBOElementDynamic
 base	VBO.h	/^	VBOBase<unsigned int> base;$/;"	m	class:VBOElementStatic
+basestring	gprof2dot.py	/^    basestring = str  # No class basestring in Python 3$/;"	v
+begin_graph	gprof2dot.py	/^    def begin_graph(self):$/;"	m	class:DotWriter
 bind	Texture2D.h	/^	void bind()$/;"	f	class:Texture2D
 bind	VAOPositionColor.h	/^	void bind()$/;"	f	class:VAOPositionColorBase
 bind	VAOPositionColor.h	/^	void bind()$/;"	f	class:VAOPositionColorDynamic
@@ -65,34 +207,87 @@ bind	VBO.h	/^	void bind()$/;"	f	class:VBODynamic
 bind	VBO.h	/^	void bind()$/;"	f	class:VBOElementDynamic
 bind	VBO.h	/^	void bind()$/;"	f	class:VBOElementStatic
 bind	VBO.h	/^	void bind()$/;"	f	class:VBOStatic
+build_profile	gprof2dot.py	/^    def build_profile(self, objects, nodes):$/;"	m	class:SysprofParser
+call_ratios	gprof2dot.py	/^    def call_ratios(self, event):$/;"	m	class:Profile
+call_re	gprof2dot.py	/^    call_re = re.compile(r'^\\s+(?P<address>[0-9a-fA-F]+)\\s+(?P<symbol>.*)\\s+\\((?P<module>[^)]*)\\)$')$/;"	v	class:PerfParser
+character_data	gprof2dot.py	/^    def character_data(self, strip = True):$/;"	m	class:XmlParser
 color	VAOPositionColor.h	/^	VBOClass color;$/;"	m	class:VAOPositionColorBase
+color	gprof2dot.py	/^    def color(self, rgb):$/;"	m	class:DotWriter
+color	gprof2dot.py	/^    def color(self, weight):$/;"	m	class:Theme
+compat_iteritems	gprof2dot.py	/^    def compat_iteritems(x): return x.items()  # No iteritems() in Python 3$/;"	f
+compat_iteritems	gprof2dot.py	/^    def compat_iteritems(x): return x.iteritems()$/;"	f
+compat_itervalues	gprof2dot.py	/^    def compat_itervalues(x): return x.itervalues()$/;"	f
+compat_itervalues	gprof2dot.py	/^    def compat_itervalues(x): return x.values()  # No itervalues() in Python 3$/;"	f
+compat_keys	gprof2dot.py	/^    def compat_keys(x): return list(x.keys())  # keys() is a generator in Python 3$/;"	f
+compat_keys	gprof2dot.py	/^    def compat_keys(x): return x.keys()$/;"	f
 compile	Shader.h	/^	void compile()$/;"	f	class:Shader
+consume	gprof2dot.py	/^    def consume(self):$/;"	m	class:LineParser
+consume	gprof2dot.py	/^    def consume(self):$/;"	m	class:XmlParser
 device	VBO.h	/^	float* device;$/;"	m	class:VBODynamic
 device	VBO.h	/^	unsigned int* device;$/;"	m	class:VBOElementDynamic
 display	VAOPositionColor.h	/^	void display()$/;"	f	class:VAOPositionColorDynamic
 display	VAOPositionColor.h	/^	void display(void)$/;"	f	class:VAOPositionColorBase
 display	VAOPositionTexture.h	/^	void display(void)$/;"	f	class:VAOPositionTexture
 display	glsltest.cpp	/^void display(void)$/;"	f
+dump	gprof2dot.py	/^    def dump(self):$/;"	m	class:Profile
+edge	gprof2dot.py	/^    def edge(self, src, dst, **attrs):$/;"	m	class:DotWriter
+edge_arrowsize	gprof2dot.py	/^    def edge_arrowsize(self, weight):$/;"	m	class:Theme
+edge_color	gprof2dot.py	/^    def edge_color(self, weight):$/;"	m	class:Theme
+edge_fontsize	gprof2dot.py	/^    def edge_fontsize(self, weight):$/;"	m	class:Theme
+edge_penwidth	gprof2dot.py	/^    def edge_penwidth(self, weight):$/;"	m	class:Theme
 element	VAOPositionColor.h	/^	VBOElementClass element;$/;"	m	class:VAOPositionColorBase
 element	VAOPositionTexture.h	/^	VBOElementStatic element;$/;"	m	class:VAOPositionTexture
+element_end	gprof2dot.py	/^    def element_end(self, name):$/;"	m	class:XmlParser
+element_start	gprof2dot.py	/^    def element_start(self, name):$/;"	m	class:XmlParser
+end_graph	gprof2dot.py	/^    def end_graph(self):$/;"	m	class:DotWriter
+eof	gprof2dot.py	/^    def eof(self):$/;"	m	class:LineParser
+escape	gprof2dot.py	/^    def escape(self, s):$/;"	m	class:DotWriter
+fail	gprof2dot.py	/^def fail(a, b):$/;"	f
+find_cycles	gprof2dot.py	/^    def find_cycles(self):$/;"	m	class:Profile
+finish_character_data	gprof2dot.py	/^    def finish_character_data(self):$/;"	m	class:XmlTokenizer
+float2int	gprof2dot.py	/^        def float2int(f):$/;"	f	function:DotWriter.color
+fontcolor	gprof2dot.py	/^    fontcolor = "black",$/;"	v
+fontsize	gprof2dot.py	/^    def fontsize(self, weight):$/;"	m	class:Theme
+format	gprof2dot.py	/^    def format(self, val):$/;"	m	class:Event
+formats	gprof2dot.py	/^formats = {$/;"	v
 fragShader	BasicShaderProgram.h	/^	Shader fragShader;$/;"	m	class:BasicShaderProgram
 fragShader	TextureShaderProgram.h	/^	Shader fragShader;$/;"	m	class:TextureShaderProgram
+gamma	gprof2dot.py	/^    gamma = 1.0$/;"	v
 getColor	VAOPositionColor.h	/^	VBOClass& getColor()$/;"	f	class:VAOPositionColorBase
 getColorDevicePointer	VAOPositionColor.h	/^	float* getColorDevicePointer()$/;"	f	class:VAOPositionColorDynamic
 getDevicePointer	VBO.h	/^	float* getDevicePointer()$/;"	f	class:VBODynamic
 getDevicePointer	VBO.h	/^	unsigned int* getDevicePointer()$/;"	f	class:VBOElementDynamic
 getElement	VAOPositionColor.h	/^	VBOElementClass& getElement()$/;"	f	class:VAOPositionColorBase
 getElementDevicePointer	VAOPositionColor.h	/^	unsigned int* getElementDevicePointer()$/;"	f	class:VAOPositionColorDynamic
+getFunctionId	gprof2dot.py	/^    def getFunctionId(self, funcName):$/;"	m	class:Profile
 getHandle	Shader.h	/^	GLuint getHandle() const$/;"	f	class:Shader
 getHandle	ShaderProgram.h	/^	GLuint getHandle()$/;"	f	class:ShaderProgram
 getHandle	VBO.h	/^	GLuint getHandle()$/;"	f	class:VBOBase
 getPosition	VAOPositionColor.h	/^	VBOClass& getPosition()$/;"	f	class:VAOPositionColorBase
 getPositionDevicePointer	VAOPositionColor.h	/^	float* getPositionDevicePointer()$/;"	f	class:VAOPositionColorDynamic
+getVertexCount	VAOPositionColor.h	/^	int getVertexCount()$/;"	f	class:VAOPositionColorBase
+getVertexCount	VAOPositionColor.h	/^	int getVertexCount()$/;"	f	class:VAOPositionColorDynamic
+get_call	gprof2dot.py	/^    def get_call(self, callee_id):$/;"	m	class:Function
+get_callee	gprof2dot.py	/^    def get_callee(self):$/;"	m	class:CallgrindParser
+get_function	gprof2dot.py	/^    def get_function(self):$/;"	m	class:CallgrindParser
+get_function	gprof2dot.py	/^    def get_function(self, key):$/;"	m	class:PstatsParser
+get_function	gprof2dot.py	/^    def get_function(self, process, symbol):$/;"	m	class:XPerfParser
+get_function_name	gprof2dot.py	/^    def get_function_name(self, key):$/;"	m	class:PstatsParser
+graph	gprof2dot.py	/^    def graph(self, profile, theme):$/;"	m	class:DotWriter
+graph_bgcolor	gprof2dot.py	/^    def graph_bgcolor(self):$/;"	m	class:Theme
+graph_fontcolor	gprof2dot.py	/^    def graph_fontcolor(self):$/;"	m	class:Theme
+graph_fontname	gprof2dot.py	/^    def graph_fontname(self):$/;"	m	class:Theme
+graph_fontsize	gprof2dot.py	/^    def graph_fontsize(self):$/;"	m	class:Theme
 handle	Shader.h	/^	GLuint handle;$/;"	m	class:Shader
 handle	ShaderProgram.h	/^	GLuint handle;$/;"	m	class:ShaderProgram
 handle	VAOPositionColor.h	/^	GLuint handle;$/;"	m	class:VAOPositionColorBase
 handle	VAOPositionTexture.h	/^	GLuint handle;$/;"	m	class:VAOPositionTexture
 handle	VBO.h	/^	GLuint handle;$/;"	m	class:VBOBase
+handle_character_data	gprof2dot.py	/^    def handle_character_data(self, data):$/;"	m	class:XmlTokenizer
+handle_element_end	gprof2dot.py	/^    def handle_element_end(self, name):$/;"	m	class:XmlTokenizer
+handle_element_start	gprof2dot.py	/^    def handle_element_start(self, name, attributes):$/;"	m	class:XmlTokenizer
+hsl_to_rgb	gprof2dot.py	/^    def hsl_to_rgb(self, h, s, l):$/;"	m	class:Theme
+id	gprof2dot.py	/^    def id(self, id):$/;"	m	class:DotWriter
 idle	glsltest.cpp	/^void idle(void)$/;"	f
 inactive	Texture2D.h	/^	void inactive()$/;"	f	class:Texture2D
 init	BasicShaderProgram.cpp	/^void BasicShaderProgram::init(void)$/;"	f	class:BasicShaderProgram
@@ -109,22 +304,120 @@ init	VBO.h	/^	void init(const std::vector<unsigned int>& v)$/;"	f	class:VBOEleme
 init	VBO.h	/^	void init(const std::vector<unsigned int>& v)$/;"	f	class:VBOElementStatic
 initCallbacks	glsltest.cpp	/^void initCallbacks(void)$/;"	f
 initScene	glsltest.cpp	/^void initScene(void)$/;"	f
+integrate	gprof2dot.py	/^    def integrate(self, outevent, inevent):$/;"	m	class:Profile
 link	ShaderProgram.h	/^	void link()$/;"	f	class:ShaderProgram
 location	UniformVariable.h	/^	GLuint location;$/;"	m	class:UniformVariable
+lookahead	gprof2dot.py	/^    def lookahead(self):$/;"	m	class:LineParser
 main	glsltest.cpp	/^int main(int argc, char** argv)$/;"	f
+main	gprof2dot.py	/^def main():$/;"	f
+make_function	gprof2dot.py	/^    def make_function(self, module, filename, name):$/;"	m	class:CallgrindParser
 map	VAOPositionColor.h	/^	void map()$/;"	f	class:VAOPositionColorDynamic
 map	VBO.h	/^	void map()$/;"	f	class:VBODynamic
 map	VBO.h	/^	void map()$/;"	f	class:VBOElementDynamic
+match_element_end	gprof2dot.py	/^    def match_element_end(self, name):$/;"	m	class:XmlParser
+match_element_start	gprof2dot.py	/^    def match_element_start(self, name):$/;"	m	class:XmlParser
+match_header	gprof2dot.py	/^    def match_header(self):$/;"	m	class:OprofileParser
+match_primary	gprof2dot.py	/^    def match_primary(self):$/;"	m	class:OprofileParser
+match_secondary	gprof2dot.py	/^    def match_secondary(self):$/;"	m	class:OprofileParser
+match_separator	gprof2dot.py	/^    def match_separator(self):$/;"	m	class:OprofileParser
+maxcolor	gprof2dot.py	/^    maxcolor = (0.0, 0.0, 0.0), # black$/;"	v
+maxcolor	gprof2dot.py	/^    maxcolor = (0.0, 1.0, 0.5), # satured red$/;"	v
+maxfontsize	gprof2dot.py	/^    maxfontsize = 24.0,$/;"	v
+maxfontsize	gprof2dot.py	/^    maxfontsize = 30.0,$/;"	v
+maxpenwidth	gprof2dot.py	/^    maxpenwidth = 8.0,$/;"	v
+mincolor	gprof2dot.py	/^    mincolor = (0.0, 0.0, 0.0), # black$/;"	v
+mincolor	gprof2dot.py	/^    mincolor = (0.0, 0.0, 0.85), # light gray$/;"	v
+mincolor	gprof2dot.py	/^    mincolor = (0.0, 1.0, 0.90), # pink$/;"	v
+mincolor	gprof2dot.py	/^    mincolor = (2.0\/3.0, 0.80, 0.25), # dark blue$/;"	v
+minfontsize	gprof2dot.py	/^    minfontsize = 18.0,$/;"	v
+minfontsize	gprof2dot.py	/^    minfontsize = 8.0,$/;"	v
+minpenwidth	gprof2dot.py	/^    minpenwidth = 0.1,$/;"	v
 mode	VAOPositionColor.h	/^	GLenum mode;$/;"	m	class:VAOPositionColorBase
 mode	VAOPositionTexture.h	/^	GLenum mode;$/;"	m	class:VAOPositionTexture
 moveVAO	glsltest.cpp	/^void moveVAO()$/;"	f
+multipleInput	gprof2dot.py	/^    multipleInput = False$/;"	v	class:Parser
+multipleInput	gprof2dot.py	/^    multipleInput = True$/;"	v	class:PstatsParser
 mvpMatrix	BasicShaderProgram.h	/^	UniformVariable<glm::mat4> mvpMatrix;$/;"	m	class:BasicShaderProgram
 mvpMatrix	TextureShaderProgram.h	/^	UniformVariable<glm::mat4> mvpMatrix;$/;"	m	class:TextureShaderProgram
 name	Texture2D.h	/^	GLuint name;$/;"	m	class:Texture2D
+naturalJoin	gprof2dot.py	/^def naturalJoin(values):$/;"	f
+next	gprof2dot.py	/^    def next(self):$/;"	m	class:XmlTokenizer
+node	gprof2dot.py	/^    def node(self, node, **attrs):$/;"	m	class:DotWriter
+node_bgcolor	gprof2dot.py	/^    def node_bgcolor(self, weight):$/;"	m	class:Theme
+node_fgcolor	gprof2dot.py	/^    def node_fgcolor(self, weight):$/;"	m	class:Theme
+node_fontsize	gprof2dot.py	/^    def node_fontsize(self, weight):$/;"	m	class:Theme
+node_style	gprof2dot.py	/^    def node_style(self):$/;"	m	class:Theme
+nodestyle	gprof2dot.py	/^    nodestyle = "solid",$/;"	v
+null	gprof2dot.py	/^    def null(self):$/;"	m	class:Event
+openEntry	gprof2dot.py	/^    def openEntry(self, name):$/;"	m	class:SleepyParser
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:AXEParser
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:CallgrindParser
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:GprofParser
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:HProfParser
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:JsonParser
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:OprofileParser
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:Parser
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:PerfParser
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:PstatsParser
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:SleepyParser
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:SysprofParser
+parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:XPerfParser
+parse_association_spec	gprof2dot.py	/^    def parse_association_spec(self):$/;"	m	class:CallgrindParser
+parse_body_line	gprof2dot.py	/^    def parse_body_line(self):$/;"	m	class:CallgrindParser
+parse_call	gprof2dot.py	/^    def parse_call(self):$/;"	m	class:PerfParser
+parse_callchain	gprof2dot.py	/^    def parse_callchain(self):$/;"	m	class:PerfParser
+parse_callstacks	gprof2dot.py	/^    def parse_callstacks(self):$/;"	m	class:SleepyParser
+parse_cg	gprof2dot.py	/^    def parse_cg(self):$/;"	m	class:AXEParser
+parse_cg	gprof2dot.py	/^    def parse_cg(self):$/;"	m	class:GprofParser
+parse_cg_entry	gprof2dot.py	/^    def parse_cg_entry(self, lines):$/;"	m	class:AXEParser
+parse_cg_entry	gprof2dot.py	/^    def parse_cg_entry(self, lines):$/;"	m	class:GprofParser
+parse_comment	gprof2dot.py	/^    def parse_comment(self):$/;"	m	class:CallgrindParser
+parse_cost_line	gprof2dot.py	/^    def parse_cost_line(self, calls=None):$/;"	m	class:CallgrindParser
+parse_cost_line_def	gprof2dot.py	/^    def parse_cost_line_def(self):$/;"	m	class:CallgrindParser
+parse_cost_summary	gprof2dot.py	/^    def parse_cost_summary(self):$/;"	m	class:CallgrindParser
+parse_cycle_entry	gprof2dot.py	/^    def parse_cycle_entry(self, lines):$/;"	m	class:AXEParser
+parse_cycle_entry	gprof2dot.py	/^    def parse_cycle_entry(self, lines):$/;"	m	class:GprofParser
+parse_description	gprof2dot.py	/^    def parse_description(self):$/;"	m	class:CallgrindParser
+parse_empty	gprof2dot.py	/^    def parse_empty(self):$/;"	m	class:CallgrindParser
+parse_entry	gprof2dot.py	/^    def parse_entry(self):$/;"	m	class:OprofileParser
+parse_event	gprof2dot.py	/^    def parse_event(self):$/;"	m	class:PerfParser
+parse_event_specification	gprof2dot.py	/^    def parse_event_specification(self):$/;"	m	class:CallgrindParser
+parse_function_entry	gprof2dot.py	/^    def parse_function_entry(self, lines):$/;"	m	class:AXEParser
+parse_function_entry	gprof2dot.py	/^    def parse_function_entry(self, lines):$/;"	m	class:GprofParser
+parse_header	gprof2dot.py	/^    def parse_header(self):$/;"	m	class:OprofileParser
+parse_header	gprof2dot.py	/^    def parse_header(self, row):$/;"	m	class:XPerfParser
+parse_header_line	gprof2dot.py	/^    def parse_header_line(self):$/;"	m	class:CallgrindParser
+parse_item	gprof2dot.py	/^    def parse_item(self, name):$/;"	m	class:SysprofParser
+parse_items	gprof2dot.py	/^    def parse_items(self, name):$/;"	m	class:SysprofParser
+parse_key	gprof2dot.py	/^    def parse_key(self, key):$/;"	m	class:CallgrindParser
+parse_keys	gprof2dot.py	/^    def parse_keys(self, keys):$/;"	m	class:CallgrindParser
+parse_part	gprof2dot.py	/^    def parse_part(self):$/;"	m	class:CallgrindParser
+parse_part_detail	gprof2dot.py	/^    def parse_part_detail(self):$/;"	m	class:CallgrindParser
+parse_position_spec	gprof2dot.py	/^    def parse_position_spec(self):$/;"	m	class:CallgrindParser
+parse_row	gprof2dot.py	/^    def parse_row(self, row):$/;"	m	class:XPerfParser
+parse_samples	gprof2dot.py	/^    def parse_samples(self):$/;"	m	class:HProfParser
+parse_subentries	gprof2dot.py	/^    def parse_subentries(self):$/;"	m	class:OprofileParser
+parse_subentry	gprof2dot.py	/^    def parse_subentry(self):$/;"	m	class:OprofileParser
+parse_symbols	gprof2dot.py	/^    def parse_symbols(self):$/;"	m	class:SleepyParser
+parse_trace	gprof2dot.py	/^    def parse_trace(self):$/;"	m	class:HProfParser
+parse_traces	gprof2dot.py	/^    def parse_traces(self):$/;"	m	class:HProfParser
+parse_value	gprof2dot.py	/^    def parse_value(self, tag):$/;"	m	class:SysprofParser
+parse_values	gprof2dot.py	/^    def parse_values(self):$/;"	m	class:SysprofParser
+percentage	gprof2dot.py	/^def percentage(p):$/;"	f
+pos	gprof2dot.py	/^    def pos(self):$/;"	m	class:XmlTokenizer
 position	VAOPositionColor.h	/^	VBOClass position;$/;"	m	class:VAOPositionColorBase
 position	VAOPositionTexture.h	/^	VBOStatic position;$/;"	m	class:VAOPositionTexture
 projection	glsltest.cpp	/^glm::mat4 projection;$/;"	v
+prune	gprof2dot.py	/^    def prune(self, node_thres, edge_thres):$/;"	m	class:Profile
+prune_leaf	gprof2dot.py	/^    def prune_leaf(self, leaf):$/;"	m	class:Profile
+prune_root	gprof2dot.py	/^    def prune_root(self, root):$/;"	m	class:Profile
+ratio	gprof2dot.py	/^    def ratio(self, outevent, inevent):$/;"	m	class:Profile
+ratio	gprof2dot.py	/^def ratio(numerator, denominator):$/;"	f
 readShaderFile	Shader.h	/^	std::string readShaderFile(const std::string& filename)$/;"	f	class:Shader
+readline	gprof2dot.py	/^    def readline(self):$/;"	m	class:AXEParser
+readline	gprof2dot.py	/^    def readline(self):$/;"	m	class:GprofParser
+readline	gprof2dot.py	/^    def readline(self):$/;"	m	class:LineParser
+readline	gprof2dot.py	/^    def readline(self):$/;"	m	class:PerfParser
 resize	glsltest.cpp	/^void resize(int w, int h)$/;"	f
 resource	VBO.h	/^	cudaGraphicsResource* resource;$/;"	m	class:VBODynamic
 resource	VBO.h	/^	cudaGraphicsResource* resource;$/;"	m	class:VBOElementDynamic
@@ -140,13 +433,30 @@ shaderProgram	BasicShaderProgram.h	/^	ShaderProgram shaderProgram;$/;"	m	class:B
 shaderProgram	TextureShaderProgram.h	/^	ShaderProgram shaderProgram;$/;"	m	class:TextureShaderProgram
 shaderProgram	VAOPositionColor.h	/^	S& shaderProgram;$/;"	m	class:VAOPositionColorBase
 shaderProgram	VAOPositionTexture.h	/^	S& shaderProgram;$/;"	m	class:VAOPositionTexture
+show_edge_events	gprof2dot.py	/^    show_edge_events = [TOTAL_TIME_RATIO, CALLS]$/;"	v	class:DotWriter
+show_function_events	gprof2dot.py	/^    show_function_events = [TOTAL_TIME_RATIO, TIME_RATIO]$/;"	v	class:DotWriter
+skip_separator	gprof2dot.py	/^    def skip_separator(self):$/;"	m	class:OprofileParser
+sorted_iteritems	gprof2dot.py	/^def sorted_iteritems(d):$/;"	f
 sourcePath	Shader.h	/^	std::string sourcePath;\/\/コンストラクタでコンパイルすればメンバとしては不要？$/;"	m	class:Shader
+stdinInput	gprof2dot.py	/^    stdinInput = False$/;"	v	class:PstatsParser
+stdinInput	gprof2dot.py	/^    stdinInput = False$/;"	v	class:SleepyParser
+stdinInput	gprof2dot.py	/^    stdinInput = True$/;"	v	class:Parser
+strip	gprof2dot.py	/^    strip = False$/;"	v	class:DotWriter
+stripped_name	gprof2dot.py	/^    def stripped_name(self):$/;"	m	class:Function
 target	Texture2D.h	/^	const GLenum target;$/;"	m	class:Texture2D
 tex	glsltest.cpp	/^Texture2D *tex;$/;"	v
 texsp	glsltest.cpp	/^TextureShaderProgram *texsp;$/;"	v
 texture	VAOPositionTexture.h	/^	Texture2D& texture;$/;"	m	class:VAOPositionTexture
 textureCoord	VAOPositionTexture.h	/^	VBOStatic textureCoord;$/;"	m	class:VAOPositionTexture
 textureSampler	TextureShaderProgram.h	/^	UniformVariable<int> textureSampler;$/;"	m	class:TextureShaderProgram
+themes	gprof2dot.py	/^themes = {$/;"	v
+times	gprof2dot.py	/^def times(x):$/;"	f
+tol	gprof2dot.py	/^tol = 2 ** -23$/;"	v
+totalMethod	gprof2dot.py	/^totalMethod = 'callratios'$/;"	v
+trace_id_re	gprof2dot.py	/^    trace_id_re = re.compile(r'^TRACE (\\d+):$')$/;"	v	class:HProfParser
+trace_re	gprof2dot.py	/^    trace_re = re.compile(r'\\t(.*)\\((.*):(.*)\\)')$/;"	v	class:HProfParser
+translate	gprof2dot.py	/^    def translate(self, mo):$/;"	m	class:AXEParser
+translate	gprof2dot.py	/^    def translate(self, mo):$/;"	m	class:GprofParser
 tsp	glsltest.cpp	/^BasicShaderProgram *tsp;$/;"	v
 type	Shader.h	/^	GLenum type;$/;"	m	class:Shader
 type	VBO.h	/^	const GLenum type;$/;"	m	class:VBOBase
@@ -159,6 +469,7 @@ unbind	VBO.h	/^	void unbind()$/;"	f	class:VBODynamic
 unbind	VBO.h	/^	void unbind()$/;"	f	class:VBOElementDynamic
 unbind	VBO.h	/^	void unbind()$/;"	f	class:VBOElementStatic
 unbind	VBO.h	/^	void unbind()$/;"	f	class:VBOStatic
+unichr	gprof2dot.py	/^    unichr = chr # No unichr in Python 3$/;"	v
 unit	Texture2D.h	/^	const GLenum unit;$/;"	m	class:Texture2D
 unmap	VAOPositionColor.h	/^	void unmap()$/;"	f	class:VAOPositionColorDynamic
 unmap	VBO.h	/^	void unmap()$/;"	f	class:VBODynamic
@@ -166,10 +477,12 @@ unmap	VBO.h	/^	void unmap()$/;"	f	class:VBOElementDynamic
 unuse	BasicShaderProgram.h	/^	void unuse()$/;"	f	class:BasicShaderProgram
 unuse	ShaderProgram.h	/^	void unuse()$/;"	f	class:ShaderProgram
 unuse	TextureShaderProgram.h	/^	void unuse()$/;"	f	class:TextureShaderProgram
+update_subentries_dict	gprof2dot.py	/^    def update_subentries_dict(self, totals, partials):$/;"	m	class:OprofileParser
 usage	VBO.h	/^	const GLenum usage;$/;"	m	class:VBOBase
 use	BasicShaderProgram.h	/^	void use()$/;"	f	class:BasicShaderProgram
 use	ShaderProgram.h	/^	void use()$/;"	f	class:ShaderProgram
 use	TextureShaderProgram.h	/^	void use()$/;"	f	class:TextureShaderProgram
+validate	gprof2dot.py	/^    def validate(self):$/;"	m	class:Profile
 vao	glsltest.cpp	/^BasicShaderProgram::vaoType *vao;$/;"	v
 vaoType	BasicShaderProgram.h	/^	typedef VAOPositionColor<BasicShaderProgram> vaoType;$/;"	t	class:BasicShaderProgram
 vaoType	TextureShaderProgram.h	/^	typedef VAOPositionTexture<TextureShaderProgram> vaoType;$/;"	t	class:TextureShaderProgram
@@ -179,6 +492,10 @@ vertShader	BasicShaderProgram.h	/^	Shader vertShader;$/;"	m	class:BasicShaderPro
 vertShader	TextureShaderProgram.h	/^	Shader vertShader;$/;"	m	class:TextureShaderProgram
 vertexCount	VAOPositionColor.h	/^	int vertexCount;$/;"	m	class:VAOPositionColorBase
 vertexCount	VAOPositionTexture.h	/^	int vertexCount;$/;"	m	class:VAOPositionTexture
+wrap	gprof2dot.py	/^    wrap = False$/;"	v	class:DotWriter
+wrap_function_name	gprof2dot.py	/^    def wrap_function_name(self, name):$/;"	m	class:DotWriter
+write	gprof2dot.py	/^    def write(self, s):$/;"	m	class:DotWriter
+xrange	gprof2dot.py	/^    xrange = range # No xrange in Python 3$/;"	v
 ~Shader	Shader.h	/^	~Shader()$/;"	f	class:Shader
 ~ShaderProgram	ShaderProgram.h	/^	~ShaderProgram()$/;"	f	class:ShaderProgram
 ~VBODynamic	VBO.h	/^	~VBODynamic()$/;"	f	class:VBODynamic

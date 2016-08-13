@@ -1,0 +1,5 @@
+# gpu   pwr  temp    sm   mem   enc   dec  mclk  pclk pviol tviol    fb  bar1 sbecc dbecc   pci rxpci txpci
+# Idx     W     C     %     %     %     %   MHz   MHz     %  bool    MB    MB  errs  errs  errs  MB/s  MB/s
+    0    14    59     0     4     0     0   405    27     0     0   155     5     -     -     0     7     1
+    0    14    59    11     4     0     0   405    26   100     0   155     5     -     -     0     0     0
+    0    14    59    11     4     0     0   405    26   100     0   155     5     -     -     0     0     0

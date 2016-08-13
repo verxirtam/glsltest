@@ -33,7 +33,5 @@ void moveVAO_cuda_kernel(float* v)
 
 void moveVAO_cuda(float* v, int vc)
 {
-	dim3 g( 1, 1, 1);
-	dim3 b(vc, 1, 1);
-	moveVAO_cuda_kernel<<<g, b>>>(v);
+	moveVAO_cuda_kernel<<<1, vc>>>(v);
 }
