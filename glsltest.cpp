@@ -29,7 +29,6 @@
 #include <glm/gtx/transform2.hpp>
 
 #include "BasicShaderProgram.h"
-#include "VAOPositionColor.h"
 
 #include "Texture2D.h"
 #include "TextureShaderProgram.h"
@@ -40,12 +39,14 @@
 
 BasicShaderProgram *tsp;
 BasicShaderProgram::vaoType *vao;
-
-VAOPositionColorDynamic<BasicShaderProgram> *vaod;
+BasicShaderProgram::vaoTypeDynamic *vaod;
+BasicShaderProgram::vaoTypeDynamic *vaod2;
 
 Texture2D *tex;
+Texture2D *tex2;
 TextureShaderProgram *texsp;
 TextureShaderProgram::vaoType *vaot;
+TextureShaderProgram::vaoType *vaot2;
 
 
 glm::mat4 projection;
@@ -78,16 +79,16 @@ void setMatrix(void)
 	texsp->setMVPMatrix(mvp);
 }
 
-void moveVAO()
+void moveVAO(BasicShaderProgram::vaoTypeDynamic& _vaod)
 {
-	vaod->map();
+	_vaod.map();
 	
-	float* v = vaod->getPositionDevicePointer();
-	int vc = vaod->getVertexCount();
+	float* v = _vaod.getPositionDevicePointer();
+	int vc = _vaod.getVertexCount();
 	//cudaの関数を呼ぶ
 	moveVAO_cuda(v, vc);
 	
-	vaod->unmap();
+	_vaod.unmap();
 }
 
 void display(void)
@@ -100,10 +101,11 @@ void display(void)
 	vao->display();
 	
 	vaot->display();
-	
-	//moveVAO();
+	vaot2->display();
 	
 	vaod->display();
+	
+	vaod2->display();
 	
 	//描画対象のバッファを入れ替える
 	glutSwapBuffers();
@@ -111,7 +113,8 @@ void display(void)
 
 void idle(void)
 {
-	moveVAO();
+	moveVAO(*vaod );
+	moveVAO(*vaod2);
 
 	glutPostRedisplay();
 }
@@ -174,7 +177,7 @@ void initScene(void)
 			{
 				-0.8f, -0.8f, 0.0f,
 				 0.8f, -0.8f, 0.0f,
-				 0.0f,  0.8f, 0.0f
+				 0.0f,  0.8f, 0.5f
 			};
 		//色データ
 		std::vector<float> texcoord_data
@@ -196,6 +199,18 @@ void initScene(void)
 				4331
 			);
 		vaot->init(position_data, texcoord_data, element_data, GL_TRIANGLES);
+		
+		position_data[ 2]=-0.5f;
+		position_data[ 5]=-0.5f;
+		position_data[ 8]= 0.0f;
+
+		tex2->init
+			(
+				"/home/daisuke/programs/ATFViewer/res/world.topo.200412.3x5400x2700.raw",
+				5400,
+				2700
+			);
+		vaot2->init(position_data, texcoord_data, element_data, GL_TRIANGLES);
 	}
 	{
 		
@@ -225,6 +240,24 @@ void initScene(void)
 				0,1,2,3,4,5
 			};
 		vaod->init(position_data, color_data, element_data, GL_TRIANGLE_STRIP);
+		
+		
+		position_data[ 2]=1.0f;
+		position_data[ 5]=1.0f;
+		position_data[ 8]=1.0f;
+		position_data[11]=1.0f;
+		position_data[14]=1.0f;
+		position_data[17]=1.0f;
+		
+		color_data[ 0]=1.0f;
+		color_data[ 3]=0.5f;
+		color_data[ 6]=0.5f;
+		color_data[ 9]=1.0f;
+		color_data[12]=0.5f;
+		color_data[15]=0.5f;
+		
+		
+		vaod2->init(position_data, color_data, element_data, GL_TRIANGLE_STRIP);
 	}
 }
 
@@ -257,20 +290,25 @@ int main(int argc, char** argv)
 	tsp = new BasicShaderProgram();
 	vao = new BasicShaderProgram::vaoType(*tsp);
 	vaod = new VAOPositionColorDynamic<BasicShaderProgram>(*tsp);
+	vaod2 = new VAOPositionColorDynamic<BasicShaderProgram>(*tsp);
 	
 	tex = new Texture2D(GL_TEXTURE0);
+	tex2 = new Texture2D(GL_TEXTURE0);
 	texsp = new TextureShaderProgram();
 	vaot = new TextureShaderProgram::vaoType(*texsp, *tex);
+	vaot2 = new TextureShaderProgram::vaoType(*texsp, *tex2);
 	
 	//シーンの初期化
 	initScene();
 	//メインループ
 	glutMainLoop();
 	
+	delete vaod2;
 	delete vaod;
 	delete vao;
 	delete tsp;
 	delete vaot;
+	delete vaot2;
 	delete texsp;
 	
 	return 0;

@@ -56,5 +56,6 @@ public:
 		shaderProgram.unuse();
 	}
 	typedef VAOPositionColor<BasicShaderProgram> vaoType;
+	typedef VAOPositionColorDynamic<BasicShaderProgram> vaoTypeDynamic;
 };
 
