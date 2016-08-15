@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['c',['C',['../classC.html',1,'']]],
   ['call',['Call',['../classgprof2dot_1_1Call.html',1,'gprof2dot']]],
   ['call_5fratios',['call_ratios',['../classgprof2dot_1_1Profile.html#a5a08da21cda98d7e9275c46b0e1a0bdf',1,'gprof2dot::Profile']]],
   ['call_5fre',['call_re',['../classgprof2dot_1_1PerfParser.html#a83cbef34c13bda233997e6e7fdd7ef97',1,'gprof2dot::PerfParser']]],
@@ -8,22 +7,18 @@ var searchData=
   ['callee_5fid',['callee_id',['../classgprof2dot_1_1Call.html#a6aee6ffc8bb4255da6ba57894adafa21',1,'gprof2dot::Call']]],
   ['callgrindparser',['CallgrindParser',['../classgprof2dot_1_1CallgrindParser.html',1,'gprof2dot']]],
   ['calls',['calls',['../classgprof2dot_1_1Function.html#affc15edc6438c1b6edf789c095e46b3b',1,'gprof2dot.Function.calls()'],['../classgprof2dot_1_1SleepyParser.html#aa011af43488b91323f2c33824fb2a737',1,'gprof2dot.SleepyParser.calls()'],['../namespacegprof2dot.html#a6ea801389cd8422d40566aaa550b0f31',1,'gprof2dot.CALLS()']]],
-  ['callsign',['callsign',['../structTrackData.html#a26a9e5e9ed1611eb138cf2b3e77525ce',1,'TrackData']]],
   ['character_5fdata',['character_data',['../classgprof2dot_1_1XmlTokenizer.html#a2b333617eba2b7dab55fda5a8dae82de',1,'gprof2dot.XmlTokenizer.character_data()'],['../classgprof2dot_1_1XmlParser.html#abd384c32143d2cb4f240b81d4432d85e',1,'gprof2dot.XmlParser.character_data()']]],
   ['character_5fpos',['character_pos',['../classgprof2dot_1_1XmlTokenizer.html#ac5b36cb11b6b142785a719730260e355',1,'gprof2dot::XmlTokenizer']]],
   ['color',['color',['../classVAOPositionColorBase.html#a933a8937940b52bc42c0c28cd53ca88f',1,'VAOPositionColorBase::color()'],['../classgprof2dot_1_1Theme.html#a810a0d518754fc7b8fb50b1406d88ff2',1,'gprof2dot.Theme.color()'],['../classgprof2dot_1_1DotWriter.html#a420390adc483e7e9572f2b34ae91d017',1,'gprof2dot.DotWriter.color()']]],
   ['column',['column',['../classgprof2dot_1_1XmlToken.html#a89a0d50443c1c077951a4b344974ae37',1,'gprof2dot.XmlToken.column()'],['../classgprof2dot_1_1XPerfParser.html#a4ba81af8de089a232e4066d472c5d242',1,'gprof2dot.XPerfParser.column()']]],
-  ['commit',['commit',['../classDBAccessor.html#a341178e029df9f86a1ac31d0eb4863f7',1,'DBAccessor']]],
   ['compat_5fiteritems',['compat_iteritems',['../namespacegprof2dot.html#ae31572f427f8ede249eb2451a0d3723e',1,'gprof2dot']]],
   ['compat_5fitervalues',['compat_itervalues',['../namespacegprof2dot.html#a2bc98f4483664acd6de9959350022758',1,'gprof2dot']]],
   ['compat_5fkeys',['compat_keys',['../namespacegprof2dot.html#aa6c232e958d0f75a0594a19916708753',1,'gprof2dot']]],
   ['compile',['compile',['../classShader.html#a5be69e48ac2436651ead777bf5fb5c9f',1,'Shader']]],
   ['consume',['consume',['../classgprof2dot_1_1LineParser.html#afccde74774bc2536b0f5ce322a072e25',1,'gprof2dot.LineParser.consume()'],['../classgprof2dot_1_1XmlParser.html#aae09668202d5192af8dc6bd7643d522b',1,'gprof2dot.XmlParser.consume()']]],
-  ['containertest',['containerTest',['../cpp11test_8cpp.html#ae88b7e4c8bfafdc8676a45eff25cad3c',1,'cpp11test.cpp']]],
   ['cost_5fevents',['cost_events',['../classgprof2dot_1_1CallgrindParser.html#a27bd25702cafae5bd21d50da74e9bcff',1,'gprof2dot::CallgrindParser']]],
   ['cost_5fpositions',['cost_positions',['../classgprof2dot_1_1CallgrindParser.html#a1c37253f7cd61a21190ae01ca758e0c5',1,'gprof2dot::CallgrindParser']]],
-  ['cpp11test_2ecpp',['cpp11test.cpp',['../cpp11test_8cpp.html',1,'']]],
-  ['cycle',['cycle',['../classgprof2dot_1_1Function.html#aab50551bcfa213a25faa8e428a6d2e2d',1,'gprof2dot::Function']]],
   ['cycle',['Cycle',['../classgprof2dot_1_1Cycle.html',1,'gprof2dot']]],
+  ['cycle',['cycle',['../classgprof2dot_1_1Function.html#aab50551bcfa213a25faa8e428a6d2e2d',1,'gprof2dot::Function']]],
   ['cycles',['cycles',['../classgprof2dot_1_1Profile.html#accb848ba5454fd5c29024b11d009581f',1,'gprof2dot.Profile.cycles()'],['../classgprof2dot_1_1GprofParser.html#a10897093fc2620987753e050b0981a29',1,'gprof2dot.GprofParser.cycles()'],['../classgprof2dot_1_1AXEParser.html#a5a8baa91d81d575cbc5bd35c7b6cf297',1,'gprof2dot.AXEParser.cycles()']]]
 ];

@@ -9,6 +9,5 @@ var searchData=
   ['element_5fstart',['element_start',['../classgprof2dot_1_1XmlParser.html#abd6ecbbff686f0e142e645194256732e',1,'gprof2dot::XmlParser']]],
   ['end_5fgraph',['end_graph',['../classgprof2dot_1_1DotWriter.html#af62826a666e383fc44ad875a09f52c98',1,'gprof2dot::DotWriter']]],
   ['eof',['eof',['../classgprof2dot_1_1LineParser.html#a1de841caf3594d9267bb70c1950dbc69',1,'gprof2dot::LineParser']]],
-  ['escape',['escape',['../classgprof2dot_1_1DotWriter.html#ad5cc68f04deb3fb28ed278eeefd689fe',1,'gprof2dot::DotWriter']]],
-  ['execquery',['execQuery',['../classDBAccessor.html#ad860f85d65b770fb0b752690fcdb701e',1,'DBAccessor']]]
+  ['escape',['escape',['../classgprof2dot_1_1DotWriter.html#ad5cc68f04deb3fb28ed278eeefd689fe',1,'gprof2dot::DotWriter']]]
 ];

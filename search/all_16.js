@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['x',['x',['../classVector2.html#a61d73d9036ccbb3257fbe595c014a1d0',1,'Vector2']]],
   ['xmlparser',['XmlParser',['../classgprof2dot_1_1XmlParser.html',1,'gprof2dot']]],
   ['xmltoken',['XmlToken',['../classgprof2dot_1_1XmlToken.html',1,'gprof2dot']]],
   ['xmltokenizer',['XmlTokenizer',['../classgprof2dot_1_1XmlTokenizer.html',1,'gprof2dot']]],

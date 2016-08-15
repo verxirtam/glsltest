@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['shader',['Shader',['../classShader.html',1,'']]],
-  ['shaderprogram',['ShaderProgram',['../classShaderProgram.html',1,'']]],
-  ['sleepyparser',['SleepyParser',['../classgprof2dot_1_1SleepyParser.html',1,'gprof2dot']]],
-  ['struct',['Struct',['../classgprof2dot_1_1Struct.html',1,'gprof2dot']]],
-  ['sysprofparser',['SysprofParser',['../classgprof2dot_1_1SysprofParser.html',1,'gprof2dot']]]
+  ['texture2d',['Texture2D',['../classTexture2D.html',1,'']]],
+  ['textureshaderprogram',['TextureShaderProgram',['../classTextureShaderProgram.html',1,'']]],
+  ['theme',['Theme',['../classgprof2dot_1_1Theme.html',1,'gprof2dot']]]
 ];

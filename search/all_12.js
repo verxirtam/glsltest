@@ -1,12 +1,7 @@
 var searchData=
 [
-  ['t',['t',['../classB.html#ac82ebb22ec393a2d96f672506f5449a2',1,'B']]],
   ['target',['target',['../classTexture2D.html#a75f81773b0525e79256055c87f3434e4',1,'Texture2D']]],
-  ['teethcountfirst',['teethCountFirst',['../classGear.html#a9125f99aa5482415d04aa542f91309c2',1,'Gear']]],
-  ['teethcountlast',['teethCountLast',['../classGear.html#aef0f193e3bd8762fbea7b0673f944c0b',1,'Gear']]],
   ['temperature_5fcolormap',['TEMPERATURE_COLORMAP',['../namespacegprof2dot.html#a6ab772da8dc9ed63db8293fb44228b0d',1,'gprof2dot']]],
-  ['test',['test',['../cpp11test_8cpp.html#ae1a3968e7947464bee7714f6d43b7002',1,'cpp11test.cpp']]],
-  ['testinitializerlist',['testInitializerList',['../cpp11test_8cpp.html#a2b8057337df066f817a81c8007b5691f',1,'cpp11test.cpp']]],
   ['tex',['tex',['../glsltest_8cpp.html#a52ac4881ea4eb536dbe77efe70140b1a',1,'glsltest.cpp']]],
   ['tex2',['tex2',['../glsltest_8cpp.html#a2357bfcace028801dc0294defa378738',1,'glsltest.cpp']]],
   ['texsp',['texsp',['../glsltest_8cpp.html#a302317d3d81d37450c043c7acebc5b67',1,'glsltest.cpp']]],
@@ -21,7 +16,7 @@ var searchData=
   ['textureshaderprogram_2eh',['TextureShaderProgram.h',['../TextureShaderProgram_8h.html',1,'']]],
   ['theme',['Theme',['../classgprof2dot_1_1Theme.html',1,'gprof2dot']]],
   ['themes',['themes',['../namespacegprof2dot.html#ab2cb707e70b7027f78ef903410993cb6',1,'gprof2dot']]],
-  ['time',['time',['../structTrackData.html#a23b2ee559472272cefb55e3cc89d6425',1,'TrackData::time()'],['../namespacegprof2dot.html#a9149d06ac8c80db227cf6bd3a74d9111',1,'gprof2dot.TIME()']]],
+  ['time',['TIME',['../namespacegprof2dot.html#a9149d06ac8c80db227cf6bd3a74d9111',1,'gprof2dot']]],
   ['time_5fratio',['TIME_RATIO',['../namespacegprof2dot.html#a945e30691b01276f7122c3328a882caa',1,'gprof2dot']]],
   ['times',['times',['../namespacegprof2dot.html#a4d051afd761d2ecba889bc1f662872b0',1,'gprof2dot']]],
   ['token',['token',['../classgprof2dot_1_1XmlParser.html#a925ac89af4a3fd56ee61b5d0db8aa4a4',1,'gprof2dot::XmlParser']]],
@@ -35,10 +30,6 @@ var searchData=
   ['trace_5fid_5fre',['trace_id_re',['../classgprof2dot_1_1HProfParser.html#a48a6aa7eb6239d7a8212bd662ed559a2',1,'gprof2dot::HProfParser']]],
   ['trace_5fre',['trace_re',['../classgprof2dot_1_1HProfParser.html#a90f5bfe64f29a6998422c2129c4ceaba',1,'gprof2dot::HProfParser']]],
   ['traces',['traces',['../classgprof2dot_1_1HProfParser.html#a3bc6396fd226f2d743b0defd1ff42b07',1,'gprof2dot::HProfParser']]],
-  ['track',['track',['../structTrackData.html#a4181c4213a31b60a84fab31e22fba963',1,'TrackData']]],
-  ['trackdata',['TrackData',['../structTrackData.html',1,'']]],
-  ['trackdata_2ecpp',['TrackData.cpp',['../TrackData_8cpp.html',1,'']]],
-  ['trackdata_2eh',['TrackData.h',['../TrackData_8h.html',1,'']]],
   ['translate',['translate',['../classgprof2dot_1_1GprofParser.html#a5e37a33b2a772a343e3a9f2f993f3f78',1,'gprof2dot.GprofParser.translate()'],['../classgprof2dot_1_1AXEParser.html#aa3acdd261201c849fcdcfc118d812d3f',1,'gprof2dot.AXEParser.translate()']]],
   ['tsp',['tsp',['../glsltest_8cpp.html#a2f4cbe24f01aacecdd65d3b4481c0a67',1,'glsltest.cpp']]],
   ['type',['type',['../classgprof2dot_1_1XmlToken.html#a13f2b4346b973f5040ede1ed152f1bed',1,'gprof2dot.XmlToken.type()'],['../classShader.html#add246d71b5fa4ab79f9a03fd48ea1971',1,'Shader::type()'],['../classVBOBase.html#ac48cbf3bbca2d731cd84e209ce104b13',1,'VBOBase::type()']]]

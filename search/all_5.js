@@ -16,6 +16,5 @@ var searchData=
   ['event',['event',['../classgprof2dot_1_1UndefinedEvent.html#ad1950a146dcbcb6d6c25e60ac687cda4',1,'gprof2dot::UndefinedEvent']]],
   ['event',['Event',['../classgprof2dot_1_1Event.html',1,'gprof2dot']]],
   ['events',['events',['../classgprof2dot_1_1Object.html#a8ff35ac56b5c5822e08d5bbff8eb9d4d',1,'gprof2dot::Object']]],
-  ['execquery',['execQuery',['../classDBAccessor.html#ad860f85d65b770fb0b752690fcdb701e',1,'DBAccessor']]],
   ['expected',['expected',['../classgprof2dot_1_1XmlTokenMismatch.html#a6c30f0bb3abc56c2fc149fc2f4d4ffc7',1,'gprof2dot::XmlTokenMismatch']]]
 ];
