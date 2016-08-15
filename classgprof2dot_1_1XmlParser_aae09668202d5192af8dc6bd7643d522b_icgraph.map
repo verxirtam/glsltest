@@ -1,0 +1,10 @@
+<map id="gprof2dot.XmlParser.consume" name="gprof2dot.XmlParser.consume">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1XmlParser.html#abd6ecbbff686f0e142e645194256732e" title="gprof2dot.XmlParser.element\l_start" alt="" coords="274,86,465,127"/>
+<area shape="rect" id="node8" href="$classgprof2dot_1_1XmlParser.html#a096b6559ec1d59b91f6111dab55b5680" title="gprof2dot.XmlParser.element_end" alt="" coords="260,211,479,237"/>
+<area shape="rect" id="node9" href="$classgprof2dot_1_1XmlParser.html#abd384c32143d2cb4f240b81d4432d85e" title="gprof2dot.XmlParser.character_data" alt="" coords="254,152,485,179"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1SysprofParser.html#a360cdbd4c6f1e54a8b6aec3fa8219aeb" title="gprof2dot.SysprofParser.parse" alt="" coords="1558,220,1757,247"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1SysprofParser.html#a32d344a02e89f3bd2ba3137b5a2badc9" title="gprof2dot.SysprofParser.parse\l_items" alt="" coords="1310,171,1509,213"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1SysprofParser.html#a7f06b3ec7d5902455c54899f52ec3c16" title="gprof2dot.SysprofParser.parse_item" alt="" coords="1030,156,1261,183"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1SysprofParser.html#a39e09ce94f972fcf61e8b6dd41e30b39" title="gprof2dot.SysprofParser.parse\l_value" alt="" coords="534,145,733,186"/>
+<area shape="rect" id="node7" href="$classgprof2dot_1_1SysprofParser.html#ab397904d17e69aedb09a470658eac0c3" title="gprof2dot.SysprofParser.parse\l_values" alt="" coords="782,145,981,186"/>
+</map>

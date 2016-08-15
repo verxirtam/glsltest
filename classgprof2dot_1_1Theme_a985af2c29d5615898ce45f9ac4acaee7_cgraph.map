@@ -1,0 +1,5 @@
+<map id="gprof2dot.Theme.edge_color" name="gprof2dot.Theme.edge_color">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1Theme.html#a810a0d518754fc7b8fb50b1406d88ff2" title="gprof2dot.Theme.color" alt="" coords="205,12,357,39"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1Theme.html#a481d1f519c553e26f5bf1b5dcfb742d3" title="gprof2dot.Theme.hsl\l_to_rgb" alt="" coords="405,5,547,46"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1Theme.html#ad9a6135524dbb031f2b08cc2ea6a1c34" title="gprof2dot.Theme._hue\l_to_rgb" alt="" coords="595,5,747,46"/>
+</map>

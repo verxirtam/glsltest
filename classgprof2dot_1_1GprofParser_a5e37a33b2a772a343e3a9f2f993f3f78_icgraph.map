@@ -1,0 +1,12 @@
+<map id="gprof2dot.GprofParser.translate" name="gprof2dot.GprofParser.translate">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1GprofParser.html#a7ec43ed242d4ded26bbcc6042c87a5b1" title="gprof2dot.GprofParser.parse\l_function_entry" alt="" coords="259,5,445,46"/>
+<area shape="rect" id="node9" href="$classgprof2dot_1_1GprofParser.html#ac71f871e5fb329669650f28defd21914" title="gprof2dot.GprofParser.parse\l_cycle_entry" alt="" coords="259,70,445,111"/>
+<area shape="rect" id="node10" href="$classgprof2dot_1_1AXEParser.html#a215dba9c921a4e8534135ad5f2a4b977" title="gprof2dot.AXEParser.parse\l_function_entry" alt="" coords="261,135,443,177"/>
+<area shape="rect" id="node11" href="$classgprof2dot_1_1AXEParser.html#ab1d33a104af924cdc909ed1262b4fb96" title="gprof2dot.AXEParser.parse\l_cycle_entry" alt="" coords="261,201,443,242"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1GprofParser.html#a884c232d322a520a6083387cabc311b6" title="gprof2dot.GprofParser.parse\l_cg_entry" alt="" coords="493,38,680,79"/>
+<area shape="rect" id="node8" href="$classgprof2dot_1_1AXEParser.html#a9fe6b53965a45bf75ea8ae8b3044fe6f" title="gprof2dot.AXEParser.parse\l_cg_entry" alt="" coords="496,103,677,145"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1GprofParser.html#a1ea5c8307e4e99ffef792c4b8c41364d" title="gprof2dot.GprofParser.parse_cg" alt="" coords="729,45,935,72"/>
+<area shape="rect" id="node7" href="$classgprof2dot_1_1AXEParser.html#a651c2935053c0d5957d03923e3d0a307" title="gprof2dot.AXEParser.parse_cg" alt="" coords="731,96,933,123"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1GprofParser.html#aae5ce339a4476254669426fe89f6d353" title="gprof2dot.GprofParser.parse" alt="" coords="984,45,1171,72"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1AXEParser.html#a3cad8da552f095254bd1a0418945d5dc" title="gprof2dot.AXEParser.parse" alt="" coords="987,96,1168,123"/>
+</map>

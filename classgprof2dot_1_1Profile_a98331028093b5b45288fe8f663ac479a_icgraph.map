@@ -1,0 +1,5 @@
+<map id="gprof2dot.Profile._integrate_call" name="gprof2dot.Profile._integrate_call">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1Profile.html#a3fded21f9a1f262a7c2de5d3c31bc8b7" title="gprof2dot.Profile.\l_integrate_function" alt="" coords="347,5,479,46"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1Profile.html#a22109777de62cb3a9164ef9576618203" title="gprof2dot.Profile.\l_integrate_cycle" alt="" coords="177,75,298,117"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1Profile.html#a387e21c51375709f3203a8d109bde696" title="gprof2dot.Profile.integrate" alt="" coords="528,12,699,39"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="gprof2dot.Theme.node_fgcolor" name="gprof2dot.Theme.node_fgcolor">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1Theme.html#a21f9d0256a90922f1d2482689fdf7120" title="gprof2dot.Theme.graph\l_bgcolor" alt="" coords="206,5,362,46"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1Theme.html#a810a0d518754fc7b8fb50b1406d88ff2" title="gprof2dot.Theme.color" alt="" coords="208,71,360,97"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1Theme.html#a481d1f519c553e26f5bf1b5dcfb742d3" title="gprof2dot.Theme.hsl\l_to_rgb" alt="" coords="411,34,552,75"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1Theme.html#ad9a6135524dbb031f2b08cc2ea6a1c34" title="gprof2dot.Theme._hue\l_to_rgb" alt="" coords="600,34,752,75"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="gprof2dot.LineParser" name="gprof2dot.LineParser">
+<area shape="rect" id="node3" href="$classgprof2dot_1_1CallgrindParser.html" title="gprof2dot.CallgrindParser" alt="" coords="366,5,535,32"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1HProfParser.html" title="gprof2dot.HProfParser" alt="" coords="375,56,527,83"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1OprofileParser.html" title="gprof2dot.OprofileParser" alt="" coords="369,107,532,133"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1PerfParser.html" title="gprof2dot.PerfParser" alt="" coords="379,157,522,184"/>
+<area shape="rect" id="node2" href="$classgprof2dot_1_1Parser.html" title="gprof2dot.Parser" alt="" coords="6,81,125,108"/>
+</map>

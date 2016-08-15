@@ -1,0 +1,23 @@
+<map id="gprof2dot.CallgrindParser.parse_part" name="gprof2dot.CallgrindParser.parse_part">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1CallgrindParser.html#ae9b58b90f1ea7910098c1ae3cc161e6a" title="gprof2dot.CallgrindParser.parse\l_header_line" alt="" coords="288,441,493,482"/>
+<area shape="rect" id="node16" href="$classgprof2dot_1_1CallgrindParser.html#a05c68f1cde6554393eaee6dd92233d15" title="gprof2dot.CallgrindParser.parse\l_body_line" alt="" coords="541,227,747,269"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1CallgrindParser.html#a482c7ba0ace6e0449c3041252672de80" title="gprof2dot.CallgrindParser.parse\l_empty" alt="" coords="809,298,1015,339"/>
+<area shape="rect" id="node8" href="$classgprof2dot_1_1CallgrindParser.html#a1307ec43bde4b9de77ea7089fb704a4b" title="gprof2dot.CallgrindParser.parse\l_comment" alt="" coords="809,363,1015,405"/>
+<area shape="rect" id="node9" href="$classgprof2dot_1_1CallgrindParser.html#a03107de3ab1eb08b5915bab7cfa34bfe" title="gprof2dot.CallgrindParser.parse\l_part_detail" alt="" coords="809,531,1015,573"/>
+<area shape="rect" id="node11" href="$classgprof2dot_1_1CallgrindParser.html#ae76ef081428ea8d6a2dd730233a06657" title="gprof2dot.CallgrindParser.parse\l_description" alt="" coords="541,590,747,631"/>
+<area shape="rect" id="node13" href="$classgprof2dot_1_1CallgrindParser.html#a9c5d2056a2ab55501f4faa78e2b563e6" title="gprof2dot.CallgrindParser.parse\l_event_specification" alt="" coords="541,655,747,697"/>
+<area shape="rect" id="node14" href="$classgprof2dot_1_1CallgrindParser.html#ae77b2ac2578c458a09533da4f57404f5" title="gprof2dot.CallgrindParser.parse\l_cost_line_def" alt="" coords="541,407,747,449"/>
+<area shape="rect" id="node15" href="$classgprof2dot_1_1CallgrindParser.html#ae19c8ddc519d35387af0c5866c877b86" title="gprof2dot.CallgrindParser.parse\l_cost_summary" alt="" coords="541,473,747,514"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1LineParser.html#a1de841caf3594d9267bb70c1950dbc69" title="gprof2dot.LineParser.eof" alt="" coords="1115,372,1279,399"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1LineParser.html#af7981f491d2779acc749095fbe2601c8" title="gprof2dot.LineParser.lookahead" alt="" coords="1365,307,1571,333"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1LineParser.html#afccde74774bc2536b0f5ce322a072e25" title="gprof2dot.LineParser.consume" alt="" coords="1369,241,1567,268"/>
+<area shape="rect" id="node7" href="$classgprof2dot_1_1LineParser.html#a231fd605b597fe7f055fb2ef8a033ef5" title="gprof2dot.LineParser.readline" alt="" coords="1626,241,1817,268"/>
+<area shape="rect" id="node10" href="$classgprof2dot_1_1CallgrindParser.html#af911005afa8fcdc4684ede4d0af3e1a3" title="gprof2dot.CallgrindParser.parse_keys" alt="" coords="1077,524,1317,551"/>
+<area shape="rect" id="node12" href="$classgprof2dot_1_1CallgrindParser.html#aec0b3fa43a0874d649dafe15380b60bd" title="gprof2dot.CallgrindParser.parse_key" alt="" coords="795,597,1029,624"/>
+<area shape="rect" id="node17" href="$classgprof2dot_1_1CallgrindParser.html#aebad5e8fce7c076990ef421bb37b3004" title="gprof2dot.CallgrindParser.parse\l_cost_line" alt="" coords="1095,37,1300,78"/>
+<area shape="rect" id="node21" href="$classgprof2dot_1_1CallgrindParser.html#aa7aa586a9805397fc035fe8da3d0a3ae" title="gprof2dot.CallgrindParser.parse\l_position_spec" alt="" coords="1095,205,1300,246"/>
+<area shape="rect" id="node22" href="$classgprof2dot_1_1CallgrindParser.html#a39e1403aed022ba0837197b38654c58f" title="gprof2dot.CallgrindParser.parse\l_association_spec" alt="" coords="809,134,1015,175"/>
+<area shape="rect" id="node18" href="$classgprof2dot_1_1CallgrindParser.html#a4395b79a43ef6d76659db8be35821b39" title="gprof2dot.CallgrindParser.get\l_function" alt="" coords="1373,5,1563,46"/>
+<area shape="rect" id="node20" href="$classgprof2dot_1_1CallgrindParser.html#a17b9ca84ed7c8b25a43b6f2683f608c5" title="gprof2dot.CallgrindParser.get\l_callee" alt="" coords="1373,70,1563,111"/>
+<area shape="rect" id="node19" href="$classgprof2dot_1_1CallgrindParser.html#a9d640e7784d23ef8cdda7c8e092bff52" title="gprof2dot.CallgrindParser.make\l_function" alt="" coords="1619,38,1824,79"/>
+</map>

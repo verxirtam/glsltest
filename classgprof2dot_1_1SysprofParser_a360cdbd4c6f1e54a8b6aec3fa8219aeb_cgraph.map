@@ -1,0 +1,14 @@
+<map id="gprof2dot.SysprofParser.parse" name="gprof2dot.SysprofParser.parse">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1XmlParser.html#abd6ecbbff686f0e142e645194256732e" title="gprof2dot.XmlParser.element\l_start" alt="" coords="1298,86,1489,127"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1SysprofParser.html#a32d344a02e89f3bd2ba3137b5a2badc9" title="gprof2dot.SysprofParser.parse\l_items" alt="" coords="254,221,453,262"/>
+<area shape="rect" id="node9" href="$classgprof2dot_1_1SysprofParser.html#a39e09ce94f972fcf61e8b6dd41e30b39" title="gprof2dot.SysprofParser.parse\l_value" alt="" coords="1030,145,1229,186"/>
+<area shape="rect" id="node11" href="$classgprof2dot_1_1XmlParser.html#a096b6559ec1d59b91f6111dab55b5680" title="gprof2dot.XmlParser.element_end" alt="" coords="1284,207,1503,233"/>
+<area shape="rect" id="node12" href="$classgprof2dot_1_1SysprofParser.html#a54146de1571e20eb987b232ae2ad2768" title="gprof2dot.SysprofParser.build\l_profile" alt="" coords="256,414,451,455"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1LineParser.html#afccde74774bc2536b0f5ce322a072e25" title="gprof2dot.LineParser.consume" alt="" coords="1558,127,1757,153"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1XmlParser.html#aae09668202d5192af8dc6bd7643d522b" title="gprof2dot.XmlParser.consume" alt="" coords="1558,177,1757,204"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1LineParser.html#a231fd605b597fe7f055fb2ef8a033ef5" title="gprof2dot.LineParser.readline" alt="" coords="1806,127,1997,153"/>
+<area shape="rect" id="node7" href="$classgprof2dot_1_1SysprofParser.html#a7f06b3ec7d5902455c54899f52ec3c16" title="gprof2dot.SysprofParser.parse_item" alt="" coords="502,177,733,204"/>
+<area shape="rect" id="node8" href="$classgprof2dot_1_1SysprofParser.html#ab397904d17e69aedb09a470658eac0c3" title="gprof2dot.SysprofParser.parse\l_values" alt="" coords="782,145,981,186"/>
+<area shape="rect" id="node10" href="$classgprof2dot_1_1XmlParser.html#abd384c32143d2cb4f240b81d4432d85e" title="gprof2dot.XmlParser.character_data" alt="" coords="1278,152,1509,179"/>
+<area shape="rect" id="node13" href="$namespacegprof2dot.html#ae31572f427f8ede249eb2451a0d3723e" title="gprof2dot.compat_iteritems" alt="" coords="527,421,707,448"/>
+</map>

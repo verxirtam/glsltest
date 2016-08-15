@@ -1,0 +1,18 @@
+<map id="gprof2dot.DotWriter.graph" name="gprof2dot.DotWriter.graph">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1DotWriter.html#ab7b6b2b6263d56422310c81af0a7ffd2" title="gprof2dot.DotWriter.begin\l_graph" alt="" coords="449,70,620,111"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1DotWriter.html#aea8f090ba56011c5b6a441b982eeeae7" title="gprof2dot.DotWriter.attr" alt="" coords="231,237,390,264"/>
+<area shape="rect" id="node6" href="$namespacegprof2dot.html#a46332489b24781ec0db02c3093f3d319" title="gprof2dot.sorted_iteritems" alt="" coords="675,440,848,467"/>
+<area shape="rect" id="node10" href="$classgprof2dot_1_1DotWriter.html#af8e506860e67d0b6f965a67e817dd511" title="gprof2dot.DotWriter.wrap\l_function_name" alt="" coords="227,466,395,507"/>
+<area shape="rect" id="node11" href="$classgprof2dot_1_1DotWriter.html#a1f793b417a4df2b7abea7ae84255601c" title="gprof2dot.DotWriter.node" alt="" coords="227,288,395,315"/>
+<area shape="rect" id="node12" href="$classgprof2dot_1_1Theme.html#a810a0d518754fc7b8fb50b1406d88ff2" title="gprof2dot.Theme.color" alt="" coords="235,532,387,559"/>
+<area shape="rect" id="node15" href="$classgprof2dot_1_1DotWriter.html#a420390adc483e7e9572f2b34ae91d017" title="gprof2dot.DotWriter.color" alt="" coords="227,583,395,609"/>
+<area shape="rect" id="node16" href="$classgprof2dot_1_1DotWriter.html#a62e842cf2aef4ac457ffb4b5fd58d579" title="gprof2dot.DotWriter.edge" alt="" coords="227,339,395,365"/>
+<area shape="rect" id="node17" href="$classgprof2dot_1_1DotWriter.html#af62826a666e383fc44ad875a09f52c98" title="gprof2dot.DotWriter.end\l_graph" alt="" coords="454,5,615,46"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1DotWriter.html#a90eac2f9f3688a1dd39a01cea391f747" title="gprof2dot.DotWriter.write" alt="" coords="904,187,1072,213"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1DotWriter.html#a82e8b352180b8e1125e73dcb9f200c0c" title="gprof2dot.DotWriter.attr_list" alt="" coords="443,237,626,264"/>
+<area shape="rect" id="node8" href="$classgprof2dot_1_1DotWriter.html#adf3a673cbc080fc41e196078b963e4b5" title="gprof2dot.DotWriter.id" alt="" coords="686,288,837,315"/>
+<area shape="rect" id="node7" href="$namespacegprof2dot.html#aa6c232e958d0f75a0594a19916708753" title="gprof2dot.compat_keys" alt="" coords="909,440,1067,467"/>
+<area shape="rect" id="node9" href="$classgprof2dot_1_1DotWriter.html#ad5cc68f04deb3fb28ed278eeefd689fe" title="gprof2dot.DotWriter.escape" alt="" coords="897,288,1079,315"/>
+<area shape="rect" id="node13" href="$classgprof2dot_1_1Theme.html#a481d1f519c553e26f5bf1b5dcfb742d3" title="gprof2dot.Theme.hsl\l_to_rgb" alt="" coords="464,525,605,566"/>
+<area shape="rect" id="node14" href="$classgprof2dot_1_1Theme.html#ad9a6135524dbb031f2b08cc2ea6a1c34" title="gprof2dot.Theme._hue\l_to_rgb" alt="" coords="685,525,837,566"/>
+</map>

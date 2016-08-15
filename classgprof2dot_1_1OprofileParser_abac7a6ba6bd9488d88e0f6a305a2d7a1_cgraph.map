@@ -1,0 +1,17 @@
+<map id="gprof2dot.OprofileParser.parse" name="gprof2dot.OprofileParser.parse">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1LineParser.html#a231fd605b597fe7f055fb2ef8a033ef5" title="gprof2dot.LineParser.readline" alt="" coords="1262,160,1453,187"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1OprofileParser.html#af7b7e20c3ab112f21daa621ed368fd01" title="gprof2dot.OprofileParser.parse\l_header" alt="" coords="254,195,453,237"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1LineParser.html#af7981f491d2779acc749095fbe2601c8" title="gprof2dot.LineParser.lookahead" alt="" coords="1008,185,1213,212"/>
+<area shape="rect" id="node9" href="$classgprof2dot_1_1OprofileParser.html#aaf6a8040e8e98add2b022bc358f92948" title="gprof2dot.OprofileParser.parse\l_entry" alt="" coords="254,405,453,446"/>
+<area shape="rect" id="node16" href="$namespacegprof2dot.html#a2bc98f4483664acd6de9959350022758" title="gprof2dot.compat_itervalues" alt="" coords="1017,596,1204,623"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1OprofileParser.html#a3b8091f1c8c0105e5b350009656fbfeb" title="gprof2dot.OprofileParser.match\l_header" alt="" coords="755,145,957,186"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1LineParser.html#afccde74774bc2536b0f5ce322a072e25" title="gprof2dot.LineParser.consume" alt="" coords="1011,352,1210,379"/>
+<area shape="rect" id="node7" href="$classgprof2dot_1_1OprofileParser.html#a89c4755af4275bc9643295e5d9b36f32" title="gprof2dot.OprofileParser.skip\l_separator" alt="" coords="507,307,698,349"/>
+<area shape="rect" id="node8" href="$classgprof2dot_1_1OprofileParser.html#a87caf9d81fd91969c2b2d11c9e067fd1" title="gprof2dot.OprofileParser.match\l_separator" alt="" coords="755,210,957,251"/>
+<area shape="rect" id="node10" href="$classgprof2dot_1_1OprofileParser.html#a6311fbb94fb6d26f2ffb6ce3982b2640" title="gprof2dot.OprofileParser.parse\l_subentries" alt="" coords="503,438,702,479"/>
+<area shape="rect" id="node12" href="$classgprof2dot_1_1OprofileParser.html#a86db4a49b69efee5ce795dc0cc1247c7" title="gprof2dot.OprofileParser.parse\l_subentry" alt="" coords="757,494,955,535"/>
+<area shape="rect" id="node13" href="$classgprof2dot_1_1OprofileParser.html#a2f8e5aab7ee3788a0458893782689652" title="gprof2dot.OprofileParser.match\l_primary" alt="" coords="501,373,704,414"/>
+<area shape="rect" id="node14" href="$classgprof2dot_1_1OprofileParser.html#ab626a04a542da15b1ec5ff02742f8855" title="gprof2dot.OprofileParser.add\l_entry" alt="" coords="509,558,697,599"/>
+<area shape="rect" id="node11" href="$classgprof2dot_1_1OprofileParser.html#a0d535f5332aa7dc0038e2000d1f11237" title="gprof2dot.OprofileParser.match\l_secondary" alt="" coords="755,429,957,470"/>
+<area shape="rect" id="node15" href="$classgprof2dot_1_1OprofileParser.html#ac101193aa5b779286e012289d746423b" title="gprof2dot.OprofileParser.update\l_subentries_dict" alt="" coords="753,559,959,601"/>
+</map>

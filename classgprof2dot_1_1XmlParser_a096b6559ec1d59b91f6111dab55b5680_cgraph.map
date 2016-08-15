@@ -1,0 +1,5 @@
+<map id="gprof2dot.XmlParser.element_end" name="gprof2dot.XmlParser.element_end">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1LineParser.html#afccde74774bc2536b0f5ce322a072e25" title="gprof2dot.LineParser.consume" alt="" coords="273,5,471,32"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1XmlParser.html#aae09668202d5192af8dc6bd7643d522b" title="gprof2dot.XmlParser.consume" alt="" coords="273,56,471,83"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1LineParser.html#a231fd605b597fe7f055fb2ef8a033ef5" title="gprof2dot.LineParser.readline" alt="" coords="521,5,711,32"/>
+</map>

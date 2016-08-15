@@ -1,0 +1,7 @@
+<map id="gprof2dot.AXEParser.translate" name="gprof2dot.AXEParser.translate">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1AXEParser.html#a215dba9c921a4e8534135ad5f2a4b977" title="gprof2dot.AXEParser.parse\l_function_entry" alt="" coords="253,5,435,46"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1AXEParser.html#ab1d33a104af924cdc909ed1262b4fb96" title="gprof2dot.AXEParser.parse\l_cycle_entry" alt="" coords="253,70,435,111"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1AXEParser.html#a9fe6b53965a45bf75ea8ae8b3044fe6f" title="gprof2dot.AXEParser.parse\l_cg_entry" alt="" coords="483,38,664,79"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1AXEParser.html#a651c2935053c0d5957d03923e3d0a307" title="gprof2dot.AXEParser.parse_cg" alt="" coords="712,45,915,72"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1AXEParser.html#a3cad8da552f095254bd1a0418945d5dc" title="gprof2dot.AXEParser.parse" alt="" coords="963,45,1144,72"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="gprof2dot.CallgrindParser.parse_description" name="gprof2dot.CallgrindParser.parse_description">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1CallgrindParser.html#aec0b3fa43a0874d649dafe15380b60bd" title="gprof2dot.CallgrindParser.parse_key" alt="" coords="259,31,493,57"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1CallgrindParser.html#af911005afa8fcdc4684ede4d0af3e1a3" title="gprof2dot.CallgrindParser.parse_keys" alt="" coords="541,31,781,57"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1LineParser.html#af7981f491d2779acc749095fbe2601c8" title="gprof2dot.LineParser.lookahead" alt="" coords="829,5,1035,32"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1LineParser.html#afccde74774bc2536b0f5ce322a072e25" title="gprof2dot.LineParser.consume" alt="" coords="833,56,1031,83"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1LineParser.html#a231fd605b597fe7f055fb2ef8a033ef5" title="gprof2dot.LineParser.readline" alt="" coords="1083,56,1274,83"/>
+</map>

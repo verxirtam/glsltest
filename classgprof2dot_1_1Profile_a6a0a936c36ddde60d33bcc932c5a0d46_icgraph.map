@@ -1,0 +1,8 @@
+<map id="gprof2dot.Profile.ratio" name="gprof2dot.Profile.ratio">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1Profile.html#a5a08da21cda98d7e9275c46b0e1a0bdf" title="gprof2dot.Profile.call\l_ratios" alt="" coords="215,5,356,46"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1Profile.html#ad5757608cf7c1fb1f4e5757232793e5a" title="gprof2dot.Profile.\l_integrate_cycle_function" alt="" coords="200,94,371,135"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1Profile.html#a22109777de62cb3a9164ef9576618203" title="gprof2dot.Profile.\l_integrate_cycle" alt="" coords="419,94,541,135"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1Profile.html#a3fded21f9a1f262a7c2de5d3c31bc8b7" title="gprof2dot.Profile.\l_integrate_function" alt="" coords="590,65,722,106"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1Profile.html#a387e21c51375709f3203a8d109bde696" title="gprof2dot.Profile.integrate" alt="" coords="771,43,941,69"/>
+<area shape="rect" id="node7" href="$classgprof2dot_1_1Profile.html#a98331028093b5b45288fe8f663ac479a" title="gprof2dot.Profile.\l_integrate_call" alt="" coords="795,94,917,135"/>
+</map>

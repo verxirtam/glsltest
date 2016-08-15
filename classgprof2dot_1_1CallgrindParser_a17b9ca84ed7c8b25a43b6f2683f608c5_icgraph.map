@@ -1,0 +1,7 @@
+<map id="gprof2dot.CallgrindParser.get_callee" name="gprof2dot.CallgrindParser.get_callee">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1CallgrindParser.html#aebad5e8fce7c076990ef421bb37b3004" title="gprof2dot.CallgrindParser.parse\l_cost_line" alt="" coords="245,5,451,46"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1CallgrindParser.html#a05c68f1cde6554393eaee6dd92233d15" title="gprof2dot.CallgrindParser.parse\l_body_line" alt="" coords="752,5,957,46"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1CallgrindParser.html#a39e1403aed022ba0837197b38654c58f" title="gprof2dot.CallgrindParser.parse\l_association_spec" alt="" coords="499,34,704,75"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1CallgrindParser.html#a023eb22d875c91e606144f401832b155" title="gprof2dot.CallgrindParser.parse_part" alt="" coords="1005,12,1240,39"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1CallgrindParser.html#a3a2a941f900c94203df66ed3cb1aae72" title="gprof2dot.CallgrindParser.parse" alt="" coords="1288,12,1493,39"/>
+</map>

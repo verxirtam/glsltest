@@ -1,0 +1,11 @@
+<map id="gprof2dot.GprofParser.parse" name="gprof2dot.GprofParser.parse">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1GprofParser.html#a1ea5c8307e4e99ffef792c4b8c41364d" title="gprof2dot.GprofParser.parse_cg" alt="" coords="241,56,447,83"/>
+<area shape="rect" id="node10" href="$namespacegprof2dot.html#a2bc98f4483664acd6de9959350022758" title="gprof2dot.compat_itervalues" alt="" coords="251,107,437,133"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1LineParser.html#a231fd605b597fe7f055fb2ef8a033ef5" title="gprof2dot.LineParser.readline" alt="" coords="501,5,691,32"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1GprofParser.html#a0ed9cc565173b72431fcb2a3dc114522" title="gprof2dot.GprofParser.readline" alt="" coords="497,56,695,83"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1GprofParser.html#a884c232d322a520a6083387cabc311b6" title="gprof2dot.GprofParser.parse\l_cg_entry" alt="" coords="503,107,689,149"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1GprofParser.html#ac71f871e5fb329669650f28defd21914" title="gprof2dot.GprofParser.parse\l_cycle_entry" alt="" coords="744,74,931,115"/>
+<area shape="rect" id="node9" href="$classgprof2dot_1_1GprofParser.html#a7ec43ed242d4ded26bbcc6042c87a5b1" title="gprof2dot.GprofParser.parse\l_function_entry" alt="" coords="744,139,931,181"/>
+<area shape="rect" id="node7" href="$classgprof2dot_1_1GprofParser.html#a5e37a33b2a772a343e3a9f2f993f3f78" title="gprof2dot.GprofParser.translate" alt="" coords="979,115,1183,141"/>
+<area shape="rect" id="node8" href="$namespacegprof2dot.html#ae31572f427f8ede249eb2451a0d3723e" title="gprof2dot.compat_iteritems" alt="" coords="1233,115,1413,141"/>
+</map>

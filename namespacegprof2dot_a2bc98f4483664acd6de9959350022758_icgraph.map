@@ -1,0 +1,24 @@
+<map id="gprof2dot.compat_itervalues" name="gprof2dot.compat_itervalues">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1Profile.html#a967f8245e9dc6de88a9b0c096cb42258" title="gprof2dot.Profile.validate" alt="" coords="261,5,427,32"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1Profile.html#a751103c3f850d987cb3447f3de9da7c5" title="gprof2dot.Profile.find\l_cycles" alt="" coords="519,81,662,122"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1Profile.html#aa39a4ce51cf4e033cd44e9f964591484" title="gprof2dot.Profile.\l_tarjan" alt="" coords="283,81,405,122"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1Profile.html#a5a08da21cda98d7e9275c46b0e1a0bdf" title="gprof2dot.Profile.call\l_ratios" alt="" coords="520,545,661,586"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1Profile.html#a387e21c51375709f3203a8d109bde696" title="gprof2dot.Profile.integrate" alt="" coords="505,147,676,173"/>
+<area shape="rect" id="node7" href="$classgprof2dot_1_1Profile.html#a3fded21f9a1f262a7c2de5d3c31bc8b7" title="gprof2dot.Profile.\l_integrate_function" alt="" coords="278,249,410,290"/>
+<area shape="rect" id="node9" href="$classgprof2dot_1_1Profile.html#a22109777de62cb3a9164ef9576618203" title="gprof2dot.Profile.\l_integrate_cycle" alt="" coords="773,349,894,390"/>
+<area shape="rect" id="node10" href="$classgprof2dot_1_1Profile.html#aec9e18cb8d8f2d16c0cb6a26015b2c13" title="gprof2dot.Profile.\l_rank_cycle_function" alt="" coords="518,390,663,431"/>
+<area shape="rect" id="node11" href="$classgprof2dot_1_1Profile.html#a69823b0f0096ea6f76198c6c50035cda" title="gprof2dot.Profile.\l_call_ratios_cycle" alt="" coords="527,479,654,521"/>
+<area shape="rect" id="node12" href="$classgprof2dot_1_1Profile.html#ad5757608cf7c1fb1f4e5757232793e5a" title="gprof2dot.Profile.\l_integrate_cycle_function" alt="" coords="505,634,676,675"/>
+<area shape="rect" id="node13" href="$classgprof2dot_1_1Profile.html#a2a74e55a245a5976a119f8a5bd3e2241" title="gprof2dot.Profile.aggregate" alt="" coords="255,579,433,605"/>
+<area shape="rect" id="node14" href="$classgprof2dot_1_1Profile.html#a6a0a936c36ddde60d33bcc932c5a0d46" title="gprof2dot.Profile.ratio" alt="" coords="271,528,417,555"/>
+<area shape="rect" id="node15" href="$classgprof2dot_1_1Profile.html#a314549755d9bb31483f0871f85fce5ed" title="gprof2dot.Profile.prune" alt="" coords="267,680,421,707"/>
+<area shape="rect" id="node16" href="$classgprof2dot_1_1Profile.html#af360593d861dca8d0bebec5e7c8bc2a9" title="gprof2dot.Profile.dump" alt="" coords="267,731,421,757"/>
+<area shape="rect" id="node17" href="$classgprof2dot_1_1GprofParser.html#aae5ce339a4476254669426fe89f6d353" title="gprof2dot.GprofParser.parse" alt="" coords="251,781,437,808"/>
+<area shape="rect" id="node18" href="$classgprof2dot_1_1AXEParser.html#a3cad8da552f095254bd1a0418945d5dc" title="gprof2dot.AXEParser.parse" alt="" coords="253,832,435,859"/>
+<area shape="rect" id="node19" href="$classgprof2dot_1_1PerfParser.html#a6205ebf08568c3b8d57341c72bd9b4ce" title="gprof2dot.PerfParser.parse" alt="" coords="255,883,433,909"/>
+<area shape="rect" id="node20" href="$classgprof2dot_1_1OprofileParser.html#ac101193aa5b779286e012289d746423b" title="gprof2dot.OprofileParser.update\l_subentries_dict" alt="" coords="241,985,447,1026"/>
+<area shape="rect" id="node23" href="$classgprof2dot_1_1OprofileParser.html#abac7a6ba6bd9488d88e0f6a305a2d7a1" title="gprof2dot.OprofileParser.parse" alt="" coords="982,963,1181,989"/>
+<area shape="rect" id="node8" href="$classgprof2dot_1_1Profile.html#a98331028093b5b45288fe8f663ac479a" title="gprof2dot.Profile.\l_integrate_call" alt="" coords="530,198,651,239"/>
+<area shape="rect" id="node21" href="$classgprof2dot_1_1OprofileParser.html#ab626a04a542da15b1ec5ff02742f8855" title="gprof2dot.OprofileParser.add\l_entry" alt="" coords="497,985,685,1026"/>
+<area shape="rect" id="node22" href="$classgprof2dot_1_1OprofileParser.html#aaf6a8040e8e98add2b022bc358f92948" title="gprof2dot.OprofileParser.parse\l_entry" alt="" coords="734,985,933,1026"/>
+</map>

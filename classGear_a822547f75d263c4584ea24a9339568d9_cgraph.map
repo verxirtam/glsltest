@@ -1,0 +1,7 @@
+<map id="Gear::operator*" name="Gear::operator*">
+<area shape="rect" id="node2" href="$classGear.html#a110d1f1716a0fd2b85cc06e970aaf37a" title="Gear::getTeethCountFirst" alt="" coords="165,5,336,32"/>
+<area shape="rect" id="node3" href="$classGear.html#a2412aea850bb3db0579286357ddca5b6" title="Gear::getTeethCountLast" alt="" coords="166,56,335,83"/>
+<area shape="rect" id="node4" href="$classGear.html#a6bb1ab4d172ffa83017fbaae607c49dc" title="Gear::getRatioInput" alt="" coords="183,107,319,133"/>
+<area shape="rect" id="node5" href="$classGear.html#a577b420a6a0b64927c7fda0a687e3737" title="Gear::getRatioOutput" alt="" coords="177,157,324,184"/>
+<area shape="rect" id="node6" href="$classGear.html#a89f41f7e600df9ed2e23c8bac839315a" title="Gear::Gear" alt="" coords="207,208,294,235"/>
+</map>

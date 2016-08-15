@@ -1,0 +1,15 @@
+<map id="gprof2dot.CallgrindParser.parse_header_line" name="gprof2dot.CallgrindParser.parse_header_line">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1CallgrindParser.html#a482c7ba0ace6e0449c3041252672de80" title="gprof2dot.CallgrindParser.parse\l_empty" alt="" coords="812,84,1017,125"/>
+<area shape="rect" id="node7" href="$classgprof2dot_1_1CallgrindParser.html#a1307ec43bde4b9de77ea7089fb704a4b" title="gprof2dot.CallgrindParser.parse\l_comment" alt="" coords="812,201,1017,243"/>
+<area shape="rect" id="node8" href="$classgprof2dot_1_1CallgrindParser.html#a03107de3ab1eb08b5915bab7cfa34bfe" title="gprof2dot.CallgrindParser.parse\l_part_detail" alt="" coords="527,113,732,155"/>
+<area shape="rect" id="node10" href="$classgprof2dot_1_1CallgrindParser.html#ae76ef081428ea8d6a2dd730233a06657" title="gprof2dot.CallgrindParser.parse\l_description" alt="" coords="259,172,464,213"/>
+<area shape="rect" id="node12" href="$classgprof2dot_1_1CallgrindParser.html#a9c5d2056a2ab55501f4faa78e2b563e6" title="gprof2dot.CallgrindParser.parse\l_event_specification" alt="" coords="259,237,464,279"/>
+<area shape="rect" id="node13" href="$classgprof2dot_1_1CallgrindParser.html#ae77b2ac2578c458a09533da4f57404f5" title="gprof2dot.CallgrindParser.parse\l_cost_line_def" alt="" coords="527,259,732,300"/>
+<area shape="rect" id="node14" href="$classgprof2dot_1_1CallgrindParser.html#ae19c8ddc519d35387af0c5866c877b86" title="gprof2dot.CallgrindParser.parse\l_cost_summary" alt="" coords="259,55,464,96"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1LineParser.html#a1de841caf3594d9267bb70c1950dbc69" title="gprof2dot.LineParser.eof" alt="" coords="1103,91,1267,118"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1LineParser.html#af7981f491d2779acc749095fbe2601c8" title="gprof2dot.LineParser.lookahead" alt="" coords="1083,197,1288,223"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1LineParser.html#afccde74774bc2536b0f5ce322a072e25" title="gprof2dot.LineParser.consume" alt="" coords="1086,146,1285,173"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1LineParser.html#a231fd605b597fe7f055fb2ef8a033ef5" title="gprof2dot.LineParser.readline" alt="" coords="1337,146,1527,173"/>
+<area shape="rect" id="node9" href="$classgprof2dot_1_1CallgrindParser.html#af911005afa8fcdc4684ede4d0af3e1a3" title="gprof2dot.CallgrindParser.parse_keys" alt="" coords="795,150,1035,177"/>
+<area shape="rect" id="node11" href="$classgprof2dot_1_1CallgrindParser.html#aec0b3fa43a0874d649dafe15380b60bd" title="gprof2dot.CallgrindParser.parse_key" alt="" coords="513,179,746,206"/>
+</map>

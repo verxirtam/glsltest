@@ -1,0 +1,7 @@
+<map id="gprof2dot.PerfParser.parse_event" name="gprof2dot.PerfParser.parse_event">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1LineParser.html#a1de841caf3594d9267bb70c1950dbc69" title="gprof2dot.LineParser.eof" alt="" coords="239,5,403,32"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1LineParser.html#afccde74774bc2536b0f5ce322a072e25" title="gprof2dot.LineParser.consume" alt="" coords="462,60,661,87"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1PerfParser.html#a7350b1dfabf6b5acbae7d846cc07ddd5" title="gprof2dot.PerfParser.parse\l_callchain" alt="" coords="232,107,411,149"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1LineParser.html#a231fd605b597fe7f055fb2ef8a033ef5" title="gprof2dot.LineParser.readline" alt="" coords="713,60,903,87"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1LineParser.html#af7981f491d2779acc749095fbe2601c8" title="gprof2dot.LineParser.lookahead" alt="" coords="459,115,664,141"/>
+</map>

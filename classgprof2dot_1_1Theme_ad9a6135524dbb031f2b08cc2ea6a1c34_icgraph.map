@@ -1,0 +1,9 @@
+<map id="gprof2dot.Theme._hue_to_rgb" name="gprof2dot.Theme._hue_to_rgb">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1Theme.html#a481d1f519c553e26f5bf1b5dcfb742d3" title="gprof2dot.Theme.hsl\l_to_rgb" alt="" coords="205,39,347,81"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1Theme.html#a21f9d0256a90922f1d2482689fdf7120" title="gprof2dot.Theme.graph\l_bgcolor" alt="" coords="395,9,551,50"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1Theme.html#a810a0d518754fc7b8fb50b1406d88ff2" title="gprof2dot.Theme.color" alt="" coords="397,77,549,104"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1Theme.html#a4ab1d79e25833e387ad1f5e05aaee332" title="gprof2dot.Theme.node\l_fgcolor" alt="" coords="611,5,763,46"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1Theme.html#a1bcae8909fe63c115ae94ccdab479763" title="gprof2dot.Theme.node\l_bgcolor" alt="" coords="611,70,763,111"/>
+<area shape="rect" id="node7" href="$classgprof2dot_1_1Theme.html#a985af2c29d5615898ce45f9ac4acaee7" title="gprof2dot.Theme.edge\l_color" alt="" coords="611,135,763,177"/>
+<area shape="rect" id="node8" href="$classgprof2dot_1_1DotWriter.html#a59cc16acfab6d9b560b5df93c822ccb2" title="gprof2dot.DotWriter.graph" alt="" coords="601,201,773,228"/>
+</map>

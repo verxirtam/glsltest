@@ -1,0 +1,14 @@
+<map id="gprof2dot.OprofileParser.parse_entry" name="gprof2dot.OprofileParser.parse_entry">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1OprofileParser.html#a6311fbb94fb6d26f2ffb6ce3982b2640" title="gprof2dot.OprofileParser.parse\l_subentries" alt="" coords="255,161,454,202"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1OprofileParser.html#a86db4a49b69efee5ce795dc0cc1247c7" title="gprof2dot.OprofileParser.parse\l_subentry" alt="" coords="509,219,707,261"/>
+<area shape="rect" id="node8" href="$classgprof2dot_1_1OprofileParser.html#a2f8e5aab7ee3788a0458893782689652" title="gprof2dot.OprofileParser.match\l_primary" alt="" coords="253,5,456,46"/>
+<area shape="rect" id="node9" href="$classgprof2dot_1_1OprofileParser.html#ab626a04a542da15b1ec5ff02742f8855" title="gprof2dot.OprofileParser.add\l_entry" alt="" coords="261,281,449,322"/>
+<area shape="rect" id="node12" href="$classgprof2dot_1_1OprofileParser.html#a89c4755af4275bc9643295e5d9b36f32" title="gprof2dot.OprofileParser.skip\l_separator" alt="" coords="259,95,450,137"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1OprofileParser.html#a0d535f5332aa7dc0038e2000d1f11237" title="gprof2dot.OprofileParser.match\l_secondary" alt="" coords="507,154,709,195"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1LineParser.html#af7981f491d2779acc749095fbe2601c8" title="gprof2dot.LineParser.lookahead" alt="" coords="760,44,965,71"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1LineParser.html#afccde74774bc2536b0f5ce322a072e25" title="gprof2dot.LineParser.consume" alt="" coords="763,165,962,192"/>
+<area shape="rect" id="node7" href="$classgprof2dot_1_1LineParser.html#a231fd605b597fe7f055fb2ef8a033ef5" title="gprof2dot.LineParser.readline" alt="" coords="1014,165,1205,192"/>
+<area shape="rect" id="node10" href="$classgprof2dot_1_1OprofileParser.html#ac101193aa5b779286e012289d746423b" title="gprof2dot.OprofileParser.update\l_subentries_dict" alt="" coords="505,285,711,326"/>
+<area shape="rect" id="node11" href="$namespacegprof2dot.html#a2bc98f4483664acd6de9959350022758" title="gprof2dot.compat_itervalues" alt="" coords="769,292,956,319"/>
+<area shape="rect" id="node13" href="$classgprof2dot_1_1OprofileParser.html#a87caf9d81fd91969c2b2d11c9e067fd1" title="gprof2dot.OprofileParser.match\l_separator" alt="" coords="507,37,709,78"/>
+</map>

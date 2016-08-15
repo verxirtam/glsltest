@@ -1,0 +1,7 @@
+<map id="gprof2dot.OprofileParser.parse_subentries" name="gprof2dot.OprofileParser.parse_subentries">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1OprofileParser.html#a0d535f5332aa7dc0038e2000d1f11237" title="gprof2dot.OprofileParser.match\l_secondary" alt="" coords="253,5,456,46"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1OprofileParser.html#a86db4a49b69efee5ce795dc0cc1247c7" title="gprof2dot.OprofileParser.parse\l_subentry" alt="" coords="255,70,454,111"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1LineParser.html#af7981f491d2779acc749095fbe2601c8" title="gprof2dot.LineParser.lookahead" alt="" coords="504,12,709,39"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1LineParser.html#afccde74774bc2536b0f5ce322a072e25" title="gprof2dot.LineParser.consume" alt="" coords="507,77,706,104"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1LineParser.html#a231fd605b597fe7f055fb2ef8a033ef5" title="gprof2dot.LineParser.readline" alt="" coords="758,77,949,104"/>
+</map>

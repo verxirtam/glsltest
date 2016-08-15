@@ -1,0 +1,8 @@
+<map id="gprof2dot.DotWriter.edge" name="gprof2dot.DotWriter.edge">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1DotWriter.html#a90eac2f9f3688a1dd39a01cea391f747" title="gprof2dot.DotWriter.write" alt="" coords="683,56,851,83"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1DotWriter.html#adf3a673cbc080fc41e196078b963e4b5" title="gprof2dot.DotWriter.id" alt="" coords="465,5,615,32"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1DotWriter.html#a82e8b352180b8e1125e73dcb9f200c0c" title="gprof2dot.DotWriter.attr_list" alt="" coords="222,56,405,83"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1DotWriter.html#ad5cc68f04deb3fb28ed278eeefd689fe" title="gprof2dot.DotWriter.escape" alt="" coords="675,5,858,32"/>
+<area shape="rect" id="node6" href="$namespacegprof2dot.html#a46332489b24781ec0db02c3093f3d319" title="gprof2dot.sorted_iteritems" alt="" coords="453,107,627,133"/>
+<area shape="rect" id="node7" href="$namespacegprof2dot.html#aa6c232e958d0f75a0594a19916708753" title="gprof2dot.compat_keys" alt="" coords="687,107,846,133"/>
+</map>

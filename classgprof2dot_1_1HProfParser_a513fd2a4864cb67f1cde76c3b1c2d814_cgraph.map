@@ -1,0 +1,9 @@
+<map id="gprof2dot.HProfParser.parse" name="gprof2dot.HProfParser.parse">
+<area shape="rect" id="node2" href="$classgprof2dot_1_1LineParser.html#a231fd605b597fe7f055fb2ef8a033ef5" title="gprof2dot.LineParser.readline" alt="" coords="971,165,1162,191"/>
+<area shape="rect" id="node3" href="$classgprof2dot_1_1LineParser.html#af7981f491d2779acc749095fbe2601c8" title="gprof2dot.LineParser.lookahead" alt="" coords="717,139,923,166"/>
+<area shape="rect" id="node4" href="$classgprof2dot_1_1LineParser.html#afccde74774bc2536b0f5ce322a072e25" title="gprof2dot.LineParser.consume" alt="" coords="721,69,919,95"/>
+<area shape="rect" id="node5" href="$classgprof2dot_1_1HProfParser.html#affa85a17866a857d3a33501924a7128b" title="gprof2dot.HProfParser.parse\l_traces" alt="" coords="243,144,431,185"/>
+<area shape="rect" id="node7" href="$classgprof2dot_1_1HProfParser.html#aab6109363f8d634e83ded0a5bdc734f4" title="gprof2dot.HProfParser.parse\l_samples" alt="" coords="481,28,669,69"/>
+<area shape="rect" id="node8" href="$namespacegprof2dot.html#ae31572f427f8ede249eb2451a0d3723e" title="gprof2dot.compat_iteritems" alt="" coords="247,311,427,338"/>
+<area shape="rect" id="node6" href="$classgprof2dot_1_1HProfParser.html#a9e0036ae9adee6f8f16ddb76f8d3215b" title="gprof2dot.HProfParser.parse\l_trace" alt="" coords="481,93,669,135"/>
+</map>
